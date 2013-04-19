@@ -1,0 +1,58 @@
+/**** Custom posts elements *****/
+/* Video play link on Timelapse page */
+a.play{
+    display: inline-block;
+    padding: 1px 10px 1px 25px;
+    background:#4db3e3 url(/wp-content/themes/myblog/images/i/play.png) no-repeat 10px center;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    color:white;
+    font-size:12px;
+    text-decoration:none;
+}
+
+
+/** Post widgets **/
+#post-widget ul{
+    margin:0;
+}
+
+#post-top-widget{
+    float:right;
+    height:30px;
+}
+#post-top-widget ul,
+#post-top-widget li{
+    margin:0;
+    padding:0 !important;
+}
+
+#post-widget h3{
+    margin-bottom:1em;
+    font-size:13pt;
+    font-weight:normal;
+    color:#666;
+}
+
+/** Typo notification **/
+#typo-notification{
+    margin:3em 0;
+    color:#666;
+    font-size:10pt;
+    font-weight:300;
+    line-height:1.5;
+}
+#typo-notification a{
+    color:#666;
+    text-decoration: underline;
+}
+#typo-notification strong{
+    font-weight:500;
+    color:#555;
+}
+
+
+#yandex_ad {
+    margin:3em 0 2em;
+}

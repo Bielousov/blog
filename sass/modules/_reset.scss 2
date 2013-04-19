@@ -1,0 +1,75 @@
+/**** Translation Overlay ****/
+.x-translate-overlay {
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    z-index: 999;
+    width: 500px;
+    margin-left: -410px;
+    padding: 40px;
+    padding-left: 300px;
+    background: #ecf3f5;
+    border-radius: 10px;
+    border: solid 2px white;
+    box-shadow: 0 2px 20px rgba(0,0,0,.5);
+    color: #8fa3a6;
+    font-size: 11pt;
+    text-shadow: 0 1px 0 white;
+    
+    ins {
+        float:left;
+        width:220px;
+        height: 150px;
+        margin: 0 40px 0 -260px;
+        background: url(/wp-content/themes/myblog/images/a/canada-flag-translataion.png) no-repeat center top;
+        background-size: contain;
+        opacity:.2;
+    }
+    h2 {
+        clear: none;
+        font-size: 16pt;
+        line-height: 1.4;
+    }
+    strong {
+        display: block;
+        margin: 1em 0;
+        padding-left: 24px;
+        background: url(http://translate.googleapis.com/translate_static/img/loading.gif) no-repeat left center;
+        color: #333;
+        line-height: 16px;
+    }
+    small {
+        display: block;
+        margin: 1em 0;
+        font-size: 9pt;
+        line-height: 1.7;
+    }
+}
+
+/** Google translate **/
+#translate {
+    margin-top:10px;
+}
+#translation_bar a {
+    margin-right:.25em;
+}
+#google_translate_element{
+    line-height:17px;
+    height:30px;
+    opacity:.6;
+
+    &:hover{
+        opacity:1;
+    }
+
+    a.goog-te-menu-value{
+        text-decoration:none !important;
+    }
+
+    #translate-widget &{
+        margin-top:-1px;
+    }
+    #primary &{
+        margin-top:8px;
+    }
+}

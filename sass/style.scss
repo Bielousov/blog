@@ -1,0 +1,23 @@
+/*!
+Theme Name: Непутевая Канада
+Theme URI: http://bielousov.com
+Description: My blog custom theme. Includes sidebar only in archives, big photos and even bigger custom fullscreen lightboxes; scrollable panoramas, custom travels map and fine social share functionality. Based on Twenty Ten theme.
+Author: Anton Bielousov
+Version: 1.0
+*/
+
+@charset "utf-8";
+@import "compass";
+
+@import "modules/reset"; // This clears all styles for elements
+@import "defaults"; // Sitewide defaults
+@import "ui";
+
+@import "modules/header";
+@import "modules/translation";
+@import "modules/images";
+@import "modules/footer";
+
+@import "modules/social";
+@import "pages/travel";
+@import "pages/error404";

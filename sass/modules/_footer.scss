@@ -1,0 +1,72 @@
+/* =Footer
+-------------------------------------------------------------- */
+
+#footer {
+    border-top: 1px solid #ccc;
+    margin: 0 -20px;
+    width:100%;
+    padding:0 20px;
+
+    #colophon {
+        margin: 0 auto;
+        overflow: hidden;
+        padding: 18px 0;
+        width:920px;
+    }
+
+    #footer-widget-area {
+        overflow: hidden;
+
+        .widget-area {
+            display: inline-block;
+            width: 100%;
+        }
+
+        .widget-title {
+            margin:.5em 0;
+        }
+
+        #first {
+            .widget_text {
+                float: left;
+                width: 65%;
+            }
+            .widget_hcard_widget{
+                float: right;
+                width: 30%;
+            }
+        }
+
+        #second {
+            text-align:right;
+        }
+
+        #third {
+            float: right;
+            margin-right: 20px;
+            width: 400px;
+        }
+
+
+        /* Author hcard widget */
+        .widget_hcard_widget .author-hcard {
+            .column.four {
+                float:right;
+                width: 64px;
+                margin-left:1em;
+                padding: 0;
+        
+                img {
+                    width: 100%;
+                }
+            }
+            .column.eight {
+                padding: 0;
+            }
+            .tel,
+            [itemprop=jobTitle] {
+                display: none;
+            }
+        }
+    }
+}

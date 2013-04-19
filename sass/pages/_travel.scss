@@ -1,0 +1,119 @@
+/**** Travels Page ****/
+#content .pageSubLinks{
+    float:left;
+    font-size:90%;
+    margin-top:-20px;
+    margin-bottom:0;
+    padding:0;
+    
+    a.active{
+        border:none;
+        color:#111;
+        cursor:default;
+        font-weight:bold;
+    }
+}
+
+#travels{
+    clear:both;
+    list-style:none;
+    margin:0;
+    padding:0;
+
+    li{
+        line-height:160%;
+        margin:0;
+        padding:0;
+    
+        h2{
+            display:inline;
+            font-size:15pt;
+            margin:0;
+            padding:0 .3em 0 0;
+        }
+        p{
+            display:inline;
+        }
+    }
+}
+
+
+/* =MAP MODE
+-------------------------------------------------------------- */
+#travels.map{
+    background:url(/wp-content/themes/myblog/images/a/world-map.png) no-repeat 0 0;
+    display:block;
+    margin:-20px -299px -75px -55px;
+    padding: 0 172px;
+    position:relative;
+    min-height:620px;
+    width:900px;
+    z-index:9;
+
+    li{
+        position:absolute;
+        line-height: 1;
+    
+        h2{
+            font-size:10pt;
+        }
+        em{
+            color:#666;
+            font-size:8pt;
+        }
+        br{
+            display: none;
+        }
+    }
+
+    .more{
+        display:none;
+    }
+}
+
+/* =LIST MODE
+-------------------------------------------------------------- */
+#travels.list{
+    margin:2em 0;
+
+    li{
+        margin-bottom:2em;
+    
+        p.more{
+            color:#666;
+            display:block;
+            font-size:90%;
+            font-style:italic;
+            margin-bottom:.5em;
+            margin-top:.25em;
+        }
+    }
+
+    .year{
+        display:block;
+        font-size:18pt;
+        margin: 3em 0 1em;
+    
+        &.first{
+            margin-top: 0;
+        }
+    }
+}
+
+/* =TRAVEL RELATED INFORMATION
+-------------------------------------------------------------- */
+.travel-extra {
+    position: relative;
+    z-index: 10;
+}
+#travels.map ~ .travel-extra {
+    margin-top: -200px;
+    margin-bottom: 100px;
+}
+
+
+// TRAVEL PAGE IN SEARCH RESULTS
+.search-results .pageSubLinks,
+.search-results #travels {
+    display: none;
+}
