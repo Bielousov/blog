@@ -30,6 +30,9 @@
     .fb_iframe_widget_lift{
         z-index:10000;
     }
+    .fb_iframe_widget iframe {
+        position: relative;
+    }
     .at300b:hover {
         opacity:1 !important;
     }

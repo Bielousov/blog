@@ -1,3 +1,9 @@
+/* =Mixins
+-------------------------------------------------------------- */
+@mixin sprite {
+    background:url(/wp-content/themes/myblog/images/sprite.png) no-repeat 0 0;
+}
+
 /* =Fonts
 -------------------------------------------------------------- */
 body,
@@ -1102,14 +1108,6 @@ html[xmlns] .clearfix {
 img[alt*=Rambler] {
     width:0;
     height:0;
-}
-
-/* Sprite graphics */
-.sprite_rss{
-    background:url(images/sprite.png) no-repeat -6px -5px;
-    display:block;
-    height:21px;
-    width:20px;
 }
 
 

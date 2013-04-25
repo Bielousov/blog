@@ -2,7 +2,7 @@
 -------------------------------------------------------------- */
 
 #header {
-    background:#f4f4f4 url(images/bg-h.png) repeat center center;
+    background: #f4f4f4 url(../images/bg-h.png) repeat center center;
     border-bottom:solid 1px #ddd;
     min-width:1000px;
 
@@ -85,11 +85,19 @@
             background:rgba(10,10,10,.03);
             border-radius:10px;
         }
-        ins{
+            /* Sprite graphics */
+        ins.sprite_rss{
+            @include sprite;
             float:right;
+            display:block;
+            height:21px;
+            width:20px;
             margin:3px 0 0 .75em;
+
+            background-position: -6px -5px;
         }
     }
+
 
     #google_plusone{
         bottom:-2px;
@@ -123,7 +131,7 @@
         }
     
         input.submit{
-            background:transparent url(images/sprite.png) no-repeat;
+            @include sprite;
             background-position: -128px center;
             border:none;
             cursor:pointer;

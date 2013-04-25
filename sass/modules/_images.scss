@@ -142,7 +142,8 @@ img.aligncenter {
 
 #content .panoramaIcon{
     display:block;
-    background:url(/wp-content/themes/myblog/images/sprite.png) no-repeat -96px 0;
+    @include sprite;
+    background-position: -96px 0;
     margin: -50px 0 20px 15px;
     opacity:.9;
     position:relative;
