@@ -49,8 +49,11 @@
 				</div>
 
 				<?php
+					// Get post year
+					$post_year = mysql2date("Y", $post->post_date_gmt);
+
 					// Google Ads
-					if(isset($custom_fields['google-ad']) && $custom_fields['google-ad'][0]=='true')
+					if($post_year < date('Y') || (isset($custom_fields['google-ad']) && $custom_fields['google-ad'][0]=='true'))
 						get_template_part( 'ad_google' );
 					//if(!isset($custom_fields['google-ad']))
 					if(isset($custom_fields['yandex-ad']) && $custom_fields['yandex-ad'][0]=='true')
