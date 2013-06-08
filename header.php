@@ -33,44 +33,45 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="header" style="position:relative;">
-	<div id="masthead">
-		<div id="branding">
-			<?php
-				if( is_home() || is_front_page() ){
-					echo '<h1 id="site-title">
-							<img src="'.get_bloginfo('template_directory', false).'/images/a/canadian-octobrist.png" alt="'. get_bloginfo('name') .'" width="128" height="128" />
-							<big>Непутевая Канада</big> <small>Блог Антона Белоусова</small>
-						  </h1>';
-				} else {
-					echo '<div id="site-title">
-							<a href="'. home_url( '/' ) .'" title="'. esc_attr( get_bloginfo( 'name', 'display' ) ) .'" rel="home">'
-								.'<img src="'.get_bloginfo('template_directory').'/images/a/canadian-octobrist.png" alt="'. get_bloginfo('name') .'" width="128" height="128" />'
-							    .'<big>Непутевая Канада</big> <small>Блог Антона Белоусова</small>
-							</a>
-						  </div>';				
-				}
-			?>
-		</div><!-- #branding -->
-		
-		<div id="access" role="navigation">
-			<?php include (TEMPLATEPATH . '/searchform.php'); ?>
-			
-			<a href="/feed/" rel="nofollow" title="Subscribe to RSS feed" id="rss_feed"><ins class="sprite_rss"></ins>Подпишитесь на рассылку<br/>и не пропускайте ни одного поста.</a>
-			<?php 
-				/* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */
-				wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); 
-			?>
-			
-			<div id="google_plusone">
-				<!-- Place this tag in your head or just before your close body tag -->
-				<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-				
-				<!-- Place this tag where you want the +1 button to render -->
-				<g:plusone size="tall" href="http://www.bielousov.com"></g:plusone>
+
+<header class="site-header">
+	<div class="content-wrapper">
+		<?php  if(is_home() || is_front_page()) { ?>
+			<h1 class="site-title">
+				<ins></ins>
+				<big>Непутевая Канада</big>
+				<small>Блог <a href="/author" rel="author">Антона Белоусова</a></small>
+			</h1>
+		<?php } else { ?>
+			<div class="site-title">
+				<ins></ins>
+				<big><a href="/" rel="home" >Непутевая Канада</a></big>
+				<small>Блог <a href="/author" rel="author">Антона Белоусова</a></small>
 			</div>
-		</div><!-- #access -->
-	</div><!-- #masthead -->
-</div><!-- #header -->
+		<?php } ?>
+
+
+		<a href="/feed/" rel="nofollow" title="Подпишитесь на RSS-рассылку и не пропускайте ни одного поста." class="rss-feed"></a>
+
+		<nav>
+			<?php 
+				// Primary Menu
+				wp_nav_menu( array( 'container_class' => 'menu-header', 'menu' => 'primary' ) ); 
+			
+				// Search form
+				include (TEMPLATEPATH . '/searchform.php');
+			?>
+		</nav>
+
+		<div id="google_plusone">
+			<!-- Place this tag in your head or just before your close body tag -->
+			<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+			
+			<!-- Place this tag where you want the +1 button to render -->
+			<g:plusone size="tall" href="http://www.bielousov.com"></g:plusone>
+		</div>
+	</div>
+</header>
+
 <div id="wrapper" class="hfeed">
-	<div id="main">
+	<div id="main" class="content-wrapper">

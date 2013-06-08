@@ -6,14 +6,19 @@
 
 /* =Fonts
 -------------------------------------------------------------- */
+$font-serif: Palatino, Georgia, "Bitstream Charter", serif;
+$font-sans: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
+$font-monospace: "Courier 10 Pitch", Courier, monospace;
+
 body,
 input,
 textarea,
 .page-title span,
 .pingback a.url,
 .serif {
-    font-family: Georgia, "Bitstream Charter", serif;
+    font-family: $font-serif;
 }
+
 h3#comments-title,
 h3#reply-title,
 .menu-header .menu,
@@ -41,23 +46,32 @@ h3#reply-title,
 a.play,
 input,
 .sans-serif {
-    font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+    font-family: $font-sans;
 }
-pre {
-    font-family: "Courier 10 Pitch", Courier, monospace;
-}
+
+pre,
 code {
-    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+    font-family: $font-monospace;
+    //font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 
-#site-title{
-    font-family: "Myriad Pro", Myriad, "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
-}
+/* =Global Colors
+-------------------------------------------------------------- */
+// Neutral Gray
+$dark: #161616;
+$med: #666;
+$light: #eee;
 
-
+// Links
+$link: #0066cc;
+$visited: #743399;
+$active: #ff4b33;
 
 /* =Global Elements
 -------------------------------------------------------------- */
+* {
+    @include box-sizing(border-box);
+}
 
 body {
     background: #fff;
@@ -65,7 +79,7 @@ body {
 body,
 input,
 textarea {
-    color: #666;
+    color: $med;
     font-size: 12px;
     line-height: 18px;
 }
@@ -146,7 +160,7 @@ pre {
 }
 abbr,
 acronym {
-    border-bottom: 1px dotted #666;
+    border-bottom: 1px dotted $med;
     cursor: help;
 }
 sup,
@@ -173,17 +187,17 @@ textarea {
     padding: 2px;
 }
 a:link {
-    color: #0066cc;
-    border-color: #0066cc;
+    color: $link;
+    border-color: $link;
 }
 a:visited {
-    color: #743399;
-    border-color: #743399;
+    color: $visited;
+    border-color: $visited;
 }
 a:active,
 a:hover {
-    color: #ff4b33;
-    border-color: #ff4b33;
+    color: $active;
+    border-color: $active;
 }
 
 /* Text meant only for screen readers */
@@ -208,6 +222,13 @@ a.vglnk {
     padding: 0 20px;
     overflow-x:hidden;
     background: #fff;
+}
+
+.content-wrapper {
+    clear: both;
+    margin: 0 auto;
+    position: relative;
+    width:960px;
 }
 
 /* =Layout
@@ -267,11 +288,7 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
 -------------------------------------------------------------- */
 
 #main {
-    clear: both;
     padding: 10px 0 0 0;
-    margin: 0 auto;
-    position: relative;
-    width:960px;
 }
 #content {
     margin-bottom: 36px;
@@ -309,7 +326,7 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
 }
 #content dt,
 #content th {
-    color: #000;
+    color: $dark;
 }
 #content h1,
 #content h2,
@@ -317,7 +334,7 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
 #content h4,
 #content h5,
 #content h6 {
-    color: #000;
+    color: $dark;
     line-height: 1.1em;
     margin: 1em 0 .25em 0;
 }
@@ -377,7 +394,7 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
 }
 .home .sticky {
     background: #f2f7fc;
-    border-top: 4px solid #000;
+    border-top: 4px solid $dark;
     margin-left: -20px;
     margin-right: -20px;
     padding: 18px 20px;
@@ -386,7 +403,7 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
     margin: 0 0 36px 0;
 }
 .page-title {
-    color: #000;
+    color: $dark;
     font-size: 14px;
     font-weight: bold;
     margin: 0 0 36px 0;
@@ -404,7 +421,7 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
 }
 .page-title a:active,
 .page-title a:hover {
-    color: #ff4b33;
+    color: $active;
 }
 #content .entry-title {
     color: #111;
@@ -428,11 +445,11 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
 }
 .entry-title a:link,
 .entry-title a:visited {
-    color: #000;
+    color: $dark;
 }
 .entry-title a:active,
 .entry-title a:hover {
-    color: #ff4b33;
+    color: $active;
     text-decoration:underline;
 }
 .entry-meta {
@@ -446,7 +463,7 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
 }
 .entry-meta abbr:hover,
 .entry-utility abbr:hover {
-    border-bottom: 1px dotted #666;
+    border-bottom: 1px dotted $med;
 }
 .entry-date{
     font-style:italic;
@@ -468,7 +485,7 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
 }
 .entry-content fieldset legend {
     background: #fff;
-    color: #000;
+    color: $dark;
     font-weight: bold;
     padding: 0 24px;
 }
@@ -493,7 +510,7 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
 
 .page-link {
     clear: both;
-    color: #000;
+    color: $dark;
     font-weight: bold;
     margin: 0 0 22px 0;
     word-spacing: 0.5em;
@@ -511,7 +528,7 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
 }
 .page-link a:active,
 .page-link a:hover {
-    color: #ff4b33;
+    color: $active;
 }
 body.page .edit-link {
     clear: both;
@@ -519,7 +536,7 @@ body.page .edit-link {
 }
 #entry-author-info {
     background: #f2f7fc;
-    border-top: 4px solid #000;
+    border-top: 4px solid $dark;
     clear: both;
     font-size: 14px;
     line-height: 20px;
@@ -540,7 +557,7 @@ body.page .edit-link {
     margin: 0 0 0 104px;
 }
 #entry-author-info h2 {
-    color: #000;
+    color: $dark;
     font-size: 100%;
     font-weight: bold;
     margin-bottom: 0;
@@ -564,7 +581,7 @@ body.page .edit-link {
 }
 .entry-meta a:hover,
 .entry-utility a:hover {
-    color: #ff4b33;
+    color: $active;
     text-decoration:underline;
 }
 #content .video-player {
@@ -620,7 +637,10 @@ body.page .edit-link {
 
 
 /**** Search engines refers highlights ****/
-.hilite { background-color:#FFCA61; color:#000000 }
+.hilite { 
+    background-color:#FFCA61; 
+    color: $dark 
+}
 
 
 /* =Asides
@@ -768,14 +788,15 @@ body.page .edit-link {
     cursor:move;
 }
 .navigation .paginator_pages{
-    background:#eee;
-    font-size:9pt;
-    margin-left: -20px;
-    margin-bottom:-2.5em;
-    padding:16px;
     position:relative;
     top:-40px;
     width:15%;
+    margin-left: -20px;
+    margin-bottom:-2.5em;
+    padding:16px;
+    
+    background: $light;
+    font-size:9pt;
 }
 .navigation .paginator_pages strong{
     font-size:130%;
@@ -945,10 +966,10 @@ body.page .edit-link {
     text-align: right;
 }
 .widget_rss a.rsswidget {
-    color: #000;
+    color: $dark;
 }
 .widget_rss a.rsswidget:hover {
-    color: #ff4b33;
+    color: $active;
 }
 .widget_rss .widget-title img {
     width: 11px;
@@ -967,9 +988,9 @@ body.page .edit-link {
 }
 
 #primary{
-    border:solid 1px #eee;
-    margin-bottom:3em;
-    width:150px;
+    width: 150px;
+    margin-bottom: 3em;
+    border: solid 1px $light;
 }
 #main #primary.widget-area ul{
     padding:0;
@@ -1156,11 +1177,11 @@ code {
         position: relative !important;
     }
     #header {
-        border-bottom: 2pt solid #000;
+        border-bottom: 2pt solid $dark;
         padding-bottom: 18pt;
     }
     #colophon {
-        border-top: 2pt solid #000;
+        border-top: 2pt solid $dark;
     }
     #site-title {
         font-size: 13pt;
