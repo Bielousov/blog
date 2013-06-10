@@ -1826,6 +1826,8 @@ header.site-header {
   -webkit-box-shadow: 0 0 5px #eeeeee;
   -moz-box-shadow: 0 0 5px #eeeeee;
   box-shadow: 0 0 5px #eeeeee;
+  /* =RSS
+  -------------------------------------------------------------- */
 }
 /* line 12, ../sass/modules/_header.scss */
 header.site-header a {
@@ -1890,7 +1892,17 @@ header.site-header .site-title small a {
   color: #666666;
   text-decoration: none;
 }
-/* line 77, ../sass/modules/_header.scss */
+/* line 79, ../sass/modules/_header.scss */
+header.site-header .rss-feed {
+  position: absolute;
+  bottom: 4px;
+  height: 32px;
+  width: 32px;
+  margin-left: 1em;
+  background: url(/wp-content/themes/myblog/images/sprite.png) no-repeat 0 0;
+  background-position: 0 0;
+}
+/* line 92, ../sass/modules/_header.scss */
 header.site-header #access {
   position: absolute;
   top: 0;
@@ -1899,31 +1911,31 @@ header.site-header #access {
   font-size: 14px;
   font-weight: 300;
 }
-/* line 87, ../sass/modules/_header.scss */
+/* line 102, ../sass/modules/_header.scss */
 header.site-header #access .menu-header,
 header.site-header #access .menu-header ul,
 header.site-header #access .menu-header ul li {
   display: inline;
 }
-/* line 90, ../sass/modules/_header.scss */
+/* line 105, ../sass/modules/_header.scss */
 header.site-header #access .menu-header ul li:after {
   content: ', ';
 }
-/* line 93, ../sass/modules/_header.scss */
+/* line 108, ../sass/modules/_header.scss */
 header.site-header #access .menu-header ul li:last-child:after {
   content: ' и ';
   margin-right: .2em;
 }
-/* line 97, ../sass/modules/_header.scss */
+/* line 112, ../sass/modules/_header.scss */
 header.site-header #access a {
   color: #666666;
 }
-/* line 103, ../sass/modules/_header.scss */
+/* line 118, ../sass/modules/_header.scss */
 header.site-header #searchform {
   display: inline-block;
   position: relative;
 }
-/* line 107, ../sass/modules/_header.scss */
+/* line 122, ../sass/modules/_header.scss */
 header.site-header #searchform input.field {
   -webkit-appearance: textfield;
   background: #fff;
@@ -1934,11 +1946,11 @@ header.site-header #searchform input.field {
   font-size: 13px;
   font-weight: 300;
 }
-/* line 120, ../sass/modules/_header.scss */
+/* line 135, ../sass/modules/_header.scss */
 header.site-header #searchform input.field:-webkit-input-placeholder, header.site-header #searchform input.field:-moz-placeholder, header.site-header #searchform input.field:-ms-input-placeholder {
   color: #ccc;
 }
-/* line 125, ../sass/modules/_header.scss */
+/* line 140, ../sass/modules/_header.scss */
 header.site-header #searchform input.submit {
   position: absolute;
   top: 2px;
@@ -1952,7 +1964,7 @@ header.site-header #searchform input.submit {
   cursor: pointer;
   text-indent: 99px;
 }
-/* line 142, ../sass/modules/_header.scss */
+/* line 157, ../sass/modules/_header.scss */
 header.site-header #google_plusone {
   -webkit-transform: scale(0.9, 0.9);
   -moz-transform: scale(0.9, 0.9);

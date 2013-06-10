@@ -73,6 +73,21 @@ header.site-header {
         }
     }
 
+    /* =RSS
+    -------------------------------------------------------------- */
+
+    .rss-feed{
+        position: absolute;
+        bottom: 4px;
+        
+        height: 32px;
+        width: 32px;
+        margin-left: 1em;
+    
+        @include sprite;
+        background-position: 0 0;
+    }
+
     // Menu
     #access {
         position: absolute;
