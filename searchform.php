@@ -7,8 +7,8 @@
  * @since Twenty Eleven 1.0
  */
 	
-	//$search_query = get_search_query();
-	//if(empty($search_query))
+	$search_query = get_search_query();
+	if(empty($search_query))
 		$search_query = 'Фотографии';
 ?>
 	<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">

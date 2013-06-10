@@ -57,6 +57,14 @@
             }
     
             dl{
+                position: absolute;
+                z-index: 1000;
+                width: 70px;
+
+                margin-left: -90px;
+                margin-top:1px;
+                padding:0 7px;
+                
                 background: white;
                 border: 1px solid rgba(200,200,200,.2);
                 -webkit-border-radius:6px;
@@ -65,16 +73,11 @@
                 -webkit-box-shadow: 0px 0px 4px rgba(128,128,128,0.2);
                 -moz-box-shadow: 0px 0px 4px rgba(128,128,128,0.2);
                 box-shadow: 0px 0px 4px rgba(128,128,128,0.2);
-                float: left;
+                
                 font-size: 10px;
-                margin-left: -110px;
-                margin-top:1px;
-                padding:0 7px;
-                position: absolute;
-                text-align: center;
                 line-height: 16px;
-                width:60px;
-                z-index: 1000;
+                text-align: center;
+                
 
                 .admin-bar & {
                     margin-top:40px;
@@ -83,7 +86,8 @@
                 dd {
                     height:64px;
                     margin:1em 0;
-                
+                    @include scale(.9);
+                    
                     &:first-child { 
                         margin-top:1em; 
                     }

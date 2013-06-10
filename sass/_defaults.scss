@@ -60,6 +60,7 @@ code {
 // Neutral Gray
 $dark: #161616;
 $med: #666;
+$border: #e2e2e2;
 $light: #eee;
 
 // Links
@@ -425,13 +426,16 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
 }
 #content .entry-title {
     color: #111;
-    font-size: 21pt;
-    font-weight: bold;
+    font-size: 24pt;
     line-height: 1.1em;
     margin-bottom: 0;
+    a {
+        text-decoration: none;
+    }
 }
 #content h1.entry-title small {
-    color:#444;
+    color: $med;
+    font-size: 70%;
     font-weight:normal;
 }
 #content h1.entry-title {
@@ -453,7 +457,6 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
     text-decoration:underline;
 }
 .entry-meta {
-    margin:1em 0 0;
     color: #888;
     font-size: 10pt;
 }
@@ -1049,7 +1052,7 @@ body.page .edit-link {
 }
 
 .widget-top-posts{
-    font-size:10pt;
+    font-size:11pt;
     margin:1em 0 3em;
 }
 .widget-top-posts ul{

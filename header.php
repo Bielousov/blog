@@ -34,43 +34,45 @@
 
 <body <?php body_class(); ?>>
 
-<header class="site-header">
-	<div class="content-wrapper">
-		<?php  if(is_home() || is_front_page()) { ?>
-			<h1 class="site-title">
-				<ins></ins>
-				<big>Непутевая Канада</big>
-				<small>Блог <a href="/author" rel="author">Антона Белоусова</a></small>
-			</h1>
-		<?php } else { ?>
-			<div class="site-title">
-				<ins></ins>
-				<big><a href="/" rel="home" >Непутевая Канада</a></big>
-				<small>Блог <a href="/author" rel="author">Антона Белоусова</a></small>
-			</div>
-		<?php } ?>
+<header id="masthead" class="site-header" role="banner">
+	<div class="header-wrapper">
+		<hgroup class="content-wrapper">
+			<?php  if(is_home() || is_front_page()) { ?>
+				<h1 class="site-title">
+					<ins></ins>
+					<big>Непутевая Канада</big>
+					<small>Блог <a href="/author" rel="author">Антона Белоусова</a></small>
+				</h1>
+			<?php } else { ?>
+				<div class="site-title">
+					<ins></ins>
+					<big><a href="/" rel="home" >Непутевая Канада</a></big>
+					<small>Блог <a href="/author" rel="author">Антона Белоусова</a></small>
+				</div>
+			<?php } ?>
 
+			<a href="/feed/" rel="nofollow" title="Подпишитесь на RSS-рассылку и не пропускайте ни одного поста." class="rss-feed"></a>
+		</hgroup>
 
-		<a href="/feed/" rel="nofollow" title="Подпишитесь на RSS-рассылку и не пропускайте ни одного поста." class="rss-feed"></a>
-
-		<nav>
+		<nav id="access" role="navigation">
 			<?php 
 				// Primary Menu
-				wp_nav_menu( array( 'container_class' => 'menu-header', 'menu' => 'primary' ) ); 
+				wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); 
 			
 				// Search form
 				include (TEMPLATEPATH . '/searchform.php');
 			?>
-		</nav>
 
-		<div id="google_plusone">
-			<!-- Place this tag in your head or just before your close body tag -->
-			<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-			
-			<!-- Place this tag where you want the +1 button to render -->
-			<g:plusone size="tall" href="http://www.bielousov.com"></g:plusone>
-		</div>
+			<div id="google_plusone">
+				<!-- Place this tag in your head or just before your close body tag -->
+				<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+				
+				<!-- Place this tag where you want the +1 button to render -->
+				<g:plusone size="tall" href="http://www.bielousov.com"></g:plusone>
+			</div>
+		</nav>
 	</div>
+
 </header>
 
 <div id="wrapper" class="hfeed">

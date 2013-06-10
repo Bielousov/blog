@@ -61,9 +61,9 @@ function myblog_setup() {
 		require_once( $locale_file );
 
 	// This theme uses wp_nav_menu() in one location.
-	/*register_nav_menus( array(
+	register_nav_menus( array(
 		'primary' => __( 'Primary Navigation', 'myblog' ),
-	) );*/
+	) );
 
 	// Your changeable header business starts here
 	if ( ! defined( 'HEADER_TEXTCOLOR' ) )
@@ -106,12 +106,12 @@ endif;
  *
  * @since Twenty Ten 1.0
  */
-/*function myblog_page_menu_args( $args ) {
+function myblog_page_menu_args( $args ) {
 	$args['show_home'] = false;
 	return $args;
 }
 add_filter( 'wp_page_menu_args', 'myblog_page_menu_args' );
-*/
+
 
 /**
  * Sets the post excerpt length.
