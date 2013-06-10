@@ -4,11 +4,11 @@
     left: 50%;
     top: 100px;
     z-index: 999;
-    width: 500px;
+    width: 800px;
     margin-left: -410px;
     padding: 40px;
     padding-left: 300px;
-    background: #ecf3f5;
+    background: rgba(#ecf3f5,.97);
     border-radius: 10px;
     border: solid 2px white;
     box-shadow: 0 2px 20px rgba(0,0,0,.5);
@@ -35,13 +35,14 @@
         margin: 1em 0;
         padding-left: 24px;
         background: url(http://translate.googleapis.com/translate_static/img/loading.gif) no-repeat left center;
-        color: #333;
+        color: $dark;
         line-height: 16px;
     }
     small {
         display: block;
         margin: 1em 0;
-        font-size: 9pt;
+        font-size: 10pt;
+        font-weight: 300;
         line-height: 1.7;
     }
 }

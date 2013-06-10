@@ -89,13 +89,14 @@ header.site-header {
     }
 
     // Menu
-    #access {
+    nav {
         position: absolute;
         top: 0;
         right: 90px;
-        margin-top: 35px;
+        margin-top: 32px;
         font-size: 14px;
         font-weight: 300;
+        white-space: nowrap;
 
         .menu-header,
         .menu-header ul,
@@ -107,7 +108,7 @@ header.site-header {
         }
         .menu-header ul li:last-child:after {
             content: ' и ';
-            margin-right: .2em;
+            margin-right: .1em;
         }
         a {
             color: $med;

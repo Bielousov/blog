@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="ru-RU"  xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta rel="author" value="Anton Bielousov" />
-<meta name="google-translate-customization" content="f8fadec1a405bc57-e0411fa1af592148-g047e9d0ed70a270d-11"></meta>
+	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta rel="author" value="Anton Bielousov" />
+	<meta name="google-translate-customization" content="f8fadec1a405bc57-e0411fa1af592148-g047e9d0ed70a270d-11"></meta>
 
-<title><?php wp_title(''); ?></title>
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<link rel="author" href="https://plus.google.com/104977961152292400509?rel=author" title="Anton Bielousov"/>
-<?php
-    $custom_fields = get_post_custom();
-    wp_enqueue_style('ui', get_template_directory_uri() . '/css/style.css', false, '2.0', 'all');
-    wp_enqueue_script('ui', WP_CONTENT_URL . '/themes/myblog/scripts/ui.js',  array('jquery'));
+	<title><?php wp_title(''); ?></title>
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	<link rel="author" href="https://plus.google.com/104977961152292400509?rel=author" title="Anton Bielousov"/>
+	<?php
+	    $custom_fields = get_post_custom();
+	    wp_enqueue_style('ui', get_template_directory_uri() . '/css/style.css', false, '2.0', 'all');
+	    wp_enqueue_script('ui', WP_CONTENT_URL . '/themes/myblog/scripts/ui.js',  array('jquery'));
 
-	/* We add some JavaScript to pages with the comment form
-	 * to support sites with threaded comments (when in use).
-	 *
-	if ( is_singular() && get_option( 'thread_comments' ) )
-		wp_enqueue_script( 'comment-reply' );
-	 * Always have wp_head() just before the closing </head>
-	 * tag of your theme, or you will break many plugins, which
-	 * generally use this hook to add elements to <head> such
-	 * as styles, scripts, and meta tags.
-	 */
-	wp_head();
-						
-	if(isset($custom_fields['og:video']))
-		echo '<meta property="og:video" content="'.$custom_fields['og:video'][0].'">';
-?>
+		/* We add some JavaScript to pages with the comment form
+		 * to support sites with threaded comments (when in use).
+		 *
+		if ( is_singular() && get_option( 'thread_comments' ) )
+			wp_enqueue_script( 'comment-reply' );
+		 * Always have wp_head() just before the closing </head>
+		 * tag of your theme, or you will break many plugins, which
+		 * generally use this hook to add elements to <head> such
+		 * as styles, scripts, and meta tags.
+		 */
+		wp_head();
+							
+		if(isset($custom_fields['og:video']))
+			echo '<meta property="og:video" content="'.$custom_fields['og:video'][0].'">';
+	?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -54,7 +54,7 @@
 			<a href="/feed/" rel="nofollow" title="Подпишитесь на RSS-рассылку и не пропускайте ни одного поста." class="rss-feed"></a>
 		</hgroup>
 
-		<nav id="access" role="navigation">
+		<nav role="navigation">
 			<?php 
 				// Primary Menu
 				wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); 
