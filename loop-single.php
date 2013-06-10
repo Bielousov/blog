@@ -13,6 +13,12 @@
  * @subpackage Twenty_Ten
  * @since Twenty Ten 1.2
  */
+
+function custom_excerpt_length( $length ) {
+	return 20;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
 ?>
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
@@ -117,11 +123,24 @@
 			        while ( $my_query->have_posts() and $i<4 ) {
 			            $my_query->the_post();
 				 	    if(has_post_thumbnail()){
+
+				 	    	$content = strip_tags(get_the_excerpt());
+    						$dot = ".";
+    						$position = stripos ($content, $dot);
+
+    						if($position) { //if there's a dot in our soruce text do
+        						$offset = $position + 1; //prepare offset
+        						$position2 = stripos ($content, $dot, $offset); //find second dot using offset
+        						$excerpt = substr($content, 0, $position2); //put two first sentences under $first_two
+    						} else {
+    							$excerpt = substr($content, 0, 100);
+    						}
+
 			    	        $str.= '<li>
 			        	    			<a href="' .  get_permalink( get_the_ID() ) . '">'
 			            					.get_the_post_thumbnail( null, 'thumbnail' )
 			            					.the_title('<strong>','</strong>',false)
-			            					.strip_tags(get_the_excerpt())
+			            					.$excerpt . '&nbsp;[&hellip;]'
 				            			.'</a>'
 				            	   	.'</li>';
 				        	$i++;

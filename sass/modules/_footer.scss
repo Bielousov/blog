@@ -27,46 +27,13 @@
         }
 
         #first {
-            .widget_text {
-                float: left;
-                width: 65%;
-            }
-            .widget_hcard_widget{
-                float: right;
-                width: 30%;
+            p {
+                line-height: 1.8;
             }
         }
 
         #second {
             text-align:right;
-        }
-
-        #third {
-            float: right;
-            margin-right: 20px;
-            width: 400px;
-        }
-
-
-        /* Author hcard widget */
-        .widget_hcard_widget .author-hcard {
-            .column.four {
-                float:right;
-                width: 64px;
-                margin-left:1em;
-                padding: 0;
-        
-                img {
-                    width: 100%;
-                }
-            }
-            .column.eight {
-                padding: 0;
-            }
-            .tel,
-            [itemprop=jobTitle] {
-                display: none;
-            }
         }
     }
 }
