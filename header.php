@@ -51,7 +51,7 @@
 				</div>
 			<?php } ?>
 
-			<a href="http://feeds.feedburner.com/Bielousov" rel="nofollow" onclick="_gaq.push(['_trackPageview', '/tracking/rss-click']);" rel="nofollow" title="Подпишитесь на RSS-рассылку и не пропускайте ни одного поста." class="rss-feed"></a>
+			<a href="http://feeds.feedburner.com/Bielousov" target="_blank" rel="nofollow" onclick="_gaq.push(['_trackPageview', '/tracking/rss-click']);" rel="nofollow" title="Подпишитесь на RSS-рассылку и не пропускайте ни одного поста." class="rss-feed"></a>
 		</hgroup>
 
 		<nav role="navigation">
