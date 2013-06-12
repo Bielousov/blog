@@ -51,7 +51,7 @@
 				</div>
 			<?php } ?>
 
-			<a href="/feed/" rel="nofollow" title="Подпишитесь на RSS-рассылку и не пропускайте ни одного поста." class="rss-feed"></a>
+			<a href="/feed/" onclick="_gaq.push(['_trackPageview', '/tracking/rss-click']);" rel="nofollow" title="Подпишитесь на RSS-рассылку и не пропускайте ни одного поста." class="rss-feed"></a>
 		</hgroup>
 
 		<nav role="navigation">
