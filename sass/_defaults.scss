@@ -401,9 +401,16 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
     margin-right: -20px;
     padding: 18px 20px;
 }
-.single .hentry {
-    margin: 0 0 36px 0;
+.single {
+    .hentry {
+        margin: 0 0 36px 0;
+    }
+
+    .entry-content {
+        font-size: 14pt;
+    }
 }
+
 .page-title {
     color: $dark;
     font-size: 14px;
