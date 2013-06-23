@@ -12,7 +12,7 @@
 	<link rel="author" href="https://plus.google.com/104977961152292400509?rel=author" title="Anton Bielousov"/>
 	<?php
 	    $custom_fields = get_post_custom();
-	    wp_enqueue_style('ui', get_template_directory_uri() . '/css/style.css', false, '2.1.8', 'all');
+	    wp_enqueue_style('ui', get_template_directory_uri() . '/css/style.css', false, '2.1.9', 'all');
 	    wp_enqueue_script('ui', WP_CONTENT_URL . '/themes/myblog/scripts/ui.js',  array('jquery'));
 
 		/* We add some JavaScript to pages with the comment form
@@ -36,18 +36,22 @@
 
 <header id="masthead" class="site-header" role="banner">
 	<div class="header-wrapper">
-		<hgroup class="content-wrapper">
+		<hgroup class="content-wrapper notranslate">
 			<?php  if(is_home() || is_front_page()) { ?>
 				<h1 class="site-title">
 					<ins></ins>
-					<big>Непутевая Канада</big>
-					<small>Блог <a href="/author" rel="author">Антона Белоусова</a></small>
+					<big data-lang="ru">Непутевая Канада</big>
+					<small data-lang="ru">Блог <a href="/author" rel="author">Антона Белоусова</a></small>
+					<big data-lang="en">Russian Canadian</big>
+					<small data-lang="en"><a href="/" rel="home">www.rublog.ca</a></small>
 				</h1>
 			<?php } else { ?>
 				<div class="site-title">
 					<ins></ins>
-					<big><a href="/" rel="home" >Непутевая Канада</a></big>
-					<small>Блог <a href="/author" rel="author">Антона Белоусова</a></small>
+					<big data-lang="ru"><a href="/" rel="home" >Непутевая Канада</a></big>
+					<small data-lang="ru">Блог <a href="/author" rel="author">Антона Белоусова</a></small>
+					<big data-lang="en"><a href="/" rel="home" >Russian Canadian</a></big>
+					<small data-lang="en"><a href="/" rel="home">www.rublog.ca</a></small>
 				</div>
 			<?php } ?>
 

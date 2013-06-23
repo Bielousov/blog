@@ -1,3 +1,17 @@
+/****  Predefined translations ****/
+*[data-lang="en"] {
+    display: none !important;
+}
+
+html.translated-ltr {
+    *[data-lang="ru"] {
+        display: none !important;
+    }
+    *[data-lang="en"] {
+        display: inline !important;
+    }
+}
+
 /**** Translation Overlay ****/
 .x-translate-overlay {
     padding: $margin*2 0;
