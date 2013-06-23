@@ -22,15 +22,28 @@ UI =
     // GLOBAL: Show translation overlay while Google Translate is loading
     initTranslateOverlay: function(){
         if(/googtrans\/en/.test(window.location.hash)) {
-            $j('#wrapper').prepend('<div class="x-translate-overlay sans-serif"><ins class="x-en"></ins><h2>This blog is originally in Russian,<br/> but we’ll translate it into English for you.</h2><strong>Please wait while loading English translation&hellip;</strong><small>Note that automatic translation is not the best reading experience,<br/> but it is good enough to give you an idea if you don’t speak Russian.</small></div>');
+            var $translatePanel = $j('<div class="x-translate-overlay sans-serif"><h2>I’m sorry, but I write to this Blog in Russian</h2><p>Please wait while loading automatic English translation from Google…</p></div>');
+                $translatePanel.prepend('<div class="x-floating-link"><small>If that takes a while…</small><a href="javascript:UI.forseTrnslation();" class="x-button x-positive-button">Force English Translation</a></div>');
+                $translatePanel.prepend('<div class="x-floating-link"><small>Товарищ?</small><a href="#" onclick="UI.hideTranslateOverlay()" class="x-button x-negative-button">Спасибо, не нужно переводить</a></div>');
+            $j('#main').prepend($translatePanel);
+
             var waitTranslation = window.setInterval(function(){
                 if($j('html').hasClass('translated-ltr')) {
-                    $j('.x-translate-overlay').remove();
+                    UI.hideTranslateOverlay();
                     waitTranslation = window.clearInterval(waitTranslation);
                 }
             }, 200);
         }
     },
+        
+        forseTrnslation: function() {
+            $j('iframe.goog-te-menu-frame').first().contents().find('.goog-te-menu2-item span.text:contains("English")').first().click();
+        },
+
+        hideTranslateOverlay: function(){
+            $j('.x-translate-overlay').remove();
+        },
+
 
     // PAGE: Travel page map/list view toggle handler
 	initTravelMap: function(){
