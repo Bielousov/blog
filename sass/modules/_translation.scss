@@ -8,7 +8,7 @@ html.translated-ltr {
         display: none !important;
     }
     *[data-lang="en"] {
-        display: inline !important;
+        display: inline-block !important;
     }
 }
 
