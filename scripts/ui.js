@@ -97,7 +97,7 @@ UI =
         if($postImages.length < 3)
             return;
         $postImages.each(function(i){
-            $j(this).before('<ins id="' + img_(i+1) + '" class="imgNumber"><small>' + (i+1) +'</small></ins>');
+            $j(this).before('<ins id="img_' + (i+1) + '" class="imgNumber"><small>' + (i+1) +'</small></ins>');
         });
     },
 	
