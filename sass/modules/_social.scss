@@ -1,9 +1,19 @@
 /**** AddThis ****/
+#post-widget {
+    h3.widget-title {
+        border-top: solid 1px #eee;
+        padding-top: 10px;
+        margin-top: 50px;
+    }
+}
+
 #ShareSnippet {
     opacity:0;
     -webkit-transition:opacity 3s 1s;
     -moz-transition:opacity 3s 1s;
     transition:opacity 3s 1s;
+
+
 
     .x-loaded & {
         opacity:1;
@@ -39,11 +49,14 @@
     .atm-i{
         @include box-shadow (1px 1px 25px rgba(128,128,128,0.5));
     }
+    .addthis_counter{
+        margin-top: 5px; 
+    }
 }
 
 @media screen and (min-width: 1180px) {
     #post-widget.floated {
-        h3{
+        h3.widget-title  {
             display:none;
         }
         #ShareSnippet {
@@ -86,7 +99,6 @@
                 dd {
                     height:64px;
                     margin:1em 0;
-                    @include scale(.9);
                     
                     &:first-child { 
                         margin-top:1em; 

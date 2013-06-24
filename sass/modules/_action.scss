@@ -1,0 +1,30 @@
+/* =Interactive elements
+-------------------------------------------------------------- */
+
+.x-button {
+    display: inline-block;
+    @include light-gradient;
+    padding: $margin/2 $side-margin;
+    text-decoration: none;
+    text-shadow: 0 0 1px white;
+    white-space: nowrap;
+
+    &:link,
+    &:hover,
+    &:visited,
+    &:active {
+        border-color: $border;
+        color: $med;
+
+        &.x-positive-button {
+            color: $link;
+        }
+        &.x-negative-button {
+            color: darken($active, 25%);
+        }
+    }
+
+    &:active {
+        @include light-active-gradient;
+    }
+}

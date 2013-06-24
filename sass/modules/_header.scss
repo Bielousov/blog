@@ -121,10 +121,7 @@ header.site-header {
         position: relative;
     
         input.field{
-            -webkit-appearance: textfield;
-            background: #fff;
-            border-radius: 0;
-            padding: 3px 35px 3px 0px;
+            padding: 3px 35px 3px 10px;
             outline: none;
             width: 180px;
 
@@ -135,6 +132,11 @@ header.site-header {
             &:-moz-placeholder,
             &:-ms-input-placeholder {
                 color:#ccc;
+            }
+
+            &::-webkit-search-decoration,
+            &::-webkit-search-cancel-button {
+                display: none;
             }
         }
     
@@ -156,9 +158,8 @@ header.site-header {
 
     // Google Plus
     #google_plusone{
-        @include scale(.9);
         position: absolute;
-        bottom: -6px;
+        bottom: -3px;
         left: 100%;
         margin-left: 20px;
     }
