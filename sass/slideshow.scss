@@ -59,7 +59,7 @@ body.theater-mode{
 	text-shadow: 0 -1px 1px rgba(0,0,0,.5);
 	top:0;
 	width:100%;
-	z-index:100000;
+	z-index:10000002; // compete with translate bar
 
 	// MENU
 	menu{
