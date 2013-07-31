@@ -21,64 +21,64 @@ Just include scripts/slideshow.js and css/slideshow.css
 
 ### v. 2.1.11 
 (July 30, 2013)
-Added Tweet Ideas block
-Refactored post titles SCSS
+ - Added Tweet Ideas block
+ - Refactored post titles SCSS
 
 
 ### v. 2.1.10
 (June 24, 2013)
-Fixed appearance of English translation title
-Fixed Errors in post images number ID
+ - Fixed appearance of English translation title
+ - Fixed Errors in post images number ID
 
 
 ### v. 2.1.9
 (June 23, 2013)
-Added Mobify tag
-Added predefined title forpages translated into English
+ - Added Mobify tag
+ - Added predefined title forpages translated into English
 
 
 ### v. 2.1.8
 (June 23, 2013)
-Redesign Translation loading message
-Fixed iPad search box appearance
+ - Redesign Translation loading message
+ - Fixed iPad search box appearance
 
 
 ### v. 2.1.7
 (June 21, 2013)
-Enlarged post font size
-Reverted social buttons scaling
+ - Enlarged post font size
+ - Reverted social buttons scaling
 
 ### v. 2.1.6
 (June 12, 2013)
-Added GA tracking to RSS link
-Switched RSS to Feedburner
-Open feed burner RSS in new window
+ - Added GA tracking to RSS link
+ - Switched RSS to Feedburner
+ - Open feed burner RSS in new window
 
 ### v. 2.1.5
 (June 10, 2013)
-Global header and footer SCSS improvements
+ - Global header and footer SCSS improvements
 
 ### v. 2.1.4
 (June 9, 2013)
-Created new header
+ - Created new header
 
 
 ### v. 2.1.3
 (April 25, 2013)
-Show bigger Google Ads
-Show Google Ads on all year long posts
+ - Show bigger Google Ads
+ - Show Google Ads on all year long posts
 
 
 ### v. 2.1.2
 (April 25, 2013)
-Improved spite graphics
+ - Improved spite graphics
 
 
 ### v. 2.1.1
 (April 22, 2013)
-Removed obsolete pages
+ - Removed obsolete pages
 
 
 ### v. 2.1.0
 (April 19, 2013)
-Introduced SASS
+ - Introduced SASS
