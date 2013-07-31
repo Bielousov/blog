@@ -1,0 +1,23 @@
+/**** Recent Tweets ****/
+
+.widget_twitter .tweets{
+    margin:0 !important;
+    list-style-type: none;
+}
+.widget_twitter .tweets li {
+    list-style-type: none;
+    padding-top: 10px;
+    border-bottom:dashed 1px #ddd;
+    padding-bottom:5px;
+}
+.widget_twitter .tweets a.timesince{
+    color:#888;
+    display:block;
+    font-size:90%;
+}
+
+#microblog .twitter-follow-button{
+    display:block;
+    margin-top:-20px;
+    margin-bottom:50px;
+}

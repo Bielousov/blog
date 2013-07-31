@@ -30,7 +30,7 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 			
 			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				
-				<h1 class="entry-title"><?php the_title(); ?></h1>
+				<h1 class="entry-title rublog-title--page"><?php the_title(); ?></h1>
 				
 				<div id="post-top-widget" class="widget-area" role="complementary">
                     <ul class="xoxo">
@@ -72,6 +72,19 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
                         <?php dynamic_sidebar( 'post-widget-area' ); ?>
                     </ul>
                 </div>
+
+                <?php
+					// Tweet ideas
+					if(isset($custom_fields['twitter_idea']) && !empty($custom_fields['twitter_idea'])) {
+						echo '<div class="rublog-widget--social-tweet"><h5 class="rublog-title--widget">Идеи для твитов:</h5><div class="rublog-widget__content"><ul>';
+						for($i=0; $i < count($custom_fields['twitter_idea']); $i++) {
+							echo '<li><a class="addthis_button_tweet" tw:count="none" tw:lang="en" tw:text="'.$custom_fields['twitter_idea'][$i].'"></a>'
+									.'&laquo;'.$custom_fields['twitter_idea'][$i].'&raquo;'
+									.'</li>';
+						}
+						echo '</ul></div></div>';
+					}
+				?>
                 
 				<div class="entry-utility">
 					<?php myblog_posted_in(); ?>
@@ -82,7 +95,7 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
                     	if(strlen(strip_tags(strip_shortcodes(get_the_content()))) > 100) {
                     ?>
                         <div id="typo-notification" class="sans-serif">
-							<h5>Нашли ошибку?</h5>
+							<h5 class="rublog-title--widget">Нашли ошибку?</h5>
 							<?php echo error_notification_action_text(); ?>
 						</div>
 					<?php } ?>
@@ -97,7 +110,7 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 	</div><!-- #container -->
 </div><!-- #main -->
 
-			
+
 <div id="main-related">
 	<div class="content">
 		<div class="clearfix">

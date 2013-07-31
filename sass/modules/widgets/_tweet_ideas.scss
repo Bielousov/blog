@@ -1,0 +1,39 @@
+/**** Tweet Ideas Widget ****/
+
+.rublog-widget--social-tweet {
+    border-top: solid 1px #eee;
+    padding-top: 15px;
+    margin-top: 50px;
+
+    .rublog-widget__content {
+        padding: 5px 0;
+        font-family: $font-sans;
+
+        ul {
+            @include kill-list;
+
+            li {
+                position: relative;
+                margin: 10px 0;
+                padding: 0 0 10px 70px;
+
+                border-bottom: dashed 1px $border;
+
+                color: $med;
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 1.4;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                a.addthis_button_tweet {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+            }
+        }
+    }
+}

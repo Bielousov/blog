@@ -30,7 +30,7 @@
 <?php /* If there are no posts to display, such as an empty archive page */ ?>
 <?php if ( ! have_posts() ) : ?>
 	<div id="post-0" class="post error404 not-found">
-		<h1 class="entry-title"><?php _e( 'Not Found', 'myblog' ); ?></h1>
+		<h1 class="entry-title rublog-title--page"><?php _e( 'Not Found', 'myblog' ); ?></h1>
 		<div class="entry-content">
 			<p><?php _e( 'Этот пост ни о чем. Пост о чем найдется на <a href="/">главной странице</a> и не один.', 'myblog' ); ?></p>
 			<?php get_search_form(); ?>
@@ -63,7 +63,7 @@
 
 	<?php if ( ( function_exists( 'get_post_format' ) && 'gallery' == get_post_format( $post->ID ) ) || in_category( _x( 'gallery', 'gallery category slug', 'myblog' ) ) ) : ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Постоянная ссылка на %s', 'myblog' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			<h2 class="entry-title rublog-title--post"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Постоянная ссылка на %s', 'myblog' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 
 			<div class="entry-meta">
 				<?php myblog_posted_on(); ?>
@@ -113,7 +113,7 @@
 	<?php elseif ( ( function_exists( 'get_post_format' ) && 'aside' == get_post_format( $post->ID ) ) || in_category( _x( 'asides', 'asides category slug', 'myblog' ) )  ) : ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Постоянная ссылка на %s', 'myblog' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			<h2 class="entry-title rublog-title--post"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Постоянная ссылка на %s', 'myblog' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 			
 			<div class="entry-meta">
 				<?php myblog_posted_on(); ?>
@@ -160,7 +160,7 @@
 
 	<?php else : ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Постоянная ссылка на %s', 'myblog' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			<h2 class="entry-title rublog-title--post"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Постоянная ссылка на %s', 'myblog' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 
 			<div class="entry-meta">
 				<?php myblog_posted_on(); ?>

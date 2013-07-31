@@ -28,15 +28,15 @@ get_header(); ?>
 		the_post();
 ?>
 
-			<h1 class="page-title">
+			<h1 class="page-title rublog-title--category">
 <?php if ( is_day() ) : ?>
-				<?php printf( __( 'Daily Archives: <span>%s</span>', 'myblog' ), get_the_date() ); ?>
+				<?php printf( __( 'Дневной архив за <span>%s</span>', 'myblog' ), get_the_date() ); ?>
 <?php elseif ( is_month() ) : ?>
-				<?php printf( __( 'Monthly Archives: <span>%s</span>', 'myblog' ), get_the_date( 'F Y' ) ); ?>
+				<?php printf( __( 'Месячный архив за <span>%s</span>', 'myblog' ), get_the_date( 'F Y' ) ); ?>
 <?php elseif ( is_year() ) : ?>
-				<?php printf( __( 'Yearly Archives: <span>%s</span>', 'myblog' ), get_the_date( 'Y' ) ); ?>
+				<?php printf( __( 'Годовой архив за <span>%s</span>', 'myblog' ), get_the_date( 'Y' ) ); ?>
 <?php else : ?>
-				<?php _e( 'Blog Archives', 'myblog' ); ?>
+				<?php _e( 'Архивные записи', 'myblog' ); ?>
 <?php endif; ?>
 			</h1>
 

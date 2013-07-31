@@ -1,0 +1,16 @@
+/* Pinterest Counter */
+
+#content .cb_pin_link{
+    bottom:5px;
+    left:10px;
+    right:auto;
+    opacity:.2;
+    text-decoration:none !important;
+        
+    -webkit-transition:opacity 2s linear;
+    -moz-transition:opacity 2s linear;
+    transition:opacity 2s linear;
+}
+#content .cb_pin_link:hover{
+    opacity:1;
+}

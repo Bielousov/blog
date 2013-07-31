@@ -25,7 +25,7 @@
 				<?php endif; ?>
 
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<h2 class="entry-title"><?php the_title(); ?></h2>
+					<h2 class="entry-title rublog-title--post"><?php the_title(); ?></h2>
 
 					<div class="entry-meta">
 						<?php

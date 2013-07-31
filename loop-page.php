@@ -18,9 +18,9 @@
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<?php if ( is_front_page() ) { ?>
-						<h2 class="entry-title"><?php the_title(); ?></h2>
+						<h2 class="entry-title rublog-title--post"><?php the_title(); ?></h2>
 					<?php } else { ?>
-						<h1 class="entry-title"><?php the_title(); ?></h1>
+						<h1 class="entry-title rublog-title--page"><?php the_title(); ?></h1>
 					<?php } ?>
 
                     <div id="post-top-widget" class="widget-area" role="complementary" style="margin-top:-24px;">

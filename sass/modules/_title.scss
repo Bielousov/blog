@@ -1,0 +1,71 @@
+/* Generic titles
+-------------------------------------------------------------- */
+
+.rublog-title {}
+
+/* Post page title or page title */
+.rublog-title--page {
+    font-size: $title-text;
+    margin-bottom: 0;
+    
+    a {
+        text-decoration: none;
+
+        &:link,
+        &:visited {
+            color: $dark;
+        }
+        &:active,
+        &:hover {
+            color: $active;
+            text-decoration:underline;
+        }
+    }
+
+    small {
+        color: $med;
+        font-size: 70%;
+        font-weight:normal;
+    }
+}
+
+/* Post link on archive pages */
+.rublog-title--post {
+    @extend .rublog-title--page;
+    font-size: $xlarge-text;
+
+    small {
+        display: inline-block;
+        margin-top:-5px;
+    }
+}
+
+
+/* Category and archive page titles */
+.rublog-title--category {
+    font-size: $xlarge-text;
+    font-weight: 300;
+    
+    span {
+        font-size: $title-text;
+        font-weight: 600;
+    }
+    
+    a:link,
+    a:visited {
+        color: $gray;
+        text-decoration: none;
+    }
+
+    a:active,
+    a:hover {
+        color: $active;
+    }
+}
+
+
+.rublog-title--widget {
+    font-family: $font-sans;
+    font-size: $large-text;
+    font-weight: bold;
+}

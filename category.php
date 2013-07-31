@@ -12,8 +12,8 @@ get_header(); ?>
 		<div id="container">
 			<div id="content" role="main">
 
-				<h1 class="page-title"><?php
-					printf( __( 'Category Archives: %s', 'myblog' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+				<h1 class="page-title rublog-title--category"><?php
+					printf( __( 'Публикации в категории %s', 'myblog' ), '<span>&laquo;' . single_cat_title( '', false ) . '&raquo;</span>' );
 				?></h1>
 				<?php
 					$category_description = category_description();

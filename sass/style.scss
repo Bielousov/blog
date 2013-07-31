@@ -5,15 +5,19 @@
 @import "defaults"; // Sitewide defaults
 @import "ui";
 
+@import "modules/title";
 @import "modules/action";
 @import "modules/form";
 
 @import "modules/header";
 @import "modules/translation";
-@import "modules/social";
 @import "modules/images";
 @import "modules/footer";
 
+@import "modules/widgets/social";
+@import "modules/widgets/_recent_tweets";
+@import "modules/widgets/_tweet_ideas";
+@import "modules/widgets/_pinterest_counter";
 
 @import "pages/travel";
 @import "pages/error404";

@@ -92,12 +92,43 @@ $margin: 10px;
 -------------------------------------------------------------- */
 $text: 12px;
     $small-text: 10px;
+    $large-text: 14pt;
+    $xlarge-text: 21pt;
+    $title-text: 30pt;
 
 
 /* =Global Elements
 -------------------------------------------------------------- */
 * {
     @include box-sizing(border-box);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $dark;
+    line-height: 1.1em;
+    margin: 1em 0 .25em 0;
+}
+h1{
+    font-size: $title-text;
+}
+h2{
+    font-size:24pt;
+}
+h3{
+    font-size: $xlarge-text;
+}
+h4{
+    font-size:18pt;
+    font-weight:bold;
+}
+h5{
+    font-size:13pt;
+    font-weight:bold;
 }
 
 body {
@@ -122,6 +153,23 @@ hr {
 p {
     margin-bottom: 18px;
 }
+
+// ==========================================================================
+// LISTS
+// ==========================================================================
+
+// If you wish to remove all list styling, use this mixin
+@mixin kill-list {
+    margin: 0;
+    padding: 0;
+
+    > li, > * {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
 ul {
     list-style: disc;
     margin: 0 0 18px 1.5em;
@@ -355,30 +403,7 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
 #content th {
     color: $dark;
 }
-#content h1,
-#content h2,
-#content h3,
-#content h4,
-#content h5,
-#content h6 {
-    color: $dark;
-    line-height: 1.1em;
-    margin: 1em 0 .25em 0;
-}
-#content h2{
-    font-size:24pt;
-}
-#content h3{
-    font-size:21pt;
-}
-#content h4{
-    font-size:18pt;
-    font-weight:bold;
-}
-#content h5{
-    font-size:13pt;
-    font-weight:bold;
-}
+
 #content table {
     border: 1px solid #e7e7e7;
     margin: 0 -1px 24px 0;
@@ -436,59 +461,6 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
     }
 }
 
-.page-title {
-    color: $dark;
-    font-size: 14px;
-    font-weight: bold;
-    margin: 0 0 36px 0;
-}
-.page-title span {
-    color: #333;
-    font-size: 18px;
-    font-style: italic;
-    font-weight: normal;
-}
-.page-title a:link,
-.page-title a:visited {
-    color: #888;
-    text-decoration: none;
-}
-.page-title a:active,
-.page-title a:hover {
-    color: $active;
-}
-#content .entry-title {
-    color: #111;
-    font-size: 24pt;
-    line-height: 1.1em;
-    margin-bottom: 0;
-    a {
-        text-decoration: none;
-    }
-}
-#content h1.entry-title small {
-    color: $med;
-    font-size: 70%;
-    font-weight:normal;
-}
-#content h1.entry-title {
-    font-size: 30pt;
-}
-#content h2.entry-title small {
-    display: inline-block;
-    margin-top:-5px;
-    font-weight: normal;
-    font-size:75%;
-}
-.entry-title a:link,
-.entry-title a:visited {
-    color: $dark;
-}
-.entry-title a:active,
-.entry-title a:hover {
-    color: $active;
-    text-decoration:underline;
-}
 .entry-meta {
     color: #888;
     font-size: 10pt;
@@ -722,6 +694,7 @@ body.page .edit-link {
 .attachment .entry-content .nav-next a:after {
     content: '\00a0\2192';
 }
+
 
 /* Livejournal imported posts */
 #content .category-livejournal{
