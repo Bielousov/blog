@@ -26,10 +26,11 @@ header.site-header {
     }
 
     // Site title
-    .site-title {
+    .rublog-title--blog {
         position: relative;
         display: inline-block;
         width: 400px;
+        margin: 0;
         font-size: 24pt;
         line-height: 1em;
         text-decoration: none;

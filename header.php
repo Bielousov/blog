@@ -42,7 +42,7 @@
 	<div class="header-wrapper">
 		<hgroup class="content-wrapper notranslate">
 			<?php  if(is_home() || is_front_page()) { ?>
-				<h1 class="site-title">
+				<h1 class="rublog-title--blog">
 					<ins></ins>
 					<big data-lang="ru">Непутевая Канада</big>
 					<small data-lang="ru">Блог <a href="/author" rel="author">Антона Белоусова</a></small>
@@ -50,7 +50,7 @@
 					<small data-lang="en"><a href="/" rel="home">www.rublog.ca</a></small>
 				</h1>
 			<?php } else { ?>
-				<div class="site-title">
+				<div class="rublog-title--blog">
 					<ins></ins>
 					<big data-lang="ru"><a href="/" rel="home" >Непутевая Канада</a></big>
 					<small data-lang="ru">Блог <a href="/author" rel="author">Антона Белоусова</a></small>
