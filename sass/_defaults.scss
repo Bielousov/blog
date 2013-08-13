@@ -87,11 +87,14 @@ $margin: 10px;
     $side-margin: $margin*1.5;
     $tall-margin: 32px;
 
+$rounded: 3px; // rounded corners
+// ex:  @include border-radius($rounded);
 
 /* =Global Font Sizes
 -------------------------------------------------------------- */
-$text: 12px;
-    $small-text: 10px;
+$text: 12pt;
+    $xsmall-text: 10px;
+    $small-text: 12px;
     $large-text: 14pt;
     $xlarge-text: 21pt;
     $title-text: 30pt;

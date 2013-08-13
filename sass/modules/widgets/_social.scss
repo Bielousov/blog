@@ -23,11 +23,15 @@
     dl dd {
         display:inline-block;
         height:64px;
-        margin:0 1em 0;
+        margin:0 .5em 0;
         vertical-align: top;
 
         &:first-child {
             margin-left:0;
+        }
+        &.x-right {
+            float: right;
+            margin-right: 0;
         }
     }
 
@@ -36,6 +40,7 @@
     }
     .mrc {
         width:96px;
+        margin-top: 2px;
     }
 
     .fb_iframe_widget_lift{
@@ -52,6 +57,36 @@
     }
     .addthis_counter{
         margin-top: 5px; 
+    }
+
+    .rublog-facebook-share-button {
+        display: block;
+        margin-top: 26px;
+        padding: 4px 20px;
+        overflow: hidden;
+
+        background: #325ba0;
+        @include background-image(linear-gradient(top, #3560a6, #2e589b));
+        @include border-radius($rounded);
+        color: white;
+        font-size: $text;
+        text-decoration: none !important;
+
+        &:active {
+            @include background-image(linear-gradient(top, darken(#2e589b,5%), #3560a6));
+        }
+
+        &:before {
+            content: '';
+            display: inline-block;
+            height:32px;
+            width: 16px;
+
+            margin: 0 1em -15px -10px;
+
+            background: url(/wp-content/themes/myblog/images/i/fb-logo@2x.png) no-repeat center center;
+            background-size: contain;
+        }
     }
 }
 
@@ -99,13 +134,16 @@
 
                 dd {
                     height:64px;
-                    margin:1em 0;
+                    margin:.75em 0;
                     
                     &:first-child { 
                         margin-top:1em; 
                     }
                     &:last-child{ 
                         margin-bottom:1em; 
+                    }
+                    &.x-horizontal-only {
+                        display: none;
                     }
                 }
                 

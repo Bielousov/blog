@@ -19,6 +19,12 @@ Just include scripts/slideshow.js and css/slideshow.css
 
 ## CHANGELOG
 
+### v. 2.1.12
+(August 13, 2013)
+ - Optimized theme JPEG images with JPEGmini
+ - Fixed Slideshow title text colour
+ - Styled new Facebook Share button
+
 ### v. 2.1.11 
 (July 30, 2013)
  - Added Tweet Ideas block
