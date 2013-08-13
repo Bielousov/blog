@@ -16,6 +16,9 @@
 
     #footer-widget-area {
         overflow: hidden;
+        color: $gray;
+        font-family: $font-sans;
+        font-size: $small-text;
 
         .widget-area {
             display: inline-block;

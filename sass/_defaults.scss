@@ -1003,6 +1003,10 @@ body.page .edit-link {
     width: 150px;
     margin-bottom: 3em;
     border: solid 1px $light;
+
+    input {
+        font-size: $small-text;
+    }
 }
 #main #primary.widget-area ul{
     padding:0;
@@ -1019,38 +1023,45 @@ body.page .edit-link {
 
 #primary .author {
     position: relative;
+    font-size: $small-text;
+    
+    img{
+        margin:0 (-$margin);
+        max-width:150px;
+    }
+
+    img.badge {
+        width:32px;
+        position: absolute;
+        right: $margin;
+        top:115px;
+        -webkit-transform:rotate(7deg);
+        -moz-transform:rotate(7deg);
+        -o-transform:rotate(7deg);
+        -ms-transform:rotate(7deg);
+        transform:rotate(7deg);
+    }
+
+    h5{
+        font-size:12pt;
+        margin:.5em 0;
+        text-align:center;
+    }
+    ul{
+        list-style:none;
+        margin:.25em 0 1em !important;
+        
+        a{
+            color:#aaa;
+
+            &:hover{
+                color:red;
+                text-decoration:underline;
+            }
+        }
+    }
 }
-#primary .author img{
-    margin:0 (-$margin);
-    max-width:150px;
-}
-#primary .author img.badge {
-    width:32px;
-    position: absolute;
-    right: $margin;
-    top:115px;
-    -webkit-transform:rotate(7deg);
-    -moz-transform:rotate(7deg);
-    -o-transform:rotate(7deg);
-    -ms-transform:rotate(7deg);
-    transform:rotate(7deg);
-}
-#primary .author h5{
-    font-size:12pt;
-    margin:.5em 0;
-    text-align:center;
-}
-#primary .author ul{
-    list-style:none;
-    margin:.25em 0 1em !important;
-}
-#primary .author ul a{
-    color:#aaa;
-}
-#primary .author ul a:hover{
-    color:red;
-    text-decoration:underline;
-}
+
 .FeedburnerEmailWidget{
     text-align:center;
 }
