@@ -72,6 +72,10 @@
         font-size: $text;
         text-decoration: none !important;
 
+        &:hover {
+            @include background-image(linear-gradient(top, lighten(#3560a6, 5%), lighten(#2e589b, 5%)));
+        }
+
         &:active {
             @include background-image(linear-gradient(top, darken(#2e589b,5%), #3560a6));
         }
