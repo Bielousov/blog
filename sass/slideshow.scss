@@ -148,8 +148,9 @@ body.theater-mode{
 
 			@include background-image(linear-gradient(top, rgba(black, 0.3), rgba(black, 0)));
 
-			 h2{
+			h2{
 				clear:none;
+				color: white;
 				font-size: 18pt;
 				font-weight:500;
 				line-height:1.1;
@@ -158,11 +159,13 @@ body.theater-mode{
 
 			p{
 				margin:0;
+				color:white;
 				font-size:11pt;
 			}
 
 			// COPYRIGHT
 			.copy{
+				color:white;
 				font-weight:normal;
 			}
 			// PINTEREST
