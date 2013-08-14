@@ -5,6 +5,7 @@
     display: inline-block;
     @include light-gradient;
     padding: $margin/2 $side-margin;
+    font-size: $small-text;
     text-decoration: none;
     text-shadow: 0 0 1px white;
     white-space: nowrap;

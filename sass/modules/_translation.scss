@@ -28,7 +28,9 @@ html.translated-ltr {
         margin:0;
         padding-left: 24px;
         background: url(http://translate.googleapis.com/translate_static/img/loading.gif) no-repeat left center;
+        
         color: $gray;
+        font-size: $small-text;
     }
 
     .x-floating-link {
@@ -41,6 +43,7 @@ html.translated-ltr {
 
         small {
             color: lighten($gray, 10%);
+            font-size: $small-text;
         }
     }
 }
