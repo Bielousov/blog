@@ -106,16 +106,17 @@ img.aligncenter {
 /**** Image Numbers ****/
 .imgNumber {
     position: relative;
-    float:right;
+    float: right;
     height: 0;
     width:0;
 
     small {
         position: absolute;
-        left:10px;
-        color:#eee;
-        font-size:28px;
-        text-shadow:0 -1px 0 #aaa;
+        left: 10px;
+        color: #aaa;
+        font-family: $font-sans;
+        font-size: 21px;
+        font-weight: 100;
     }
 }
 
