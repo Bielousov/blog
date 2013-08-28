@@ -24,25 +24,34 @@ UI =
     initTranslateOverlay: function(){
         if(/googtrans\/en/.test(window.location.hash)) {
             var $translatePanel = $j('<div class="x-translate-overlay sans-serif"><h2>I’m sorry, but I write to this Blog in Russian</h2><p>Please wait while loading automatic English translation from Google…</p></div>');
-                $translatePanel.prepend('<div class="x-floating-link"><small>If that takes a while…</small><a href="javascript:UI.forceTrnslation(); if(_gaq){_gaq.push([\'_trackEvent\',\'Google Website Translator\',\'Force English Translation\']);}" class="x-button x-positive-button">Force English Translation</a></div>');
-                $translatePanel.prepend('<div class="x-floating-link"><small>Товарищ?</small><a href="javascript:UI.hideTranslateOverlay(); if(_gaq){_gaq.push([\'_trackEvent\',\'Google Website Translator\',\'Cancel Translation\']);}" class="x-button x-negative-button">Спасибо, не нужно переводить</a></div>');
+                $translatePanel.prepend('<div class="x-floating-link"><small>If that takes a while…</small><a href="javascript:UI.forceTranslation();" class="x-button x-positive-button">Force English Translation</a></div>');
+                $translatePanel.prepend('<div class="x-floating-link"><small>Товарищ?</small><a href="javascript:UI.hideTranslation();" class="x-button x-negative-button">Спасибо, не нужно переводить</a></div>');
             $j('#main').prepend($translatePanel);
 
             var waitTranslation = window.setInterval(function(){
                 if($j('html').hasClass('translated-ltr')) {
-                    UI.hideTranslateOverlay();
+                    UI.hideTranslation();
                     waitTranslation = window.clearInterval(waitTranslation);
                 }
             }, 200);
+
+            if(_gaq)
+                _gaq.push(['_trackEvent','Google Website Translator','Show Translation Popup']);
         }
     },
         
-        forceTrnslation: function() {
+        forceTranslation: function() {
             $j('iframe.goog-te-menu-frame').first().contents().find('.goog-te-menu2-item span.text:contains("English")').first().click();
+            
+            if(_gaq)
+                _gaq.push(['_trackEvent','Google Website Translator','Force English Translation']);
         },
 
-        hideTranslateOverlay: function(){
+        hideTranslation: function(){
             $j('.x-translate-overlay').remove();
+
+            if(_gaq)
+                _gaq.push(['_trackEvent','Google Website Translator','Cancel Translation']);
         },
 
 
