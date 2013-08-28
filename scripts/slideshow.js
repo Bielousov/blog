@@ -169,6 +169,9 @@ iSlide =
 		iSlide.select(index);
 		if(iSlide.useFullscreen)
 			iSlide.fullscreen(true);
+
+		if(_gaq)
+			_gaq.push(['_trackEvent','Slideshow',window.location]);
 	},
 	
 	fullscreen: function(a) {
