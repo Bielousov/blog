@@ -117,19 +117,20 @@ UI =
 	    $img.addClass('panorama-loading');
         $img.wrap('<div class="panorama-canvas"></div>');
 
-		$j(window).load(function() {
-			$j('.panorama-canvas').each(function(){
-				var $self = $j(this),
-                    $_img = $self.find('img');
-				$_img.removeClass('panorama-loading');
-				$self.prop('scrollLeft', $_img.width()/2 - $self.width()/2);
-				$self.scrollview({
-					grab:"/wp-content/themes/myblog/images/c/openhand.cur",
-					grabbing:"/wp-content/themes/myblog/images/c/closedhand.cur"
-				});
-				$self.after('<span class="panoramaIcon"></span>')
+		
+		$j('.panorama-canvas img.panorama').load(function(){
+			var $_img = $j(this),
+                $_panorama = $_img.parent('.panorama-canvas');
+                
+			$_img.removeClass('panorama-loading');
+			$_panorama.prop('scrollLeft', $_img.width()/2 - $self.width()/2);
+			$_panorama.scrollview({
+				grab:"/wp-content/themes/myblog/images/c/openhand.cur",
+				grabbing:"/wp-content/themes/myblog/images/c/closedhand.cur"
 			});
-	    });
+			$_panorama.after('<span class="panoramaIcon"></span>')
+		});
+	    
 	},
 	
     // POST: Floating share widget

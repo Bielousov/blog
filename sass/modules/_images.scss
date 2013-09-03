@@ -129,11 +129,12 @@ img.aligncenter {
 
     img.panorama{
         cursor:move;
+        position: relative;
+        display: block;
         max-height: 480px;
         max-width:none !important;
         -webkit-transition: opacity .5;
         -moz-transition: opacity .5;
-        position:relative;
         transition: opacity .5;
     }
     img.panorama-loading{
