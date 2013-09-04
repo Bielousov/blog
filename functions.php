@@ -423,6 +423,12 @@ function ru_plural($num, $words, $print_num=false){
 	return ($print_num ? $num . '&nbsp;' : '') . $_w;
 }
 
+// Use Twitter photo card type with Yoast SEO plugin
+add_filter( 'wpseo_twitter_card_type', 'change_card_type', 20 );
+function change_card_type(  ) {
+	return 'photo';
+}
+
 // CDN Subdomain for images sitemap
 function wpseo_cdn_filter( $uri ) {
 	return str_replace( 'http://www.bielousov.com', 'http://cdn.bielousov.com', $uri );
