@@ -127,6 +127,11 @@ img.aligncenter {
     position:relative;
     width:100%;
 
+    &.panorama-ready {
+        min-width: 100%;
+        max-width: none;
+    }
+
     img.panorama{
         cursor:move;
         position: relative;

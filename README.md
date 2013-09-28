@@ -19,6 +19,14 @@ Just include scripts/slideshow.js and css/slideshow.css
 
 ## CHANGELOG
 
+### v. 2.1.13
+(September 28, 2013)
+ - Faster processing of panoramic images scripts
+ - Stretch panoramic images to fit window width
+ - Added Twitter Photo cards
+ - Better Translation popup events tracking
+ - Font tweaks for post text and translate Popup
+
 ### v. 2.1.12
 (August 13, 2013)
  - Optimized theme JPEG images with JPEGmini

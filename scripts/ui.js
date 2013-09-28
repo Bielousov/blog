@@ -121,19 +121,39 @@ UI =
 		$j('.panorama-canvas img.panorama').one('load', function(){
 			var $_img = $j(this),
                 $_panorama = $_img.parent('.panorama-canvas');
-                
+            
+            
+            UI.stylePanorama($_panorama);
+            $j(window).on('resize', function(){
+                UI.stylePanorama($_panorama);
+            });
+
 			$_img.removeClass('panorama-loading');
+            $_panorama.addClass('panorama-ready')
 			$_panorama.prop('scrollLeft', $_img.width()/2 - $_panorama.width()/2);
 			$_panorama.scrollview({
 				grab:"/wp-content/themes/myblog/images/c/openhand.cur",
 				grabbing:"/wp-content/themes/myblog/images/c/closedhand.cur"
 			});
 			$_panorama.after('<span class="panoramaIcon"></span>')
+
+            
 		}).each(function() {
+            // If loading from cache
             if(this.complete) $j(this).load();
-        });
-	    
+        }); 
 	},
+
+    stylePanorama:function($panorama){
+        var width = $j('body').width(),
+            margin = (width - $panorama.parent().width()) / 2;
+
+        $panorama.css({
+            'width': width, 
+            'margin-left': (margin > 0) ? -margin : 0,
+            'margin-right': (margin > 0) ? -margin : 0
+        });
+    },
 	
     // POST: Floating share widget
 	initShareSnippet:function(){
