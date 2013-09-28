@@ -78,7 +78,7 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 					if(isset($custom_fields['twitter_idea']) && !empty($custom_fields['twitter_idea'])) {
 						echo '<div class="rublog-widget--social-tweet"><h5 class="rublog-title--widget">Идеи для твитов:</h5><div class="rublog-widget__content"><ul>';
 						for($i=0; $i < count($custom_fields['twitter_idea']); $i++) {
-							echo '<li><a class="addthis_button_tweet" tw:count="none" tw:lang="en" tw:text="'.$custom_fields['twitter_idea'][$i].'"></a>'
+							echo '<li><a class="addthis_button_tweet" tw:count="none" tw:lang="en" tw:text="'.$custom_fields['twitter_idea'][$i].'" tw:via="Bielousov" rel="nofollow"></a>'
 									.'&laquo;'.$custom_fields['twitter_idea'][$i].'&raquo;'
 									.'</li>';
 						}
