@@ -46,7 +46,7 @@
 					<ins></ins>
 					<big data-lang="ru">Непутевая Канада</big>
 					<small data-lang="ru">Блог <a href="/author" rel="author">Антона Белоусова</a></small>
-					<big data-lang="en">Russian Canadian</big>
+					<big data-lang="en">Shiftless Canada</big>
 					<small data-lang="en"><a href="/" rel="home">www.rublog.ca</a></small>
 				</h1>
 			<?php } else { ?>

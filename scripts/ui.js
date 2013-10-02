@@ -32,6 +32,8 @@ UI =
                 if($j('html').hasClass('translated-ltr')) {
                     UI.hideTranslation();
                     waitTranslation = window.clearInterval(waitTranslation);
+                } else {
+                    UI.forceTranslation();
                 }
             }, 200);
 
