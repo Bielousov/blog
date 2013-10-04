@@ -138,6 +138,7 @@ img.aligncenter {
         display: block;
         max-height: 480px;
         max-width:none !important;
+        margin: 0 auto;
         -webkit-transition: opacity .5;
         -moz-transition: opacity .5;
         transition: opacity .5;
@@ -159,4 +160,8 @@ img.aligncenter {
     -webkit-transition: 1s opacity linear;
     -moz-transition: 1s opacity linear;
     -o-transition: 1s opacity linear;
+
+    &.panoramaIcon--hide {
+        opacity: 0;
+    }
 }

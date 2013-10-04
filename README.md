@@ -1,4 +1,4 @@
-## Wordpress Theme for www.bielousov.com (“Непутевая Канада”)
+## RuBlog.CA Wordpress Theme for www.bielousov.com (“Непутевая Канада”)
 
 Based on Twenty Ten template, contains sidebar on archive page and widget areas before and after content in posts.
 
@@ -19,73 +19,80 @@ Just include scripts/slideshow.js and css/slideshow.css
 
 ## CHANGELOG
 
+### v. 2.1.14
+(October 4, 2013)
+ - Panorama: Fixed short panoramas alignment on wider screens
+ - Panorama: Hide panorama hint icon when entire image is visible on wide screen.
+ - Translation: improved English header text and styling
+ _ Translation: forcing trnaslation harder with hash tag in URL
+
 ### v. 2.1.13
 (September 28, 2013)
- - Faster processing of panoramic images scripts
- - Stretch panoramic images to fit window width
- - Added Twitter Photo cards
- - Better Translation popup events tracking
- - Font tweaks for post text and translate Popup
+ - Panorama: Faster processing of panoramic images scripts
+ - Panorama: Stretch panoramic images to fit window width
+ - SEO: Added Twitter Photo cards
+ - Tracking: Better Translation popup events tracking
+ - Style: Font tweaks for post text and translate Popup
 
 ### v. 2.1.12
 (August 13, 2013)
- - Optimized theme JPEG images with JPEGmini
- - Fixed Slideshow title text colour
- - Styled new Facebook Share button
+ - SEO: Optimized theme JPEG images with JPEGmini
+ - Style: Fixed Slideshow title text colour
+ - Share: Styled new Facebook Share button
 
 ### v. 2.1.11 
 (July 30, 2013)
- - Added Tweet Ideas block
- - Refactored post titles SCSS
+ - Share: Added Tweet Ideas block
+ - Style: Refactored post titles SCSS
 
 
 ### v. 2.1.10
 (June 24, 2013)
- - Fixed appearance of English translation title
+ - Translation: Fixed appearance of English translation title
  - Fixed Errors in post images number ID
 
 
 ### v. 2.1.9
 (June 23, 2013)
- - Added Mobify tag
- - Added predefined title forpages translated into English
+ - Mobile: Added Mobify tag
+ - Translation: Added predefined title forpages translated into English
 
 
 ### v. 2.1.8
 (June 23, 2013)
- - Redesign Translation loading message
- - Fixed iPad search box appearance
+ - Translation: Redesign Translation loading message
+ - Mobile: Fixed iPad search box appearance
 
 
 ### v. 2.1.7
 (June 21, 2013)
- - Enlarged post font size
- - Reverted social buttons scaling
+ - Style: Enlarged post font size
+ - Share: Reverted social buttons scaling
 
 ### v. 2.1.6
 (June 12, 2013)
- - Added GA tracking to RSS link
- - Switched RSS to Feedburner
- - Open feed burner RSS in new window
+ - Tracking: Added GA tracking to RSS link
+ - Share: Switched RSS to Feedburner
+ - Share: Open feed burner RSS in new window
 
 ### v. 2.1.5
 (June 10, 2013)
- - Global header and footer SCSS improvements
+ - Style: Global header and footer SCSS improvements
 
 ### v. 2.1.4
 (June 9, 2013)
- - Created new header
+ - Style: Created new header
 
 
 ### v. 2.1.3
 (April 25, 2013)
- - Show bigger Google Ads
- - Show Google Ads on all year long posts
+ - Ads: Show bigger Google Ads
+ - Ads: Show Google Ads on all year long posts
 
 
 ### v. 2.1.2
 (April 25, 2013)
- - Improved spite graphics
+ - Syle: Improved sprite graphics
 
 
 ### v. 2.1.1

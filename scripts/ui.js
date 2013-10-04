@@ -139,6 +139,8 @@ UI =
 			});
 			$_panorama.after('<span class="panoramaIcon"></span>')
 
+            // Once again fix styling
+            UI.stylePanorama($_panorama);
             
 		}).each(function() {
             // If loading from cache
@@ -155,6 +157,9 @@ UI =
             'margin-left': (margin > 0) ? -margin : 0,
             'margin-right': (margin > 0) ? -margin : 0
         });
+
+        // Hide Icon if entire image is shown
+        $panorama.next('.panoramaIcon').toggleClass('panoramaIcon--hide', $panorama.find('img.panorama').width() < width);
     },
 	
     // POST: Floating share widget
