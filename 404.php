@@ -8,15 +8,16 @@
  */
  
 get_header(); 
-$randomPost = $wpdb->get_var("SELECT guid FROM $wpdb->posts WHERE post_type = 'post' AND post_status = 'publish' ORDER BY rand() LIMIT 1");
+//$randomPost = $wpdb->get_var("SELECT guid FROM $wpdb->posts WHERE post_type = 'post' AND post_status = 'publish' ORDER BY rand() LIMIT 1");
+$randomPost = $wpdb->get_var("SELECT guid FROM $wpdb->posts WHERE post_type = 'post' AND post_status = 'publish' AND post_date > '2012-01-01 00:00:00' ORDER BY rand() LIMIT 1");
 ?>
 </div><div id="error404">
 	<div class="content">
 		<h1>Страница, которой <big>НЕТ!</big></h1>
-		<p class="main">Пока одни ищут братьев по разуму, другие — лекарство от рака,<br/>
-						третьи — смысл жизни, а четвертые и вовсе — Бога.</p>
+		<p class="main">Пока одни ищут правду, другие — братьев по разуму,<br/>
+						третьи — лекарство от рака, а четвертые и вовсе — смысл жизни…</p>
 		<p class="main"><big>Вы ищите страницу, которой нет.</big><br/>
-			<?php echo '<small>Зачем? Ведь есть же <a href="'.$randomPost.'">страница которая есть</a>!</small>'; ?>
+			<?php echo '<small>Зачем? Ведь есть же <a href="'.$randomPost.'">страница, которая есть</a>!</small>'; ?>
 		</p>
 		<br/>
 		<? /*		
@@ -26,9 +27,8 @@ $randomPost = $wpdb->get_var("SELECT guid FROM $wpdb->posts WHERE post_type = 'p
 			<input type="submit" class="submit" id="searchsubmit" value="<?php esc_attr_e( 'Борться и искать', 'myblog' ); ?>" />
 		</form><br/><br/>
 		*/ ?>
-		<p>	А здесь нет ни жизни после смерти ни справедливости.<br/>
-			Нет ни слова об <a href="/category/immigration/">иммиграции</a> и <a href="/category/photos/">красивых фотографий</a> тоже нет.<br/>
-		   	Не расскажут о <a href="/travels/">путешествиях</a> и даже не поделятся <a href="/tag/news/">новостями</a>.<br/>
+		<p>	А здесь вы не узнаете совершенно ничего нового об <a href="/category/immigration/">иммиграции</a> и не увидите <a href="/category/photos/">красивых фотографий</a>,<br/>
+		   	не совершите <a href="/travels/">виртуального путешествия</a> и даже не почитаете <a href="/tag/news/">увлекательных репортажей</a>.<br/>
 		 </p>
 		   
 		<h2>Потому что этой страницы нет.</h2>
