@@ -17,6 +17,7 @@
 	<?php
 	    $custom_fields = get_post_custom();
 	    wp_enqueue_style('ui', get_template_directory_uri() . '/css/style.css', false, '2.1.13', 'all');
+	    wp_enqueue_script('ui', WP_CONTENT_URL . '/themes/myblog/scripts/helpers.js',  array('jquery'));
 	    wp_enqueue_script('ui', WP_CONTENT_URL . '/themes/myblog/scripts/ui.js',  array('jquery'));
 
 		/* We add some JavaScript to pages with the comment form

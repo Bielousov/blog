@@ -150,7 +150,7 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
     						}
 
 			    	        $str.= '<li>
-			        	    			<a href="' .  get_permalink( get_the_ID() ) . '">'
+			        	    			<a onclick="trackOutboundLink(this, \'Related Posts\', \'Position #' . ($i+1) . '\', \'' . the_title('','',false) . '\', \'' . get_permalink( get_the_ID() ) . '\'); return false;" href="' .  get_permalink( get_the_ID() ) . '">'
 			            					.get_the_post_thumbnail( null, 'thumbnail' )
 			            					.the_title('<strong>','</strong>',false)
 			            					.$excerpt . '&nbsp;[&hellip;]'
