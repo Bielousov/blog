@@ -519,6 +519,17 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
     font-size: $small-text;
 }
 
+.entry-content iframe[id*=twitter-widget] {
+    display: inline-block !important;
+    max-width: 49% !important;
+    margin-right: 2% !important;
+    vertical-align: top;
+
+    &:nth-of-type(even) {
+        margin-right: 0 !important;
+    }
+}
+
 .page-link {
     clear: both;
     color: $dark;
