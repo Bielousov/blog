@@ -19,12 +19,19 @@ Just include scripts/slideshow.js and css/slideshow.css
 
 ## CHANGELOG
 
+### v. 2.1.15
+(February 6, 2014)
+ - Panorama: Fixed image aspect ratio
+ – Created 2-column layout for twitter images
+ – Added tracking experiment to Related Posts
+ – Moved common functions used from posts to helpers.js file
+
 ### v. 2.1.14
 (October 4, 2013)
  - Panorama: Fixed short panoramas alignment on wider screens
  - Panorama: Hide panorama hint icon when entire image is visible on wide screen.
  - Translation: improved English header text and styling
- _ Translation: forcing trnaslation harder with hash tag in URL
+ – Translation: forcing trnaslation harder with hash tag in URL
 
 ### v. 2.1.13
 (September 28, 2013)
