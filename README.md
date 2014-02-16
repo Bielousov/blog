@@ -19,6 +19,11 @@ Just include scripts/slideshow.js and css/slideshow.css
 
 ## CHANGELOG
 
+### v. 2.1.16
+(February 15, 2014)
+ - Fixed searchbox behavior on focus
+ - Addded global version
+
 ### v. 2.1.15
 (February 6, 2014)
  - Panorama: Fixed image aspect ratio
