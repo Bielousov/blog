@@ -13,6 +13,8 @@
  * @since Twenty Ten 1.0
  */
 
+$version = '2.1.16';
+
 get_header(); ?>
 
 		<div id="container">

@@ -16,9 +16,9 @@
 	<link rel="author" href="https://plus.google.com/104977961152292400509?rel=author" title="Anton Bielousov"/>
 	<?php
 	    $custom_fields = get_post_custom();
-	    wp_enqueue_style('ui', get_template_directory_uri() . '/css/style.css', false, '2.1.15', 'all');
-	    wp_enqueue_script('ui', WP_CONTENT_URL . '/themes/myblog/scripts/helpers.js',  array('jquery'));
-	    wp_enqueue_script('ui', WP_CONTENT_URL . '/themes/myblog/scripts/ui.js',  array('jquery'));
+	    wp_enqueue_style('ui', get_template_directory_uri() . '/css/style.css', false, $version, 'all');
+	    wp_enqueue_script('ui', WP_CONTENT_URL . '/themes/myblog/scripts/helpers.js',  array('jquery'), $version);
+	    wp_enqueue_script('ui', WP_CONTENT_URL . '/themes/myblog/scripts/ui.js',  array('jquery'), $version);
 
 		/* We add some JavaScript to pages with the comment form
 		 * to support sites with threaded comments (when in use).

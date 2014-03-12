@@ -18,7 +18,6 @@ UI =
 	    $j('body').addClass('x-loaded');
 
 	},
-	
 
     // GLOBAL: Show translation overlay while Google Translate is loading
     initTranslateOverlay: function(){
