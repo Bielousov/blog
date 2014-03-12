@@ -1,6 +1,6 @@
 /*** 404 page ***/
 #error404{
-    background:url(/wp-content/themes/myblog/images/a/not.jpg) no-repeat right 30px;
+    background:url($theme + 'images/a/not.jpg') no-repeat right 30px;
     margin:0 -20px;
     padding:0 20px;
 }

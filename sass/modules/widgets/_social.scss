@@ -88,7 +88,7 @@
 
             margin: 0 1em -15px -10px;
 
-            background: url(/wp-content/themes/myblog/images/i/fb-logo@2x.png) no-repeat center center;
+            background: url($theme + 'images/i/fb-logo@2x.png') no-repeat center center;
             background-size: contain;
         }
     }

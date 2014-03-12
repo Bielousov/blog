@@ -1,7 +1,7 @@
 /* =Mixins
 -------------------------------------------------------------- */
 @mixin sprite {
-    background:url(/wp-content/themes/myblog/images/sprite.png) no-repeat 0 0;
+    background:url($theme + 'images/sprite.png') no-repeat 0 0;
 }
 
 /* =Fonts
@@ -828,7 +828,7 @@ body.page .edit-link {
 #main-related{
     clear: both;
     margin: 4em -20px 0;
-    background:#F4F4F4 url(/wp-content/themes/myblog/images/bg-h.png) repeat center center;
+    background:#F4F4F4 url($theme + 'images/bg-h.png') repeat center center;
     border-top:solid 1px #ddd;
     box-shadow:0 -3px 10px #e5e5e5;
 }
@@ -1039,18 +1039,6 @@ body.page .edit-link {
     img{
         margin:0 (-$margin);
         max-width:150px;
-    }
-
-    img.badge {
-        width:32px;
-        position: absolute;
-        right: $margin;
-        top:115px;
-        -webkit-transform:rotate(7deg);
-        -moz-transform:rotate(7deg);
-        -o-transform:rotate(7deg);
-        -ms-transform:rotate(7deg);
-        transform:rotate(7deg);
     }
 
     h5{

@@ -4,7 +4,7 @@ header.site-header {
     display: block;
     min-width:1000px;
     padding: 10px 0 20px;
-    background: #f5f5f5 url(/wp-content/themes/myblog/images/h/header-totems.jpg) no-repeat center center;
+    background: #f5f5f5 url($theme + 'images/h/header-totems.jpg') no-repeat center center;
     background-size: cover;
     border-bottom: solid 1px $border;
     @include box-shadow(0 0 5px $light);
@@ -29,7 +29,7 @@ header.site-header {
     .rublog-title--blog {
         position: relative;
         display: inline-block;
-        width: 400px;
+        width: 430px;
         margin: 0;
         font-size: 24pt;
         line-height: 1em;
@@ -37,11 +37,12 @@ header.site-header {
 
         ins {
             display: inline-block;
-            height: 64px;
-            width: 64px;
-            margin-left: -5px;
+            height: 100px;
+            width: 100px;
+            margin-left: -10px;
             margin-right: 10px;
-            background: transparent url(/wp-content/themes/myblog/images/a/canadian-octobrist@2x.png) no-repeat center center;
+            margin-bottom: -35px;
+            background: transparent url($theme + 'images/a/moose-crossing@2x.png') no-repeat center center;
             background-size: contain;
             vertical-align: middle;
         }
@@ -61,7 +62,7 @@ header.site-header {
         small{
             @extend .sans-serif;
             position: absolute;
-            left: 116px;
+            left: 148px;
             top: 5px;
             color: $med;
             font-size: 10pt;

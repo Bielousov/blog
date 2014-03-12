@@ -2,7 +2,8 @@
 @import "compass";
 
 @import "modules/reset"; // This clears all styles for elements
-@import "defaults"; // Sitewide defaults
+@import "variables";	 // Global variables
+@import "defaults"; 	 // Sitewide defaults
 @import "ui";
 
 @import "modules/title";
