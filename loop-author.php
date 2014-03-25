@@ -18,13 +18,17 @@
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 				<?php dynamic_sidebar( 'subheader-widget-area' ); ?>
 				
-				<div  itemscope itemtype="http://schema.org/Person" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<article  itemscope itemtype="http://schema.org/Person" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<h1  itemprop="name" class="entry-title"><?php the_title(); ?></h1>
 					<div class="entry-content">
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'myblog' ), 'after' => '</div>' ) ); ?>
-						<?php edit_post_link( __( 'Edit', 'myblog' ), '<span class="edit-link">', '</span>' ); ?>
 					</div><!-- .entry-content -->
-				</div><!-- #post-## -->
+
+					<?php
+						// Entry Meta
+						get_template_part( '_entry-utility');
+					?>
+				</article><!-- #post-## -->
 
 <?php endwhile; // end of the loop. ?>

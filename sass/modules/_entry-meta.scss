@@ -1,0 +1,21 @@
+// POST META
+// =========
+.x-entry-meta {
+    color: $gray;
+    font-family: $font-sans;
+    font-size: $small-text;
+    font-style: italic;
+    font-weight: 300;
+
+    .x-entry-meta__published {
+        color: $gray;
+        text-decoration: none;
+    }
+
+    .x-entry-meta__category {
+        &,
+        a {
+            margin-left:.5em;
+        }
+    }
+}

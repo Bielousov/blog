@@ -65,9 +65,10 @@
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<h2 class="entry-title rublog-title--post"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Постоянная ссылка на %s', 'myblog' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 
-			<div class="entry-meta">
-				<?php myblog_posted_on(); ?>
-			</div><!-- .entry-meta -->
+			<?php 
+				// Entry Meta
+				get_template_part( '_entry-meta');
+			?>
 
 			<div class="entry-content">
 				<?php if ( post_password_required() ) : ?>
@@ -84,24 +85,10 @@
 				<?php endif; ?>
 			</div><!-- .entry-content -->
 
-			<div class="entry-utility">
-				<?php if ( count( get_the_category() ) ) : ?>
-					<span class="cat-links">
-						<?php printf( __( '<span class="%1$s">Галерея из рубрики</span> &laquo;%2$s&raquo;', 'myblog' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?>
-					</span>
-					<!--span class="meta-sep">|</span-->
-				<?php endif; ?>
-				<?php
-					$tags_list = get_the_tag_list( '', ', ' );
-					if ( $tags_list ):
-				?>
-					<span class="tag-links">
-						<?php printf( __( '<span class="%1$s">с фотографиями по темам: </span> %2$s', 'myblog' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?>
-					</span>
-				<?php endif; ?>
-				<br/><span class="comments-link"><?php comments_popup_link( __( 'Оставить отзыв', 'myblog' ), __( 'Комментарии', 'myblog' ), __( 'Комментарии (%)', 'myblog' ) ); ?></span>
-				<?php edit_post_link( __( 'Редактировать', 'myblog' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
-			</div><!-- .entry-utility -->
+			<?php 
+				// Entry Meta Utility
+				get_template_part( '_entry-utility');
+			?>
 		</div><!-- #post-## -->
 
 
@@ -115,9 +102,10 @@
 
 			<h2 class="entry-title rublog-title--post"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Постоянная ссылка на %s', 'myblog' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 			
-			<div class="entry-meta">
-				<?php myblog_posted_on(); ?>
-			</div><!-- .entry-meta -->
+			<?php 
+				// Entry Meta
+				get_template_part( '_entry-meta');
+			?>
 
 			<?php if ( post_password_required() ) : ?>
 				<?php the_content(); ?>
@@ -132,24 +120,10 @@
 				</div>
 			<?php endif; ?>
 
-			<div class="entry-utility">
-				<?php if ( count( get_the_category() ) ) : ?>
-					<span class="cat-links">
-						<?php printf( __( '<span class="%1$s">Фотография опубликована в рубрике</span> &laquo;%2$s&raquo;', 'myblog' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?>
-					</span>
-					<span class="meta-sep">|</span>
-				<?php endif; ?>
-				<?php
-					$tags_list = get_the_tag_list( '', ', ' );
-					if ( $tags_list ):
-				?>
-					<span class="tag-links">
-						<?php printf( __( '<span class="%1$s">читайте также: </span> %2$s', 'myblog' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?>
-					</span>
-				<?php endif; ?>
-				<br/><span class="comments-link"><?php comments_popup_link( __( 'Оставить отзыв', 'myblog' ), __( 'Комментарии', 'myblog' ), __( 'Комментарии (%)', 'myblog' ) ); ?></span>
-				<?php edit_post_link( __( 'Редактировать', 'myblog' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
-			</div><!-- .entry-utility -->
+			<?php 
+				// Entry Meta Utility
+				get_template_part( '_entry-utility');
+			?>
 		</div><!-- #post-## -->
 
 
@@ -162,9 +136,11 @@
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<h2 class="entry-title rublog-title--post"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Постоянная ссылка на %s', 'myblog' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 
-			<div class="entry-meta">
-				<?php myblog_posted_on(); ?>
-			</div><!-- .entry-meta -->
+			<?php 
+				// Entry Meta
+				get_template_part( '_entry-meta');
+			?>
+			
 
 	<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
 			<div class="entry-summary">
@@ -189,24 +165,11 @@
 			</div><!-- .entry-content -->
 	<?php endif; ?>
 
-			<div class="entry-utility">
-				<?php if ( count( get_the_category() ) ) : ?>
-					<span class="cat-links">
-						<?php printf( __( '<span class="%1$s">Опубликовано в рубрике</span> &laquo;%2$s&raquo;', 'myblog' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?>
-					</span>
-					<span class="meta-sep">|</span>
-				<?php endif; ?>
-				<?php
-					$tags_list = get_the_tag_list( '', ', ' );
-					if ( $tags_list ):
-				?>
-					<span class="tag-links">
-						<?php printf( __( '<span class="%1$s">помечено тэгами: </span> %2$s', 'myblog' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?>
-					</span>
-				<?php endif; ?>
-				<br/><span class="comments-link"><?php comments_popup_link( __( 'Оставить отзыв', 'myblog' ), __( 'Комментарии', 'myblog' ), __( 'Комментарии (%)', 'myblog' ) ); ?></span>
-				<?php edit_post_link( __( 'Редактировать', 'myblog' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
-			</div><!-- .entry-utility -->
+			<?php 
+				// Entry Meta Utility
+				get_template_part( '_entry-utility');
+			?>
+
 		</div><!-- #post-## -->
 
 		<?php comments_template( '', true ); ?>

@@ -19,6 +19,12 @@ Just include scripts/slideshow.js and css/slideshow.css
 
 ## CHANGELOG
 
+### v. 2.1.17
+(March 25, 2014)
+ - Changed translation popup text
+ - Fixed Pinterest counter position
+ - Redesigned post meta
+
 ### v. 2.1.16
 (February 15, 2014)
  - Fixed searchbox behavior on focus

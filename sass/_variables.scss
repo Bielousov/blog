@@ -1,1 +1,62 @@
 $theme: '/wp-content/themes/myblog/';
+
+/* =Global Colors
+-------------------------------------------------------------- */
+// Neutral Gray
+$dark: #161616;
+$med: #666;
+$gray: #999;
+$border: #e2e2e2;
+$light: #eee;
+
+// Links
+$link: #0086cc;
+$visited: #743399;
+$active: #ff4b33;
+
+/* =Global Gradient Mixins
+-------------------------------------------------------------- */
+@mixin light-gradient {
+        @include background-image(linear-gradient(white, $light));
+        border: solid 1px $border;
+    }
+
+@mixin light-active-gradient {
+        @include background-image(linear-gradient(darken($light, 5%), $light));
+        border: solid 1px $border;
+    }
+
+/* =Global Margins
+-------------------------------------------------------------- */
+$margin: 10px;
+    $side-margin: $margin*1.5;
+    $tall-margin: 32px;
+
+$rounded: 3px; // rounded corners
+// ex:  @include border-radius($rounded);
+
+/* =Global Font Sizes
+-------------------------------------------------------------- */
+$text: 13pt;
+    $xsmall-text: 10px;
+    $small-text: 10pt;
+    $large-text: 15pt;
+    $xlarge-text: 21pt;
+    $title-text: 30pt;
+
+
+/* =Fonts
+-------------------------------------------------------------- */
+$font-serif: Palatino, Georgia, "Bitstream Charter", serif;
+$font-sans: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
+$font-monospace: "Courier 10 Pitch", Courier, monospace;
+
+/* =Mixins
+-------------------------------------------------------------- */
+@mixin sprite {
+    background:url($theme + 'images/s/sprite.old.png') no-repeat 0 0;
+}
+@mixin sprite2x {
+    background:url($theme + 'images/s/sprite@2x.png') no-repeat 0 0;
+    background-size: auto 32px;
+}

@@ -157,14 +157,14 @@ add_filter( 'excerpt_more', 'myblog_auto_excerpt_more' );
  * @since Twenty Ten 1.0
  * @return string Excerpt with a pretty "Continue Reading" link
  */
-function myblog_custom_excerpt_more( $output ) {
+/*function myblog_custom_excerpt_more( $output ) {
 	if ( ! is_attachment() ) {
 		$output .= myblog_continue_reading_link();
 	}
 	return $output;
 }
 add_filter( 'get_the_excerpt', 'myblog_custom_excerpt_more' );
-
+*/
 /**
  * Remove inline styles printed when the gallery shortcode is used.
  *
@@ -325,7 +325,7 @@ if ( ! function_exists( 'myblog_posted_on' ) ) :
 function myblog_posted_on() {
 	printf( __( '%2$s', 'myblog' ),
 		'meta-prep meta-prep-author',
-		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
+		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark" class="x-entry-meta__published">%3$s</a>',
 			get_permalink(),
 			esc_attr( get_the_time() ),
 			get_the_date()

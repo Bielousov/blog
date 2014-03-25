@@ -13,7 +13,7 @@
  * @since Twenty Ten 1.0
  */
 
-$version = '2.1.16';
+$version = '2.1.17';
 
 get_header(); ?>
 

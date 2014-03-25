@@ -1,0 +1,87 @@
+// POST META
+// =========
+.x-entry-utility {
+    display: inline-block;
+    width: 100%;
+    
+    padding: $tall-margin/2 0;
+    margin-bottom: $tall-margin;
+
+    border-bottom: solid 1px $light;
+
+    color: $link;
+    font-family: $font-sans;
+    font-weight: 300;
+
+    a {
+        color: $link;
+        text-decoration: none;
+    }
+
+    // Post Links
+    // ==========
+    .x-entry-utility__links {
+        float: left;
+        margin-right: $side-margin;
+        white-space: nowrap;
+    }
+
+    // TAGS
+    // ====
+    .x-entry-utility__tags {
+        float: right;
+        text-align: right;
+
+        a {
+            margin-right: $margin;
+            opacity: .5;
+            @include transition(opacity, .5s);
+
+            &:before {
+                content: '#';
+            }
+            &:hover {
+                opacity: 1;
+                text-decoration: underline;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    // Comments
+    // ========
+    .x-entry-utility__comments-link {
+        @include sprite2x;
+
+        display: inline-block;
+        height: 32px;
+        width: 45px;
+
+        margin-right: $margin;
+
+        color: white;
+        font-weight: normal;
+        line-height: 24px;
+        text-align: center;
+    }
+
+    // More Link
+    // =========
+    .x-entry-utility__more-link {
+        &:after {
+            content: '→';
+            margin-left: .5em;
+        }
+    }
+
+    // Edit Link
+    // =========
+    .x-entry-utility__edit-link + .x-entry-utility__more-link {
+        &:before {
+            content: '|';
+            margin: 0 .5em;
+        }
+    }
+}

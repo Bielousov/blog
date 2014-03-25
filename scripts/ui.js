@@ -21,8 +21,8 @@ UI =
 
     // GLOBAL: Show translation overlay while Google Translate is loading
     initTranslateOverlay: function(){
-        if(/googtrans\/en/.test(window.location.hash)) {
-            var $translatePanel = $j('<div class="x-translate-overlay sans-serif"><h2>I’m sorry, but I write to this Blog in Russian</h2><p>Please wait while loading automatic English translation from Google…</p></div>');
+        if(/googtrans\/en/.test(window.location.hash) || /rublog\.ca/.test(window.location.hostname)) {
+            var $translatePanel = $j('<div class="x-translate-overlay sans-serif"><h2>Ooops, this blog is in Russian</h2><p>Please wait while loading automatic English translation from Google…</p></div>');
                 $translatePanel.prepend('<div class="x-floating-link"><small>If that takes a while…</small><a href="javascript:UI.forceTranslation();" class="x-button x-positive-button">Force English Translation</a></div>');
                 $translatePanel.prepend('<div class="x-floating-link"><small>Товарищ?</small><a href="javascript:UI.hideTranslation();" class="x-button x-negative-button">Спасибо, не нужно переводить</a></div>');
             $j('#main').prepend($translatePanel);

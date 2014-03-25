@@ -106,10 +106,10 @@
 
 					</div><!-- .entry-content -->
 
-					<div class="entry-utility">
-						<?php myblog_posted_in(); ?>
-						<?php edit_post_link( __( 'Edit', 'myblog' ), ' <span class="edit-link">', '</span>' ); ?>
-					</div><!-- .entry-utility -->
+					<?php
+						// Entry Meta
+						get_template_part( '_entry-utility');
+					?>
 				</div><!-- #post-## -->
 
 <?php comments_template(); ?>

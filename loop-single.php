@@ -28,7 +28,7 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 ?>
 			<?php dynamic_sidebar( 'subheader-widget-area' ); ?>
 			
-			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				
 				<h1 class="entry-title rublog-title--page"><?php the_title(); ?></h1>
 				
@@ -38,9 +38,10 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
                     </ul>
                 </div>
 
-				<div class="entry-meta">
-					<?php myblog_posted_on(); ?>
-				</div>
+				<?php 
+					// Entry Meta
+					get_template_part( '_entry-meta');
+				?>
 
 				<div class="entry-content">
 					<?php
@@ -55,16 +56,11 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 				</div>
 
 				<?php
-					// Get post year
-					$post_year = mysql2date("Y", $post->post_date_gmt);
+					// Entry Meta
+					get_template_part( '_entry-utility');
 
-					// Google Ads
-					//if($post_year < date('Y') || (isset($custom_fields['google-ad']) && $custom_fields['google-ad'][0]=='true'))
+					// Ads
 					get_template_part( 'ad_google' );
-					//if(!isset($custom_fields['google-ad']))
-					//if(isset($custom_fields['yandex-ad']) && $custom_fields['yandex-ad'][0]=='true')
-					//	get_template_part( 'ad_yandex' );
-
 				?>
 				
 				<div id="post-widget" class="widget-area sans-serif" role="complementary">
@@ -85,11 +81,6 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 						echo '</ul></div></div>';
 					}
 				?>
-                
-				<div class="entry-utility">
-					<?php myblog_posted_in(); ?>
-					<?php edit_post_link( __( 'Редактировать', 'myblog' ), '<span class="edit-link">', '</span>' ); ?>
-				</div>
 
 				<?php
                     	if(strlen(strip_tags(strip_shortcodes(get_the_content()))) > 100) {
@@ -99,13 +90,13 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 							<?php echo error_notification_action_text(); ?>
 						</div>
 					<?php } ?>
-			</div><!-- #post-## -->
+			</article><!-- #post-## -->
 
-			<div id="nav-below" class="navigation post-navigation">
+			<nav id="nav-below" class="navigation post-navigation">
 				<div class="nav-previous"><?php previous_post_link( '%link', '<big><span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'myblog' ) . '</span> %title</big><small>Предыдущий пост</small>' ); ?></div>
 				<div class="nav-next"><?php next_post_link( '%link', '<big>%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'myblog' ) . '</span></big><small>Следующий пост</small>' ); ?></div>
 				<div class="nav-hint"><span class="x-prev">&larr;</span> <span class="x-pc">Ctrl</span> / <span class="x-os">&#8984;</span> <span class="x-next">&rarr;</span></div>
-			</div><br clear="all" /><!-- #nav-below -->
+			</nav><br clear="all" /><!-- #nav-below -->
 		</div><!-- #content -->
 	</div><!-- #container -->
 </div><!-- #main -->
