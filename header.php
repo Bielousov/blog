@@ -7,7 +7,10 @@
 	
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta rel="author" value="Anton Bielousov" />
+	<meta rel="copyright" value="Anton Bielousov" />
 	<meta name="google-translate-customization" content="f8fadec1a405bc57-e0411fa1af592148-g047e9d0ed70a270d-11"></meta>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<title><?php wp_title(''); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
