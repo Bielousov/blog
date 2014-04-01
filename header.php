@@ -10,7 +10,7 @@
 	<meta rel="copyright" value="Anton Bielousov" />
 	<meta name="google-translate-customization" content="f8fadec1a405bc57-e0411fa1af592148-g047e9d0ed70a270d-11"></meta>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width">
 
 	<title><?php wp_title(''); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
