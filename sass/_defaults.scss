@@ -444,6 +444,10 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
     font-size: $small-text;
 }
 
+.entry-content div[data-twttr-id] {
+    margin: -$margin 0 $margin*2;
+}
+
 .entry-content iframe[id*=twitter-widget] {
     display: inline-block !important;
     max-width: 49% !important;
