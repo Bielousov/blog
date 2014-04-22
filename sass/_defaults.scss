@@ -916,7 +916,9 @@ body.page .edit-link {
     border: solid 1px $light;
 
     input {
-        font-size: $small-text;
+        width: 100%;
+        padding: 5px 10px;
+        font-size: $xsmall-text;
     }
 }
 #main #primary.widget-area ul{
@@ -942,8 +944,9 @@ body.page .edit-link {
     }
 
     h5{
-        font-size:12pt;
         margin:.5em 0;
+        font-size:12pt;
+        font-weight: normal;
         text-align:center;
     }
     ul{

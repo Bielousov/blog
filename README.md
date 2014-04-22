@@ -18,6 +18,9 @@ Just include scripts/slideshow.js and css/slideshow.css
 
 
 ## CHANGELOG
+### v. 2.1.18
+(April 22, 2014)
+ - Fixed header and email subscription font styling in author block
 
 ### v. 2.1.17
 (March 25, 2014)
