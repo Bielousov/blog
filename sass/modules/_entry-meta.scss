@@ -17,5 +17,26 @@
         a {
             margin-left:.5em;
         }
+
+        /* =Sponsored post= */
+        #content .category-sponsored & a {
+            display: inline-block;
+            padding: 0 5px;
+
+            background: yellow;
+            color: $dark;
+            text-decoration: none;
+
+            &:after {
+                content: ": оплаченный пост"ж
+            }
+        }
     }
+}
+
+
+.archive-meta{
+    color: $gray;
+    font-size: $small-text;
+    font-style: italic;
 }
