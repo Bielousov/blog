@@ -2,15 +2,16 @@
 // Example:
 // <a onclick="trackOutboundLink(this, 'Ad Campaign', 'TAL Group', 'Off site', 'http://tal.com'); return false;" href="" />
 function trackOutboundLink(link, category, action, label) { 
-     try { 
+    try { 
     	_gaq.push(['_trackEvent', category , action, label]); 
     } catch(err){}
      
-    setTimeout(function() {
-        document.location.href = link.href;
-    }, 100);
+    if(link) {
+      setTimeout(function() {
+          document.location.href = link.href;
+      }, 100);
+    }
 }
-
 
 // Safe Email display
 // Example:

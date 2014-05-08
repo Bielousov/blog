@@ -18,6 +18,14 @@ Just include scripts/slideshow.js and css/slideshow.css
 
 
 ## CHANGELOG
+### v. 2.1.19
+(May 8, 2014)
+ - Added GA tracking for all outbound links (discarded GA plugin functionality due to its buggy nature)
+ - Added main.js for autostart scripts
+ - Added Link post type for post updates
+ - Style Sponsored posts based on category
+ - Refactored SCSS for post styles
+
 ### v. 2.1.18
 (April 22, 2014)
  - Fixed header and email subscription font styling in author block
