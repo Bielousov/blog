@@ -95,12 +95,16 @@
 
 
 
-<?php /* How to display posts of the Aside format. The asides category is the old way. */ ?>
+<?php /* How to display posts of the Aside format. (Sponsored posts) */ ?>
 
 	<?php elseif ( ( function_exists( 'get_post_format' ) && 'aside' == get_post_format( $post->ID ) ) || in_category( _x( 'asides', 'asides category slug', 'myblog' ) )  ) : ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			<h2 class="entry-title rublog-title--post"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Постоянная ссылка на %s', 'myblog' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			<h2 class="entry-title rublog-title--post">
+				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Постоянная ссылка на %s', 'myblog' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
+					<?php the_title(); ?>
+				</a>
+			</h2>
 			
 			<?php 
 				// Entry Meta
@@ -126,6 +130,42 @@
 			?>
 		</div><!-- #post-## -->
 
+
+
+<?php /* How to display link posts. */ ?>
+
+	<?php elseif ( ( function_exists( 'get_post_format' ) && 'link' == get_post_format( $post->ID ) ) ) : ?>
+		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+			<h2 class="entry-title rublog-title--post">
+				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Постоянная ссылка на %s', 'myblog' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
+					<?php the_title(); ?>
+					<small class="rublog-sponsored-subtitle">Обновленный пост</small>
+				</a>
+			</h2>
+			
+			<?php 
+				// Entry Meta
+				get_template_part( '_entry-meta');
+			?>
+
+			<div class="entry-content">
+				<?php 
+					if ( function_exists('my_excerpt_thumbnails') ) {
+   						my_excerpt_thumbnails($id, 0); 
+					}
+					the_excerpt();
+					//the_advanced_excerpt();
+				?>
+				<?php /*the_content( __( myblog_more_text().' <span class="meta-nav">&rarr;</span>', 'myblog' ) );*/ ?>
+				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Страницы:', 'myblog' ), 'after' => '</div>' ) ); ?>
+			</div><!-- .entry-content -->
+
+			<?php 
+				// Entry Meta Utility
+				get_template_part( '_entry-utility');
+			?>
+		</div><!-- #post-## -->
 
 
 

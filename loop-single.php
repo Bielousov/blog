@@ -60,7 +60,9 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 					get_template_part( '_entry-utility');
 
 					// Ads
-					get_template_part( 'ad_google' );
+					if(!isset($custom_fields['ad-free'])) {
+						get_template_part( 'ad_google' );
+					}
 				?>
 				
 				<div id="post-widget" class="widget-area sans-serif" role="complementary">
