@@ -19,9 +19,10 @@
 @import "modules/footer";
 
 @import "modules/widgets/social";
-@import "modules/widgets/_recent_tweets";
-@import "modules/widgets/_tweet_ideas";
-@import "modules/widgets/_pinterest_counter";
+@import "modules/widgets/recent_tweets";
+@import "modules/widgets/tweet_ideas";
+@import "modules/widgets/pinterest_counter";
+@import "modules/widgets/paginator";
 
 @import "pages/travel";
 @import "pages/error404";
