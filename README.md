@@ -18,6 +18,13 @@ Just include scripts/slideshow.js and css/slideshow.css
 
 
 ## CHANGELOG
+### v. 2.1.20
+(June 11, 2014)
+ - Fixed Advanced Excerpt plugin dependency in theme
+ - Fixed issue with related content link not working due to tracking
+ - Comment counters on link posts now show comments on targeted post
+
+
 ### v. 2.1.19
 (May 8, 2014)
  - Added GA tracking for all outbound links (discarded GA plugin functionality due to its buggy nature)
