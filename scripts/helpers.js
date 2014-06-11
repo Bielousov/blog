@@ -5,12 +5,13 @@ function trackOutboundLink(link, category, action, label) {
     try { 
     	_gaq.push(['_trackEvent', category , action, label]); 
     } catch(err){}
-     
+    /* 
     if(link) {
       setTimeout(function() {
           document.location.href = link.href;
       }, 100);
-    }
+    }*/
+    return true;
 }
 
 // Safe Email display

@@ -193,7 +193,7 @@ function myblog_remove_gallery_css( $css ) {
 if ( version_compare( $GLOBALS['wp_version'], '3.1', '<' ) )
 	add_filter( 'gallery_style', 'myblog_remove_gallery_css' );
 
-
+/*
 add_filter('get_comments_number', 'comment_count', 0);
 function comment_count( $count ) {
 	global $id;
@@ -205,7 +205,7 @@ function comment_count( $count ) {
 		}
 	}
 	return $comment_count;
-}
+}*/
 
 /**
  * Register widgetized areas, including two sidebars and four widget-ready columns in the footer.
