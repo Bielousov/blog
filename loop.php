@@ -197,8 +197,13 @@
 					if ( function_exists('my_excerpt_thumbnails') ) {
    						my_excerpt_thumbnails($id, 0); 
 					}
-					the_excerpt();
-					//the_advanced_excerpt();
+
+					// Use Advanced excerpts plugion if available
+					if ( function_exists('the_advanced_excerpt') ) {
+						the_advanced_excerpt();
+					} else {
+						the_excerpt();
+					}
 				?>
 				<?php /*the_content( __( myblog_more_text().' <span class="meta-nav">&rarr;</span>', 'myblog' ) );*/ ?>
 				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Страницы:', 'myblog' ), 'after' => '</div>' ) ); ?>
