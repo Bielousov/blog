@@ -397,19 +397,6 @@ if (!function_exists('get_previous_posts_link_attributes')){
 	}
 }
 
-//Related posts exerpts filters
-function related_post_excerpt( $output ) {
-	return strip_tags($output);
-}	
-
-function related_post_excerpt_length($length) {
-	return 20;
-}
-
-function related_post_excerpt_more($excerpt) {
-	return ' [&hellip;]';
-}
-
 function ru_plural($num, $words, $print_num=false){
   //$words = array('страница', 'страницы', 'страниц');
 	$_w = '';

@@ -112,41 +112,38 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 			<?php
 				//Related posts
 			    $scores = the_related_get_scores(); // pass the post ID if outside of the loop
-			    $posts = array_slice( array_keys( $scores ), 0, 5 ); // keep only the the five best results
+			    $posts = array_slice( array_keys( $scores ), 0, 6 ); // keep only the the five best results
 			    $args = array(
 			        'post__in'          => $posts,
-			        'posts_per_page'    => 5,
+			        'posts_per_page'    => 6,
 			        'caller_get_posts'  => 1 // ignore sticky status
 			    );
 			    $my_query = new WP_Query( $args );
 			    if ( $my_query->have_posts() ) {
+
 			    	$str='<div class="related_posts"><h6>Читайте также:</h6><ul>';
 			    	
-			    	remove_filter( 'get_the_excerpt','myblog_custom_excerpt_more');
-			    	add_filter('excerpt_length', 'related_post_excerpt_length');
-			    	add_filter('excerpt_more', 'related_post_excerpt_more');
-			    	$i=0;
-			        while ( $my_query->have_posts() and $i<4 ) {
+			    	$i = 0;
+
+			    	// Get 4 posts with thumbnails only of 6 posts loaded from DB
+			        while ( $my_query->have_posts() and $i < 4 ) {
 			            $my_query->the_post();
+				 	    
 				 	    if(has_post_thumbnail()){
 
-				 	    	$content = strip_tags(get_the_excerpt());
-    						$dot = ".";
-    						$position = stripos ($content, $dot);
+				 	    	// Create excerpt from the content
+				 	    	$excerpt = get_the_content();
+				 	    	$excerpt = esc_attr( strip_tags( stripslashes( $excerpt ) ) );
+							$excerpt = wp_trim_words( $excerpt, $num_words = 100, $more = NULL );
 
-    						if($position) { //if there's a dot in our soruce text do
-        						$offset = $position + 1; //prepare offset
-        						$position2 = stripos ($content, $dot, $offset); //find second dot using offset
-        						$excerpt = substr($content, 0, $position2); //put two first sentences under $first_two
-    						} else {
-    							$excerpt = substr($content, 0, 100);
-    						}
-
+							// Get only 2 first sentances
+				 	    	preg_match('/^([^.!?]*[\.!?]+){0,2}/', $excerpt, $excerpt);
+    											
 			    	        $str.= '<li>
 			        	    			<a onclick="trackOutboundLink(this, \'Related Posts\', \'Position #' . ($i+1) . '\', \'' . get_permalink( get_the_ID() ) . '\');" href="' .  get_permalink( get_the_ID() ) . '">'
 			            					.get_the_post_thumbnail( null, 'thumbnail' )
 			            					.the_title('<strong>','</strong>',false)
-			            					.$excerpt . '&nbsp;[&hellip;]'
+			            					.'<span>'. $excerpt[0] . '</span>'
 				            			.'</a>'
 				            	   	.'</li>';
 				        	$i++;
