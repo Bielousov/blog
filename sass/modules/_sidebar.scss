@@ -1,0 +1,89 @@
+/* Main sidebars */
+
+#sidebar .widget-area {
+	font-family: $font-sans;
+	font-size: 10pt;
+	font-weight: 300;
+
+	ul {
+	    margin: 0;
+	    padding: 0;
+
+	    list-style: none;
+	}
+}
+
+#primary {
+    width: 170px;
+    margin-bottom: 3em;
+    border: solid 1px $light;
+
+    input {
+        width: 100%;
+        padding: 5px 10px;
+        font-size: $xsmall-text;
+    }
+
+    ul{
+	    padding:0;
+	}
+
+	.widget-container{
+	    margin: 0 $margin $side-margin $margin;
+	}
+
+	/* Author block */
+	.author {
+	    position: relative;
+
+	    text-align: center;
+	    font-size: $small-text;
+	    
+	    img{
+	        margin: 10px 0;
+	        max-width:150px;
+	    }
+
+	    h5{
+	        margin:.5em 0;
+	        font-size:12pt;
+	        font-weight: normal;
+	        text-align:center;
+	    }
+	    ul{
+	        margin:.25em 0 1em !important;
+	        
+	        a{
+	            color:#aaa;
+
+	            &:hover{
+	                color:red;
+	                text-decoration:underline;
+	            }
+	        }
+	    }
+	}
+}
+
+#secondary {
+
+	// Title
+    .widget-title{
+        margin-bottom:.5em;
+        font-size: $large-text;
+        font-weight: normal;
+        line-height:100%;
+    }
+
+    .widget_text{
+    	margin-bottom:.5em;
+    }
+
+	ul {
+		margin:.5em -1em 0 1px;
+
+		li {
+			margin-bottom: .5em;
+		}
+	}
+}

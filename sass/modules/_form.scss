@@ -5,3 +5,16 @@ input, textarea {
     border: solid 1px $border;
     border-radius: 0;
 }
+
+input[type=submit],
+button,
+.x-button {
+	-webkit-appearance: none;
+	background: $link;
+	border: darken($link, 10%);
+	color: white;
+}
+
+label {
+	display: block;
+}

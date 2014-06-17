@@ -11,18 +11,22 @@
 @import "modules/form";
 
 @import "modules/header";
+@import "modules/sidebar";
+@import "modules/footer";
+
 @import "modules/translation";
 @import "modules/entry-meta";
 @import "modules/entry-utility";
 @import "modules/entry-post";
 @import "modules/images";
-@import "modules/footer";
 
-@import "modules/widgets/social";
-@import "modules/widgets/recent_tweets";
-@import "modules/widgets/tweet_ideas";
-@import "modules/widgets/pinterest_counter";
+
+@import "modules/widgets/feedburner_subscription";
 @import "modules/widgets/paginator";
+@import "modules/widgets/pinterest_counter";
+@import "modules/widgets/social";
+@import "modules/widgets/top_posts";
+@import "modules/widgets/tweet_ideas";
 
 @import "pages/travel";
 @import "pages/error404";
