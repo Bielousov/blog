@@ -226,6 +226,10 @@ body.page .edit-link {
     margin-bottom:12px;
 }
 
+.one-column #content .adsbygoogle iframe {
+    height: auto !important;
+}
+
 .excerpt_thumbnails{
     display:block;
     margin-bottom:1em;
@@ -251,9 +255,9 @@ body.page .edit-link {
 
 
 /**** Search engines refers highlights ****/
-.hilite { 
-    background-color:#FFCA61; 
-    color: $dark 
+.hilite {
+    background-color:#FFCA61;
+    color: $dark
 }
 
 
