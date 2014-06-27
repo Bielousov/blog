@@ -110,12 +110,13 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 			<?php comments_template( '', true ); ?>
 
 			<?php
+			
 				//Related posts
 			    $scores = the_related_get_scores(); // pass the post ID if outside of the loop
-			    $posts = array_slice( array_keys( $scores ), 0, 6 ); // keep only the the five best results
+			    $posts = array_slice( array_keys( $scores ), 0, 5 ); // keep only the the five best results
 			    $args = array(
 			        'post__in'          => $posts,
-			        'posts_per_page'    => 6,
+			        'posts_per_page'    => 5,
 			        'caller_get_posts'  => 1 // ignore sticky status
 			    );
 			    $my_query = new WP_Query( $args );
@@ -132,18 +133,17 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 				 	    if(has_post_thumbnail()){
 
 				 	    	// Create excerpt from the content
+				 	    	// No more than 70 words but only complete sentances.
 				 	    	$excerpt = get_the_content();
 				 	    	$excerpt = esc_attr( strip_tags( stripslashes( $excerpt ) ) );
-							$excerpt = wp_trim_words( $excerpt, $num_words = 100, $more = NULL );
-
-							// Get only 2 first sentances
-				 	    	preg_match('/^([^.!?]*[\.!?]+){0,2}/', $excerpt, $excerpt);
+							$excerpt = wp_trim_words( $excerpt, $num_words = 70, $more = NULL );
+				 	    	preg_match('/^(.*[\.!?]+)([^.!?]*)$/', $excerpt, $excerpt);
     											
 			    	        $str.= '<li>
 			        	    			<a onclick="trackOutboundLink(this, \'Related Posts\', \'Position #' . ($i+1) . '\', \'' . get_permalink( get_the_ID() ) . '\');" href="' .  get_permalink( get_the_ID() ) . '">'
 			            					.get_the_post_thumbnail( null, 'thumbnail' )
 			            					.the_title('<strong>','</strong>',false)
-			            					.'<span>'. $excerpt[0] . '</span>'
+			            					.'<span>'. $excerpt[1] . '</span>'
 				            			.'</a>'
 				            	   	.'</li>';
 				        	$i++;
@@ -154,4 +154,4 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 			    }
 			?>
 
-			<?php endwhile; // end of the loop. ?>
+			<?php endwhile; // end of the loop.?>
