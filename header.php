@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="ru-RU"  xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
-	<?php 
+	<?php
 		// <!-- MOBIFY - DO NOT ALTER - PASTE IMMEDIATELY AFTER OPENING HEAD TAG -->
 		// <script type="text/javascript">/*<![CDATA[*/(function(a){function b(a,b){if(+a)return~a||(d.cookie=h+"=; path=/");j=d.createElement(e),k=d.getElementsByTagName(e)[0],j.src=a,b&&(j.onload=j.onerror=b),k.parentNode.insertBefore(j,k)}function c(){n.api||b(l.shift()||-1,c)}if(this.Mobify)return;var d=document,e="script",f="mobify",g="."+f+".com/",h=f+"-path",i=g+"un"+f+".js",j,k,l=[!1,1],m,n=this.Mobify={points:[+(new Date)],tagVersion:[6,1],ajs:"//a.mobify.com/performance/bielousov/a.js"},o=/((; )|#|&|^)mobify-path=([^&;]*)/g.exec(location.hash+"; "+d.cookie);o?(m=o[3])&&!+(m=o[2]&&sessionStorage[h]||m)&&(l=[!0,"//preview"+g+escape(m)]):(l=a()||l,l[0]&&l.push("//cdn"+i,"//files01"+i)),l.shift()?(d.write('<plaintext style="display:none;">'),setTimeout(c)):b(l[0])})(function(){if(/ip(hone|od|ad)|android|blackberry.*applewebkit|bb1\d.*mobile/i.test(navigator.userAgent)){return[1,"//cdn.mobify.com/swift/bielousov/production/mobify.js"]}return[0,Mobify.ajs]})/*]]>*/</script>
 		// <!-- END MOBIFY -->
 	 ?>
-	
-	
+
+
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta rel="author" value="Anton Bielousov" />
 	<meta rel="copyright" value="Anton Bielousov" />
@@ -38,7 +38,7 @@
 		 * as styles, scripts, and meta tags.
 		 */
 		wp_head();
-							
+
 		if(isset($custom_fields['og:video']))
 			echo '<meta property="og:video" content="'.$custom_fields['og:video'][0].'">';
 	?>
@@ -56,6 +56,7 @@
 					<small data-lang="ru">Блог <a href="/author" rel="author">Антона Белоусова</a></small>
 					<big data-lang="en">Shiftless Canada</big>
 					<small data-lang="en"><a href="/" rel="home">www.rublog.ca</a></small>
+					<a href="http://feeds.feedburner.com/Bielousov" target="_blank" rel="nofollow" onclick="_gaq.push(['_trackPageview', '/tracking/rss-click']);" rel="nofollow" title="Подпишитесь на RSS-рассылку и не пропускайте ни одного поста." class="rss-feed"></a>
 				</h1>
 			<?php } else { ?>
 				<div class="rublog-title--blog">
@@ -64,17 +65,16 @@
 					<small data-lang="ru">Блог <a href="/author" rel="author">Антона Белоусова</a></small>
 					<big data-lang="en"><a href="/" rel="home" >Russian Canadian</a></big>
 					<small data-lang="en"><a href="/" rel="home">www.rublog.ca</a></small>
+					<a href="http://feeds.feedburner.com/Bielousov" target="_blank" rel="nofollow" onclick="_gaq.push(['_trackPageview', '/tracking/rss-click']);" rel="nofollow" title="Подпишитесь на RSS-рассылку и не пропускайте ни одного поста." class="rss-feed"></a>
 				</div>
 			<?php } ?>
-
-			<a href="http://feeds.feedburner.com/Bielousov" target="_blank" rel="nofollow" onclick="_gaq.push(['_trackPageview', '/tracking/rss-click']);" rel="nofollow" title="Подпишитесь на RSS-рассылку и не пропускайте ни одного поста." class="rss-feed"></a>
 		</hgroup>
 
 		<nav role="navigation">
-			<?php 
+			<?php
 				// Primary Menu
-				wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); 
-			
+				wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) );
+
 				// Search form
 				include (TEMPLATEPATH . '/searchform.php');
 			?>
@@ -82,7 +82,7 @@
 			<div id="google_plusone">
 				<!-- Place this tag in your head or just before your close body tag -->
 				<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-				
+
 				<!-- Place this tag where you want the +1 button to render -->
 				<g:plusone size="tall" href="http://www.bielousov.com"></g:plusone>
 			</div>

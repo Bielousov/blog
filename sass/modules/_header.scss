@@ -51,7 +51,7 @@ header.site-header {
             color: $dark;
             font-size: 28pt;
             line-height: 1.1;
-            vertical-align: bottom;   
+            vertical-align: bottom;
             a {
                 color: $dark;
                 text-decoration: none;
@@ -80,11 +80,11 @@ header.site-header {
     .rss-feed{
         position: absolute;
         bottom: 4px;
-        
+        left:103%;
+
         height: 32px;
         width: 32px;
-        margin-left: 1em;
-    
+
         @include sprite;
         background-position: 0 0;
     }
@@ -120,7 +120,7 @@ header.site-header {
     #searchform{
         display: inline-block;
         position: relative;
-    
+
         input.field{
             padding: 3px 35px 3px 7px;
             outline: none;
@@ -128,7 +128,7 @@ header.site-header {
 
             font-size: 13px;
             font-weight: 300;
-        
+
             &:-webkit-input-placeholder,
             &:-moz-placeholder,
             &:-ms-input-placeholder {
@@ -140,7 +140,7 @@ header.site-header {
                 display: none;
             }
         }
-    
+
         input.submit{
             position:absolute;
             top:2px;
@@ -148,7 +148,7 @@ header.site-header {
             height:24px;
             width:30px;
             overflow: hidden;
-            
+
             @include sprite;
             background-position: -128px center;
             border:none;
