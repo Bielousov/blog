@@ -3,7 +3,7 @@ header.site-header {
     z-index: 10;
     display: block;
     min-width:1000px;
-    padding: 10px 0 20px;
+    padding: 15px 0 10px;
     background: #f5f5f5 url($theme + 'images/h/header-totems.jpg') no-repeat center center;
     background-size: cover;
     border-bottom: solid 1px $border;
@@ -120,8 +120,10 @@ header.site-header {
     #searchform{
         display: inline-block;
         position: relative;
+        top: -1px;
 
         input.field{
+            margin: 0;
             padding: 3px 35px 3px 7px;
             outline: none;
             width: 180px;
@@ -142,11 +144,11 @@ header.site-header {
         }
 
         input.submit{
-            position:absolute;
-            top:2px;
-            right:4px;
-            height:24px;
-            width:30px;
+            position: absolute;
+            top: 0;
+            right: 4px;
+            height: 24px;
+            width: 30px;
             overflow: hidden;
 
             @include sprite;
@@ -160,7 +162,7 @@ header.site-header {
     // Google Plus
     #google_plusone{
         position: absolute;
-        bottom: -3px;
+        bottom: -4px;
         left: 100%;
         margin-left: 20px;
     }
