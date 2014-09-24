@@ -98,6 +98,23 @@ function myblog_admin_header_style() {
 }
 endif;
 
+
+function wpEnqueueScripts(){
+    // Adds external JS helper functions
+    wp_register_script('helpers-script', get_template_directory_uri() . '/js/helpers.js', array('jquery'));
+    wp_enqueue_script('helpers-script');
+
+    // Adds UI scripts
+    wp_register_script('ui-script', get_template_directory_uri() . '/js/ui.js', array('jquery'));
+    wp_enqueue_script('ui-script');
+
+    // Adds Slideshow scripts
+    wp_register_script('slideshow-script', get_template_directory_uri() . '/js/slideshow.js', array('jquery'));
+    wp_enqueue_script('slideshow-script');
+}
+
+add_action('wp_enqueue_scripts', 'wpEnqueueScripts');
+
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  *
@@ -135,37 +152,6 @@ function myblog_continue_reading_link() {
 }
 
 /**
- * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and myblog_continue_reading_link().
- *
- * To override this in a child theme, remove the filter and add your own
- * function tied to the excerpt_more filter hook.
- *
- * @since Twenty Ten 1.0
- * @return string An ellipsis
- */
-/*function myblog_auto_excerpt_more( $more ) {
-	return ' &hellip;' . myblog_continue_reading_link();
-}
-add_filter( 'excerpt_more', 'myblog_auto_excerpt_more' );
-*/
-/**
- * Adds a pretty "Continue Reading" link to custom post excerpts.
- *
- * To override this link in a child theme, remove the filter and add your own
- * function tied to the get_the_excerpt filter hook.
- *
- * @since Twenty Ten 1.0
- * @return string Excerpt with a pretty "Continue Reading" link
- */
-/*function myblog_custom_excerpt_more( $output ) {
-	if ( ! is_attachment() ) {
-		$output .= myblog_continue_reading_link();
-	}
-	return $output;
-}
-add_filter( 'get_the_excerpt', 'myblog_custom_excerpt_more' );
-*/
-/**
  * Remove inline styles printed when the gallery shortcode is used.
  *
  * Galleries are styled by the theme in Twenty Ten's style.css. This is just
@@ -193,19 +179,6 @@ function myblog_remove_gallery_css( $css ) {
 if ( version_compare( $GLOBALS['wp_version'], '3.1', '<' ) )
 	add_filter( 'gallery_style', 'myblog_remove_gallery_css' );
 
-/*
-add_filter('get_comments_number', 'comment_count', 0);
-function comment_count( $count ) {
-	global $id;
-	$comments = get_approved_comments($id);
-	$comment_count = 0;
-	foreach($comments as $comment){
-		if($comment->comment_type == ""){
-			$comment_count++;
-		}
-	}
-	return $comment_count;
-}*/
 
 /**
  * Register widgetized areas, including two sidebars and four widget-ready columns in the footer.
@@ -217,7 +190,7 @@ function comment_count( $count ) {
  * @uses register_sidebar
  */
 function myblog_widgets_init() {
-    
+
 	register_sidebar( array(
 		'name' => __( 'Translate', 'myblog' ),
 		'id' => 'translate-widget-area',
@@ -225,7 +198,7 @@ function myblog_widgets_init() {
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>'
 	) );
-	
+
 	// Area 1, located at the top of the sidebar.
 	register_sidebar( array(
 		'name' => __( 'Primary Sidebar Area', 'myblog' ),
@@ -247,7 +220,7 @@ function myblog_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
-	
+
 	// Area 2, located below the Primary Widget Area in the sidebar. Empty by default.
 	register_sidebar( array(
 		'name' => __( 'Microblog Sidebar Area', 'myblog' ),
@@ -270,7 +243,7 @@ function myblog_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
-	
+
 	// Area 4, located in the footer. Empty by default.
 	register_sidebar( array(
 		'name' => __( 'Main Footer Widget Area', 'myblog' ),

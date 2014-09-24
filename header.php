@@ -23,9 +23,7 @@
 	<?php
 	    $custom_fields = get_post_custom();
 	    wp_enqueue_style('ui', get_template_directory_uri() . '/css/style.css', false, $version, 'all');
-	    wp_enqueue_script('ui', WP_CONTENT_URL . '/themes/myblog/scripts/helpers.js',  array('jquery'), $version);
-	    wp_enqueue_script('ui', WP_CONTENT_URL . '/themes/myblog/scripts/ui.js',  array('jquery'), $version);
-	    wp_enqueue_script('ui', WP_CONTENT_URL . '/themes/myblog/scripts/main.js',  array('jquery'), $version);
+	    wp_enqueue_style('slideshow', get_template_directory_uri() . '/css/slideshow.css', false, '1.1', 'all');
 
 		/* We add some JavaScript to pages with the comment form
 		 * to support sites with threaded comments (when in use).

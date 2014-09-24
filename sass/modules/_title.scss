@@ -6,8 +6,8 @@
 /* Post page title or page title */
 .rublog-title--page {
     font-size: $title-text;
-    margin-bottom: 0;
-    
+    margin-bottom: $margin*2;
+
     a {
         text-decoration: none;
 
@@ -24,7 +24,7 @@
 
     small {
         color: $med;
-        font-size: 70%;
+        font-size: 65%;
         font-weight:normal;
     }
 }
@@ -45,12 +45,12 @@
 .rublog-title--category {
     font-size: $xlarge-text;
     font-weight: 300;
-    
+
     span {
         font-size: $title-text;
         font-weight: 600;
     }
-    
+
     a:link,
     a:visited {
         color: $gray;

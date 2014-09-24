@@ -1,14 +1,15 @@
-/* 
+/*
     v. 1.1 — April 10, 2013
                 • Code review
                 • Added Cntrl/Cmnd + arrows navigation
     v. 1.2 — April 11, 2013
                 • Added translation overlay
-*/            
-UI =  
+*/
+UI =
 {
-	init: function()  
+	init: function()
 	{
+        UI.initTracking();
         UI.initTranslateOverlay();
         UI.initTravelMap();
         UI.initKeyboardNavigation();
@@ -18,6 +19,13 @@ UI =
 	    $j('body').addClass('x-loaded');
 
 	},
+
+    // GLOBAL: Track all external links
+    initTracking: function() {
+        jQuery(document).on('click', 'a[href*="//"]:not([href*="' + document.location.host + '"])', function(){
+            trackOutboundLink(false, 'outbound-article', jQuery(this).attr('href'));
+        });
+    },
 
     // GLOBAL: Show translation overlay while Google Translate is loading
     initTranslateOverlay: function(){
@@ -40,10 +48,10 @@ UI =
                 _gaq.push(['_trackEvent','Google Website Translator','Show Translation Popup']);
         }
     },
-        
+
         forceTranslation: function() {
             $j('iframe.goog-te-menu-frame').first().contents().find('.goog-te-menu2-item span.text:contains("English")').first().click();
-            
+
             if(_gaq)
                 _gaq.push(['_trackEvent','Google Website Translator','Force English Translation']);
         },
@@ -83,7 +91,7 @@ UI =
             $navBar.find('.x-prev').hide()
         if(!$navNext.length)
             $navBar.find('.x-next').hide()
-        
+
         $j(document).keydown(function (e){
             if(!$j('body').hasClass('theater-mode') && (event.metaKey || event.ctrlKey)) {
                 switch(e.keyCode) {
@@ -111,19 +119,19 @@ UI =
             $j(this).before('<ins id="img_' + (i+1) + '" class="imgNumber"><small>' + (i+1) +'</small></ins>');
         });
     },
-	
+
     // POST: Panoramic images scrolling feature
 	initPanorama:function(){
         var $img = $j('img.panorama');
 	    $img.addClass('panorama-loading');
         $img.wrap('<div class="panorama-canvas"></div>');
 
-		
+
 		$j('.panorama-canvas img.panorama').one('load', function(){
 			var $_img = $j(this),
                 $_panorama = $_img.parent('.panorama-canvas');
-            
-            
+
+
             UI.stylePanorama($_panorama);
             $j(window).on('resize', function(){
                 UI.stylePanorama($_panorama);
@@ -140,11 +148,11 @@ UI =
 
             // Once again fix styling
             UI.stylePanorama($_panorama);
-            
+
 		}).each(function() {
             // If loading from cache
             if(this.complete) $j(this).load();
-        }); 
+        });
 	},
 
     stylePanorama:function($panorama){
@@ -152,7 +160,7 @@ UI =
             margin = (width - $panorama.parent().width()) / 2;
 
         $panorama.css({
-            'width': width, 
+            'width': width,
             'margin-left': (margin > 0) ? -margin : 0,
             'margin-right': (margin > 0) ? -margin : 0
         });
@@ -160,7 +168,7 @@ UI =
         // Hide Icon if entire image is shown
         $panorama.next('.panoramaIcon').toggleClass('panoramaIcon--hide', $panorama.find('img.panorama').width() < width);
     },
-	
+
     // POST: Floating share widget
 	initShareSnippet:function(){
         var $container = $j('#container'),
@@ -173,11 +181,11 @@ UI =
 
         var top = $container.offset().top - shift,
         	maxTop;
-		
+
 		var updateShareSnippet = function(){
 			//maxTop = top + container.height() - $j('dl', shareSnippet).height();
             maxTop = $container.height() - $j('#post-widget:not(.floated)').height()*1.5 - window.innerHeight*.75;
-            
+
 			if(top < document.body.scrollTop){
 			    if(document.body.scrollTop < maxTop) { //-shift)
                     $widget.addClass('floated');
@@ -199,7 +207,7 @@ UI =
 
 jQuery(function(){
     $j=jQuery.noConflict();
-    UI.init(); 
+    UI.init();
 });
 
 (function() {
@@ -227,13 +235,13 @@ jQuery(function(){
                     this.grab = "default";
                     this.grabbing = "move";
                 }
-                
+
                 // Get container and image.
                 this.m = $j(container);
                 this.i = this.m.children().css("cursor", this.grab);
-                
+
                 this.isgrabbing = false;
-                
+
                 // Set mouse events.
                 var self = this;
                 this.i.mousedown(function(e){
@@ -268,7 +276,7 @@ jQuery(function(){
                         _m.animate({ scrollLeft:  dx, scrollTop: dy },
                                 "normal", "swing");
                 });
-                
+
                 this.centering();
         },
         centering: function(){
@@ -292,7 +300,7 @@ jQuery(function(){
                 _m.scrollLeft(x).scrollTop(y);
         }
     };
-    
+
     jQuery.fn.scrollview = function(config){
         return this.each(function(){
             new ScrollView(this, config);

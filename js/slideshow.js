@@ -1,5 +1,5 @@
 // Init slideshow by calling iSlide.init(); when document is ready
-iSlide =  
+iSlide =
 {
 	version: "1.1",
 	copyright: '&copy; Anton Bielousov',
@@ -12,11 +12,11 @@ iSlide =
 	pinterest: true,
 	useFullscreen: false,
 
-	init: function()  
+	init: function()
 	{
 		iSlide.container = false;
 		iSlide.title = $j('h1.entry-title').text();
-	
+
 		$j(iSlide.imgSelector).each(function(i,el){
 			if(!/-\d{3}x\d{4}./.test($j(el).attr('src')))
 				$j(this).addClass('zoom').after('<span data-src="'+$j(el).attr('src')+'" class="zoomIcon"></span>');
@@ -26,17 +26,17 @@ iSlide =
 
 		if(iSlide.images.length==0)
 			return;
-		
-		
+
+
 		iSlide.images.click(function(){
 			iSlide.open($j(this).attr('src'));
 		});
-		
+
 		$j('.zoomIcon').click(function(){
 			iSlide.open($j(this).attr('data-src'));
 		});
 	},
-	
+
 	initEvents: function(){
 		$j(document).keydown(function(e) {
 			if(iSlide.is_active()){
@@ -63,7 +63,7 @@ iSlide =
         iSlide.container.find('.thumbnails li a').click(function(){
 			iSlide.select($j(this).attr('data-index'));
 		});
-        
+
         // On fullscreen mode change
         $j(document).on("webkitfullscreenchange mozfullscreenchange fullscreenchange",function(){
         	if(iSlide.useFullscreen && iSlide.is_active()){
@@ -75,27 +75,27 @@ iSlide =
 				}
 			}
         });
-        
+
         $j(window).resize(function(){
         	if(iSlide.is_active()){
 	        	iSlide.loadCurrent();
 	        }
         });
-        
+
     	/*iSlide.container.find('.slide img').bind("contextmenu",function(e){
             return false;
-        });*/ 
-       
+        });*/
+
         $j(window).unload(function() {
 		  if(iSlide.useFullscreen && iSlide.is_active())
 		  	iSlide.fullscreen(false);
 		});
 	},
-	
+
 	is_active: function() {
 		return ($j('body').hasClass('theater-mode') && iSlide.container!=false);
 	},
-	
+
 	create: function() {
 		iSlide.container = $j('<section id="Slideshow"></section>');
 		iSlide.container.html('<menu><a class="exit">(Esc)<ins></ins></a></menu><ul class="thumbnails" rel="nav"></ul>');
@@ -127,7 +127,7 @@ iSlide =
 
 		// Init interaction events
 		iSlide.initEvents();
-		
+
 		// Append Slideshow into body
 		iSlide.container.appendTo($j('body'));
 
@@ -148,7 +148,7 @@ iSlide =
 		}
 		$j('body').removeClass('theater-mode');
 	},
-	
+
 	open: function(src) {
 		if(iSlide.is_active())
 			return false;
@@ -156,7 +156,7 @@ iSlide =
 		var index = 0;
 		if(!iSlide.container)
 			iSlide.create();
-		
+
 		iSlide.images.each(function(i,el){
 			if($j(el).attr('src')==src){
 				index = i;
@@ -173,7 +173,7 @@ iSlide =
 		if(_gaq)
 			_gaq.push(['_trackEvent','Slideshow',window.location]);
 	},
-	
+
 	fullscreen: function(a) {
 		if(a){
 			var docElm = document.documentElement;
@@ -198,49 +198,49 @@ iSlide =
 			}
 		}
 	},
-	
+
 	reset: function() {
 		iSlide.index = 0;
 		iSlide.container.find('.slide.active').removeClass('active');
 		iSlide.container.find('.thumbnails li.active').removeClass('active');
 	},
-	
-	
+
+
 	previous: function(){
 		if(iSlide.index>0)
 			iSlide.select(parseInt(iSlide.index)-1);
 	},
-	
+
 	next: function(){
 		if(iSlide.index<iSlide.images.length-1)
 			iSlide.select(parseInt(iSlide.index)+1);
 	},
-	
+
 	select: function(index){
 		iSlide.reset();
 		iSlide.index = index;
 		var $slide = iSlide.getSlide(iSlide.index),
 			$thumb = iSlide.container.find('.thumbnails li a[data-index='+iSlide.index+']').parent();
-			
+
 		$thumb.addClass('active');
 		$slide.addClass('active');
 		iSlide.container.find('.thumbnails').css('left', '-' + $thumb.position().left + 'px');
 		iSlide.loadCurrent();
 	},
-	
+
 	loadCurrent: function(){
 		if(iSlide.is_active()){
 			iSlide.load(iSlide.index, true);
 		}
 	},
-	
+
 	preload: function(index){
 		if(index<iSlide.images.length-1)
 			iSlide.load(parseInt(index)+1, false);
 		if(index>0)
 			iSlide.load(parseInt(index)-1, false);
 	},
-	
+
 	load: function(index, preload){
 		var $slide = iSlide.getSlide(index),
 			$thumb = iSlide.container.find('.thumbnails li a[data-index='+index+']').parent(),
@@ -250,7 +250,7 @@ iSlide =
 				iSlide.preload(index);
 			return;
 		}
-			
+
 		$slide.addClass('preloading');
 		$thumb.addClass('preloading');
 		$j('<img />')
@@ -263,12 +263,12 @@ iSlide =
 				$slide.removeClass('preloading').addClass('loaded');
 				$thumb.removeClass('preloading').addClass('loaded');
 				$j(this).remove();
-				
+
 				if(preload)
 					iSlide.preload(index);
 			});
 	},
-	
+
 	getSlide: function(index){
 		return iSlide.container.find('#slide-'+index);
 	}

@@ -55,7 +55,7 @@ h4,
 h5,
 h6 {
     color: $dark;
-    line-height: 1.1em;
+    line-height: 1.2;
     margin: 1em 0 .25em 0;
 }
 h1{
@@ -328,10 +328,10 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
     line-height: 24px;
     letter-spacing:.05em;
     padding:0 $side-margin 0 $margin;
-    
+
     a {
         text-decoration: none;
-    
+
         small{
             display:block;
             margin-top:-.5em;
@@ -406,7 +406,7 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
     }
     ul{
         margin:0 0 2em -15px;
-        
+
         li{
             float:left;
             list-style:none;
@@ -429,7 +429,7 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
                     -moz-border-radius:10px;
                     -webkit-border-radius:10px;
                 }
-            
+
                 strong{
                     font-size:10pt;
                     padding:.25em 0 .5em;
@@ -584,15 +584,15 @@ a.dashed{
     line-height: 0;
     height: 0;
 }
- 
+
 .clearfix {
     display: inline-block;
 }
- 
+
 html[xmlns] .clearfix {
     display: block;
 }
- 
+
 * html .clearfix {
     height: 1%;
 }

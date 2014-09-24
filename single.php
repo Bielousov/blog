@@ -6,8 +6,6 @@
  * @subpackage Twenty_Ten
  * @since Twenty Ten 1.0
  */
-wp_enqueue_style('slideshow', get_template_directory_uri() . '/css/slideshow.css', false, '1.1', 'all');
-wp_enqueue_script('slideshow', get_template_directory_uri() . '/scripts/slideshow.js',  array('jquery', 'ui'));
 get_header(); ?>
 
 		<div id="container" class="one-column">
