@@ -22,6 +22,7 @@ UI =
 
     // GLOBAL: Track all external links
     initTracking: function() {
+        // console.log('initTracking');
         jQuery(document).on('click', 'a[href*="//"]:not([href*="' + document.location.host + '"])', function(){
             trackOutboundLink(false, 'outbound-article', jQuery(this).attr('href'));
         });
@@ -29,6 +30,7 @@ UI =
 
     // GLOBAL: Show translation overlay while Google Translate is loading
     initTranslateOverlay: function(){
+        // console.log('initTranslateOverlay');
         if(/googtrans\/en/.test(window.location.hash) || /rublog\.ca/.test(window.location.hostname)) {
             var $translatePanel = $j('<div class="x-translate-overlay sans-serif"><h2>Ooops, this blog is in Russian</h2><p>Please wait while loading automatic English translation from Google…</p></div>');
                 $translatePanel.prepend('<div class="x-floating-link"><small>If that takes a while…</small><a href="javascript:UI.forceTranslation();" class="x-button x-positive-button">Force English Translation</a></div>');
@@ -66,6 +68,7 @@ UI =
 
     // PAGE: Travel page map/list view toggle handler
 	initTravelMap: function(){
+        // console.log('initTravelMap');
 	    $j('a.travelView').on('click', function(){
 	        var $self = $j(this),
                 $canvas = $j('#travels'),
@@ -80,6 +83,8 @@ UI =
 
      // ARCHIVE, POST: Keyboard navigation
     initKeyboardNavigation:function(){
+        // console.log('initKeyboardNavigation');
+
         var $navBar = $j('#nav-below'),
             $navPrev = $navBar.find('a[rel=prev]'),
             $navNext = $navBar.find('a[rel=next]');
@@ -112,6 +117,8 @@ UI =
 
     // POST: Numbers after image image to reffer to
     initImageNumbers:function(){
+        // console.log('initImageNumbers');
+
         var $postImages = $j('.one-column .entry-content img');
         if($postImages.length < 3)
             return;
@@ -122,6 +129,8 @@ UI =
 
     // POST: Panoramic images scrolling feature
 	initPanorama:function(){
+        // console.log('initPanorama');
+
         var $img = $j('img.panorama');
 	    $img.addClass('panorama-loading');
         $img.wrap('<div class="panorama-canvas"></div>');
@@ -155,22 +164,24 @@ UI =
         });
 	},
 
-    stylePanorama:function($panorama){
-        var width = $j('body').width(),
-            margin = (width - $panorama.parent().width()) / 2;
+        stylePanorama:function($panorama){
+            var width = $j('body').width(),
+                margin = (width - $panorama.parent().width()) / 2;
 
-        $panorama.css({
-            'width': width,
-            'margin-left': (margin > 0) ? -margin : 0,
-            'margin-right': (margin > 0) ? -margin : 0
-        });
+            $panorama.css({
+                'width': width,
+                'margin-left': (margin > 0) ? -margin : 0,
+                'margin-right': (margin > 0) ? -margin : 0
+            });
 
-        // Hide Icon if entire image is shown
-        $panorama.next('.panoramaIcon').toggleClass('panoramaIcon--hide', $panorama.find('img.panorama').width() < width);
-    },
+            // Hide Icon if entire image is shown
+            $panorama.next('.panoramaIcon').toggleClass('panoramaIcon--hide', $panorama.find('img.panorama').width() < width);
+        },
 
     // POST: Floating share widget
 	initShareSnippet:function(){
+        // console.log('initShareSnippet');
+
         var $container = $j('#container'),
             $widget = $j('#post-widget'),
             $shareSnippet = $j('#ShareSnippet', $widget),
