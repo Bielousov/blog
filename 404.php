@@ -6,8 +6,8 @@
  * @subpackage Twenty_Ten
  * @since Twenty Ten 1.0
  */
- 
-get_header(); 
+
+get_header();
 //$randomPost = $wpdb->get_var("SELECT guid FROM $wpdb->posts WHERE post_type = 'post' AND post_status = 'publish' ORDER BY rand() LIMIT 1");
 $randomPost = $wpdb->get_var("SELECT guid FROM $wpdb->posts WHERE post_type = 'post' AND post_status = 'publish' AND post_date > '2012-01-01 00:00:00' ORDER BY rand() LIMIT 1");
 ?>
@@ -20,24 +20,17 @@ $randomPost = $wpdb->get_var("SELECT guid FROM $wpdb->posts WHERE post_type = 'p
 			<?php echo '<small>Зачем? Ведь есть же <a href="'.$randomPost.'">страница, которая есть</a>!</small>'; ?>
 		</p>
 		<br/>
-		<? /*		
-		<form method="get" id="error404:searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-			<label for="error404:s">А этой все равно нет — ищите не ищите.</label>
-			<input type="text" class="field" id="error404:s" name="s" id="s" placeholder="<?php esc_attr_e( '', 'myblog' ); ?>" />
-			<input type="submit" class="submit" id="searchsubmit" value="<?php esc_attr_e( 'Борться и искать', 'myblog' ); ?>" />
-		</form><br/><br/>
-		*/ ?>
 		<p>	А здесь вы не узнаете совершенно ничего нового об <a href="/category/immigration/">иммиграции</a> и не увидите <a href="/category/photos/">красивых фотографий</a>,<br/>
 		   	не совершите <a href="/travels/">виртуального путешествия</a> и даже не почитаете <a href="/tag/news/">увлекательных репортажей</a>.<br/>
+		   	Потому что этой страницы нет.
 		 </p>
-		   
-		<h2>Потому что этой страницы нет.</h2>
+
 		<br/><br/><br/>
-		
+
 		<p><strong>Полный список того, чего здесь нет, есть на самой главной странице, которая есть</strong>.<br/>
 			Вы можете нажать <a href="/">здесь</a> или <a href="/">здесь</a> чтобы перейти на нее. Или кликнуть <a href="/">здесь</a>.</p>
 	</div>
-	
+
 <?php
 /*
 ?>
@@ -51,7 +44,7 @@ $randomPost = $wpdb->get_var("SELECT guid FROM $wpdb->posts WHERE post_type = 'p
 					<p style="font-size:125%;">
 					    404 — очень много, почему бы не начать <a href="/">с первой</a>?
                     </p>
-                    
+
                     <script type="text/javascript">
                           var GOOG_FIXURL_LANG = 'ru';
                           var GOOG_FIXURL_SITE = 'http://www.example.com'
