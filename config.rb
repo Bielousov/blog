@@ -10,7 +10,7 @@ javascripts_dir = "scripts"
 output_style = (environment == :production) ? :compressed : :expanded
 
 # Config doesn't work with Compas 1.0 use the follow ing shortcut:
-# output_style = :compressed
+output_style = :compressed
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
