@@ -54,7 +54,7 @@
 					<small data-lang="ru">Блог <a href="/author" rel="author">Антона Белоусова</a></small>
 					<big data-lang="en">Shiftless Canada</big>
 					<small data-lang="en"><a href="/" rel="home">www.rublog.ca</a></small>
-					<a href="http://feeds.feedburner.com/Bielousov" target="_blank" rel="nofollow" onclick="_gaq.push(['_trackPageview', '/tracking/rss-click']);" rel="nofollow" title="Подпишитесь на RSS-рассылку и не пропускайте ни одного поста." class="rss-feed"></a>
+					<a href="http://feeds.feedburner.com/Bielousov" target="_blank" rel="nofollow" onclick="return trackOutboundLink(this, 'RSS', 'Click RSS Link', false, false);" rel="nofollow" title="Подпишитесь на RSS-рассылку и не пропускайте ни одного поста." class="rss-feed"></a>
 				</h1>
 			<?php } else { ?>
 				<div class="rublog-title--blog">
@@ -63,7 +63,7 @@
 					<small data-lang="ru">Блог <a href="/author" rel="author">Антона Белоусова</a></small>
 					<big data-lang="en"><a href="/" rel="home" >Russian Canadian</a></big>
 					<small data-lang="en"><a href="/" rel="home">www.rublog.ca</a></small>
-					<a href="http://feeds.feedburner.com/Bielousov" target="_blank" rel="nofollow" onclick="_gaq.push(['_trackPageview', '/tracking/rss-click']);" rel="nofollow" title="Подпишитесь на RSS-рассылку и не пропускайте ни одного поста." class="rss-feed"></a>
+					<a href="http://feeds.feedburner.com/Bielousov" target="_blank" rel="nofollow" onclick="return trackOutboundLink(this, 'RSS', 'Click RSS Link', false, false);" rel="nofollow" title="Подпишитесь на RSS-рассылку и не пропускайте ни одного поста." class="rss-feed"></a>
 				</div>
 			<?php } ?>
 		</hgroup>

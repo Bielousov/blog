@@ -1,17 +1,42 @@
 // GA Track links
 // Example:
 // <a onclick="trackOutboundLink(this, 'Ad Campaign', 'TAL Group', 'Off site', 'http://tal.com');" href="" />
-function trackOutboundLink(link, category, action, label) {
+function trackOutboundLink(link, eventCategory, eventAction, eventLabel, eventValue) {
+    if (!window.ga) {
+        return;
+    }
+
+    var eventOptions = {};
+
+    if (eventCategory) {
+        eventOptions.eventCategory = eventCategory;
+    }
+
+    if (eventAction) {
+        eventOptions.eventAction = eventAction;
+    }
+
+    if (eventLabel) {
+        eventOptions.eventLabel = eventLabel;
+    }
+
+    if (eventValue) {
+        eventOptions.eventValue = eventValue;
+    }
+
+
     try {
-    	_gaq.push(['_trackEvent', category , action, label]);
-    } catch(err){}
-    /*
-    if(link) {
-      setTimeout(function() {
-          document.location.href = link.href;
-      }, 100);
-    }*/
+        window.ga('send', 'event', eventOptions);
+    } catch(err){
+        console.log(err);
+    }
+
     return true;
+}
+
+// Mirror trackOutboundLink for events
+function trackEvent(eventCategory, eventAction, eventLabel, eventValue) {
+    return trackOutboundLink(false, eventCategory, eventAction, eventLabel, eventValue);
 }
 
 // Safe Email display

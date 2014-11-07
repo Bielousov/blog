@@ -46,23 +46,23 @@ UI =
                 }
             }, 200);
 
-            if(_gaq)
-                _gaq.push(['_trackEvent','Google Website Translator','Show Translation Popup']);
+            // Track event
+            trackEvent('Google Website Translator', 'Show Translation Popup', false, false) ;
         }
     },
 
         forceTranslation: function() {
             $j('iframe.goog-te-menu-frame').first().contents().find('.goog-te-menu2-item span.text:contains("English")').first().click();
 
-            if(_gaq)
-                _gaq.push(['_trackEvent','Google Website Translator','Force English Translation']);
+            // Track event
+            trackEvent('Google Website Translator', 'Force English Translation', false, false) ;
         },
 
         hideTranslation: function(){
             $j('.x-translate-overlay').remove();
 
-            if(_gaq)
-                _gaq.push(['_trackEvent','Google Website Translator','Cancel Translation']);
+            // Track event
+            trackEvent('Google Website Translator', 'Cancel Translation', false, false) ;
         },
 
 

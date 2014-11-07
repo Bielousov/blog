@@ -170,8 +170,7 @@ iSlide =
 		if(iSlide.useFullscreen)
 			iSlide.fullscreen(true);
 
-		if(_gaq)
-			_gaq.push(['_trackEvent','Slideshow',window.location]);
+		return trackEvent('Slideshow', 'View Slideshow', 'Post', window.location);
 	},
 
 	fullscreen: function(a) {
