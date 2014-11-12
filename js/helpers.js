@@ -2,7 +2,9 @@
 // Example:
 // <a onclick="trackOutboundLink(this, 'Ad Campaign', 'TAL Group', 'Off site', 'http://tal.com');" href="" />
 function trackOutboundLink(link, eventCategory, eventAction, eventLabel, eventValue) {
-    if (!window.ga) {
+    var analytics = window.__gaTracker || window.ga;
+
+    if (!analytics) {
         return;
     }
 
@@ -26,7 +28,7 @@ function trackOutboundLink(link, eventCategory, eventAction, eventLabel, eventVa
 
 
     try {
-        window.ga('send', 'event', eventOptions);
+        analytics('send', 'event', eventOptions);
     } catch(err){
         console.log(err);
     }
@@ -38,6 +40,7 @@ function trackOutboundLink(link, eventCategory, eventAction, eventLabel, eventVa
 function trackEvent(eventCategory, eventAction, eventLabel, eventValue) {
     return trackOutboundLink(false, eventCategory, eventAction, eventLabel, eventValue);
 }
+
 
 // Safe Email display
 // Example:
