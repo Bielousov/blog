@@ -23,16 +23,16 @@ UI =
     initTracking: function() {
         var $document = jQuery('body');
 
-        // GLOBAL: Track all external links
-        $document.on('click', 'a[href*="//"]:not([href*="' + document.location.host + '"])', function(){
-            var $link = jQuery(this);
-            trackOutboundLink(this, 'outbound-article', $link.attr('href'));
-        });
-
         // GLOBAL: Track Ad Campaigns
         $document.on('click', 'a[data-campaign]', function(){
             var $link = jQuery(this);
             trackOutboundLink(this, 'Ad Campaign', $link.data('campaign'),  $link.data('campaign-label'), $link.attr('href'));
+        });
+
+        // GLOBAL: Track all external links
+        $document.on('click', 'a[href*="//"]:not([href*="' + document.location.host + '"])', function(){
+            var $link = jQuery(this);
+            trackOutboundLink(this, 'outbound-article', $link.attr('href'));
         });
     },
 
