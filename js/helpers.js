@@ -23,7 +23,7 @@ function trackOutboundLink(link, eventCategory, eventAction, eventLabel, eventVa
     }
 
     if (eventValue) {
-        eventOptions.eventValue = eventValue;
+        eventOptions.eventValue = parseInt(eventValue);
     }
 
 
