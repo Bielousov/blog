@@ -322,33 +322,6 @@ function myblog_slug_filter_wp_title( $title ) {
 add_filter( 'wp_title', 'myblog_slug_filter_wp_title' );
 
 
-if ( ! function_exists( 'myblog_posted_in' ) ) :
-/**
- * Prints HTML with meta information for the current post (category, tags and permalink).
- *
- * @since Twenty Ten 1.0
- */
-function myblog_posted_in() {
-	// Retrieves tag list of current post, separated by commas.
-	$tag_list = get_the_tag_list( '', ', ' );
-	if ( $tag_list ) {
-		$posted_in = __( 'Опубликовано в рубрике &laquo;%1$s&raquo; и помечено тэгами: %2$s. <br/><a href="%3$s" title="Permalink to %4$s" rel="bookmark">Постоянная ссылка</a>.', 'myblog' );
-	} elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
-		$posted_in = __( 'Опубликовано в рубрике &laquo;%1$s&raquo;. <a href="%3$s" title="Permalink to %4$s" rel="bookmark">Постоянная ссылка</a>.', 'myblog' );
-	} else {
-		$posted_in = __( '<a href="%3$s" title="Permalink to %4$s" rel="bookmark">Постоянная ссылка</a>.', 'myblog' );
-	}
-	// Prints the string, replacing the placeholders.
-	printf(
-		$posted_in,
-		get_the_category_list( ', ' ),
-		$tag_list,
-		get_permalink(),
-		the_title_attribute( 'echo=0' )
-	);
-}
-endif;
-
 function myblog_more_text(){
 	$more_links = array('Дальше', 'Дальше', 'Подробнее', 'Еще', 'Читать дальше', 'Читать дальше', 'Читать дальше', 'Продолжение', 'Дальше &mdash; больше', 'И это еще не все', 'Полная история', 'Читаем дальше', 'Больше фоток');
 	return $more_links[array_rand($more_links)];
