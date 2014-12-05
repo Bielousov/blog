@@ -162,15 +162,19 @@ ins {
     background: #ffc;
     text-decoration: none;
 }
+
 blockquote {
-    font-style: italic;
-    padding: 0 3em;
-}
-blockquote cite,
-blockquote em,
-blockquote i {
+    margin:1em 0;
+    padding: 0 2em 0 4em;
+
+    border-left: solid 4px $active;
+
+    text-align:left;
+    font-family: $font-sans;
     font-style: normal;
+    font-weight: 300;
 }
+
 pre {
     background: #f7f7f7;
     color: #222;
