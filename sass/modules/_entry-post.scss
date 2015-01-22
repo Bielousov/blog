@@ -192,8 +192,11 @@ body.page .edit-link {
 }
 
 #content img{
+    display: block;
     max-width:100%;
+    height: auto;
 }
+
 #content iframe[allowfullscreen],
 #content iframe[src*=youtube],
 #content iframe[src*=vimeo]{
