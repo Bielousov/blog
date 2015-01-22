@@ -3,7 +3,7 @@
 .x-entry-utility {
     display: inline-block;
     width: 100%;
-    
+
     padding: $tall-margin/2 0;
     margin-bottom: $tall-margin;
 
@@ -33,7 +33,7 @@
         text-align: right;
 
         a {
-            margin-right: $margin;
+            margin-left: $margin;
             opacity: .5;
             @include transition(opacity, .5s);
 

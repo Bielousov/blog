@@ -1,0 +1,301 @@
+/**
+ * Media Queries
+ */
+/*
+ * Does the same thing as <meta name="viewport" content="width=device-width">,
+ * but in the future W3C standard way. -ms- prefix is required for IE10+ to
+ * render responsive styling in Windows 8 "snapped" views; IE10+ does not honor
+ * the meta tag. See https://core.trac.wordpress.org/ticket/25888.
+ */
+@-ms-viewport {
+    width: device-width;
+}
+
+@viewport {
+    width: device-width;
+}
+
+
+/* Smartphone */
+@media screen and (max-width: 480px){
+
+    // Fix Admin bar position issue caused by Google Translate bar
+    body {
+        top: 0 !important;
+    }
+
+    .skiptranslate {
+        display: none !important;
+    }
+
+    #wpadminbar {
+        top: -46px;
+    }
+
+    // Header
+    // ------
+    header.site-header {
+        &,
+        .header-wrapper {
+            min-width: 0;
+        }
+
+        .content-wrapper {
+            width: auto;
+            padding: 0 $side-margin;
+        }
+
+        nav {
+            display: none;
+        }
+
+        .rublog-title--blog {
+            display: block;
+
+            line-height: 1.3;
+            font-size: $large-text;
+            // text-align: center;
+
+            .rss-feed {
+                display: none;
+            }
+
+            ins {
+                position: absolute;
+                right: 0;
+                height: 50px;
+                width: 50px;
+                margin-right: 0;
+            }
+
+            big {
+                font-size: $large-text;
+            }
+
+            small {
+                position: static;
+                display: block;
+            }
+        }
+    }
+
+    // Content
+    // -------
+    #wrapper {
+        min-width: 0;
+        padding: 0 $side-margin;
+
+        .content-wrapper {
+            width: auto;
+        }
+
+        #container,
+        #content {
+            float: none;
+            margin: 0;
+        }
+
+        #content {
+            &,
+            input,
+            textarea {
+                font-size: $mobile-text;
+            }
+        }
+
+        .hentry {
+            margin-bottom: 0;
+        }
+        .rublog-title--page,
+        .rublog-title--post {
+            font-size: $medium-text;
+            line-height: 1.5;
+            margin-bottom: .25em;
+
+            small {
+                display: block;
+                margin-top: .1em;
+            }
+        }
+
+        .single & .entry-content {
+            font-size: $mobile-text + 1;
+        }
+
+        .entry-content img {
+            margin: 0 -15px;
+            max-width: 112%;
+
+            &.zoom {
+                pointer-events: none;
+            }
+        }
+
+        .related_posts,
+        #post-widget,
+        .imgNumber {
+            display: none;
+        }
+
+        .x-entry-meta {
+            padding-top: 0;
+
+            font-size: $small-text;
+        }
+
+        .x-entry-utility {
+            display: block;
+            width: auto;
+            margin: 0 (-$side-margin);
+            padding: $margin $side-margin;
+
+            font-size: $small-text;
+
+            .x-entry-utility__links,
+            .x-entry-utility__tags {
+                float: none;
+            }
+
+            .x-entry-utility__links {
+                margin-right: 0;
+            }
+
+            .x-entry-utility__tags {
+                margin-top: $margin;
+                text-align: left;
+
+                a {
+                    margin-left: 0;
+                    margin-right: $margin;
+                }
+            }
+        }
+
+        .excerpt_thumbnails {
+            margin-left: -$side-margin;
+            margin-right: -$side-margin;
+        }
+    }
+
+    // Pagination
+    // ----------
+    .navigation {
+        position: relative;
+
+        &#nav-above {
+            display: none;
+        }
+
+        &#nav-below {
+            margin-top: 0;
+        }
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            width: $side-margin;
+            pointer-events: none;
+        }
+
+        &:before {
+            left: -$side-margin;
+            @include background-image(linear-gradient(to right, white, rgba(white, 0)));
+        }
+        &:after {
+            right: -$side-margin;
+            @include background-image(linear-gradient(to left, white, rgba(white, 0)));
+        }
+
+        // Paginator plugin
+        #paginator {
+            width: auto;
+            margin: $margin (-$side-margin);
+            padding: $margin $side-margin;
+
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+
+
+
+            table {
+                width: auto;
+
+                td span strong {
+                    display: block;
+                    padding: $margin/2 $margin;
+                }
+            }
+        }
+        .scroll_bar,
+        .paginator_pages,
+        .nav-hint {
+            display: none;
+        }
+
+        .nav-previous,
+        .nav-next {
+            width: 50%;
+            padding: 0 1.2em;
+
+            a {
+                position: relative;
+
+                display: block;
+                height: 32px;
+                overflow: hidden;
+                padding-left: 100%;
+
+                .meta-nav {
+                    position: absolute;
+                    top: 0;
+                    margin: 0;
+                    font-size: $xlarge-text;
+                }
+            }
+        }
+
+        .nav-previous a .meta-nav {
+            left: 0;
+        }
+        .nav-next a .meta-nav {
+            right: 0;
+        }
+
+    }
+
+    // Sidebar
+    // -------
+    #sidebar {
+        display: none;
+    }
+
+    // Footer
+    // ------
+    #footer {
+        width: auto;
+        margin: $margin (-$side-margin);
+        padding: $margin $side-margin;
+
+        #colophon {
+            width: auto;
+            padding: $margin $side-margin;
+        }
+
+        #footer-widget-area {
+            &,
+            .widget-title {
+                font-size: $xsmall-text;
+            }
+
+            .widget-area ul,
+            .widget-container {
+                margin-bottom: 0;
+            }
+
+        }
+    }
+}
