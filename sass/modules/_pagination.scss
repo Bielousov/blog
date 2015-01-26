@@ -1,0 +1,174 @@
+/*
+* Pagination
+*/
+
+.x-pagination {
+    margin-top: -$margin;
+
+    color: $gray;
+    font-family: $font-sans;
+    font-size: $small-text;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+// All Pages
+// ---------
+.x-pagination__all {
+    position: relative;
+    margin-bottom: $margin;
+
+    // Fade Gradient
+    // -------------
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 2;
+        height: 100%;
+        width: $margin*2;
+        pointer-events: none;
+    }
+
+    &:before {
+        left: 0;
+        @include background-image(linear-gradient(to right, white, rgba(white, 0)));
+    }
+    &:after {
+        right: 0;
+        @include background-image(linear-gradient(to left, white, rgba(white, 0)));
+    }
+
+    ul.page-numbers {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+
+        margin: 0 !important;
+        list-style: none;
+        color: $gray;
+        white-space: nowrap;
+
+        li {
+            display: inline;
+
+            ~ li:before {
+                content: '•';
+            }
+
+            .page-numbers {
+                position: relative;
+                display: inline-block;
+
+                padding: $margin $side-margin;
+
+                color: $gray;
+
+                &.current {
+                    color: $dark;
+                    font-size: $medium-text;
+
+                    // Triangle
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+
+                        margin-left: -$side-margin/2;
+
+
+                        width: 0;
+                        height: 0;
+                        border-left: $side-margin/2 solid transparent;
+                        border-right: $side-margin/2 solid transparent;
+
+                        border-top: $side-margin/2 solid $active;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Previous / Next Links
+// ---------------------
+.x-pagination__prev-next {
+    display: inline-block;
+    width: 100%;
+}
+
+.x-pagination__arrow {
+    font-size: $text;
+}
+.x-pagination__arrow-hint {
+    display: block;
+
+    font-weight: 300;
+
+    .x-pagination.x--post & {
+        color: $light-gray;
+    }
+}
+
+.x-pagination__post-title {
+    display: block;
+    font-size: $medium-text;
+    line-height: 1.25;
+
+    br {
+        display: none;
+    }
+
+    small {
+        display: block;
+        font-size: $small-text;
+    }
+}
+
+.x-pagination__prev,
+.x-pagination__next {
+    width: 33%;
+    padding: 0 2em;
+
+    a {
+        position: relative;
+        display: block;
+    }
+
+    .x-pagination__arrow {
+        position: absolute;
+        top: 50%;
+
+        margin: -.85em .33em;
+    }
+}
+
+.x-pagination__prev {
+    float: left;
+    text-align: left;
+
+    .x-pagination__arrow {
+        right: 100%;
+    }
+}
+
+.x-pagination__next {
+    float: right;
+    text-align: right;
+
+    .x-pagination__arrow {
+        left: 100%;
+    }
+}
+
+.x-pagination__hint {
+    width: 34%;
+    margin: 0 33%;
+
+    color: $light-gray;
+    text-align: center;
+}

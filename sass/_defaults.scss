@@ -325,64 +325,64 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
 ----- tom menu, prev/next post -----
 -------------------------------------------------------------- */
 
-.navigation {
-    color: #bbb;
-    font-size: 13px;
-    font-weight:200;
-    line-height: 24px;
-    letter-spacing:.05em;
-    padding:0 $side-margin 0 $margin;
+// .navigation {
+//     color: #bbb;
+//     font-size: 13px;
+//     font-weight:200;
+//     line-height: 24px;
+//     letter-spacing:.05em;
+//     padding:0 $side-margin 0 $margin;
 
-    a {
-        text-decoration: none;
+//     a {
+//         text-decoration: none;
 
-        small{
-            display:block;
-            margin-top:-.5em;
-        }
-    }
+//         small{
+//             display:block;
+//             margin-top:-.5em;
+//         }
+//     }
 
-    .nav-previous{
-        float: left;
-        width: 33%;
-    }
-    .nav-next {
-        float: right;
-        text-align: right;
-        width: 33%;
-    }
-    .nav-hint {
-        width: 34%;
-        margin: 0 33%;
-        text-align: center;
-    }
-}
+//     .nav-previous{
+//         float: left;
+//         width: 33%;
+//     }
+//     .nav-next {
+//         float: right;
+//         text-align: right;
+//         width: 33%;
+//     }
+//     .nav-hint {
+//         width: 34%;
+//         margin: 0 33%;
+//         text-align: center;
+//     }
+// }
 
-.post-navigation .nav-hint {
-    margin-top: 1em;
-}
-#nav-above {
-    margin: 0 0 18px 0;
-    display: none;
-}
+// .post-navigation .nav-hint {
+//     margin-top: 1em;
+// }
+// #nav-above {
+//     margin: 0 0 18px 0;
+//     display: none;
+// }
 
-.paged #nav-above,
-.single #nav-above {
-    display: block;
-}
+// .paged #nav-above,
+// .single #nav-above {
+//     display: block;
+// }
 
-#nav-below {
-    display:inline-block;
-    margin: 2em 0 0 0;
-    padding:0;
-    width:100%;
-}
-.nav-next .meta-nav{
-    margin-right:-1.2em;
-}
-.nav-previous .meta-nav{
-    margin-left:-1.2em;
-}
+// #nav-below {
+//     display:inline-block;
+//     margin: 2em 0 0 0;
+//     padding:0;
+//     width:100%;
+// }
+// .nav-next .meta-nav{
+//     margin-right:-1.2em;
+// }
+// .nav-previous .meta-nav{
+//     margin-left:-1.2em;
+// }
 
 
 /* =Related posts

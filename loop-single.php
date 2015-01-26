@@ -22,23 +22,23 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 ?>
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-<?php 
+<?php
 	// Custom fields
 	$custom_fields = get_post_custom();
 ?>
 			<?php dynamic_sidebar( 'subheader-widget-area' ); ?>
-			
+
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				
+
 				<h1 class="entry-title rublog-title--page"><?php the_title(); ?></h1>
-				
+
 				<div id="post-top-widget" class="widget-area" role="complementary">
                     <ul class="xoxo">
                         <?php dynamic_sidebar( 'translate-widget-area' ); ?>
                     </ul>
                 </div>
 
-				<?php 
+				<?php
 					// Entry Meta
 					get_template_part( '_entry-meta');
 				?>
@@ -64,7 +64,7 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 						get_template_part( 'ad_google' );
 					}
 				?>
-				
+
 				<div id="post-widget" class="widget-area sans-serif" role="complementary">
                     <ul class="xoxo">
                         <?php dynamic_sidebar( 'post-widget-area' ); ?>
@@ -94,11 +94,22 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 					<?php } ?>
 			</article><!-- #post-## -->
 
-			<nav id="nav-below" class="navigation post-navigation">
-				<div class="nav-previous"><?php previous_post_link( '%link', '<big><span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'myblog' ) . '</span> %title</big><small>Предыдущий пост</small>' ); ?></div>
-				<div class="nav-next"><?php next_post_link( '%link', '<big>%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'myblog' ) . '</span></big><small>Следующий пост</small>' ); ?></div>
-				<div class="nav-hint"><span class="x-prev">&larr;</span> <span class="x-pc">Ctrl</span> / <span class="x-os">&#8984;</span> <span class="x-next">&rarr;</span></div>
-			</nav><br clear="all" /><!-- #nav-below -->
+			<nav class="x-pagination x--post">
+				<div class="x-pagination__prev-next">
+					<div class="x-pagination__prev">
+						<?php previous_post_link( '%link', '<span class="x-pagination__arrow">' . _x( '&larr;', 'Previous post link', 'myblog' ) . '</span> <span class="x-pagination__post-title">%title</span><small class="x-pagination__arrow-hint">Предыдущий пост</small>' ); ?>
+					</div>
+					<div class="x-pagination__next">
+						<?php next_post_link( '%link', '<span class="x-pagination__post-title">%title</span> <span class="x-pagination__arrow">' . _x( '&rarr;', 'Next post link', 'myblog' ) . '</span><small class="x-pagination__arrow-hint">Следующий пост</small>' ); ?>
+					</div>
+
+					<div class="x-pagination__hint">
+		                <span class="x-pagination__arrow">&larr;</span>
+		                <span class="x__pc">Ctrl</span> / <span class="x__os">&#8984;</span>
+		                <span class="x-pagination__arrow">&rarr;</span>
+		            </div>
+		        </div>
+			</nav><!-- #nav-below -->
 		</div><!-- #content -->
 	</div><!-- #container -->
 </div><!-- #main -->
@@ -110,7 +121,7 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 			<?php comments_template( '', true ); ?>
 
 			<?php
-			
+
 				//Related posts
 			    $scores = the_related_get_scores(); // pass the post ID if outside of the loop
 			    $posts = array_slice( array_keys( $scores ), 0, 5 ); // keep only the the five best results
@@ -123,13 +134,13 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 			    if ( $my_query->have_posts() ) {
 
 			    	$str='<div class="related_posts"><h6>Читайте также:</h6><ul>';
-			    	
+
 			    	$i = 0;
 
 			    	// Get 4 posts with thumbnails only of 6 posts loaded from DB
 			        while ( $my_query->have_posts() and $i < 4 ) {
 			            $my_query->the_post();
-				 	    
+
 				 	    if(has_post_thumbnail()){
 
 				 	    	// Create excerpt from the content
@@ -138,7 +149,7 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 				 	    	$excerpt = esc_attr( strip_tags( stripslashes( $excerpt ) ) );
 							$excerpt = wp_trim_words( $excerpt, $num_words = 70, $more = NULL );
 				 	    	preg_match('/^(.*[\.!?]+)([^.!?]*)$/', $excerpt, $excerpt);
-    											
+
 			    	        $str.= '<li>
 			        	    			<a onclick="trackOutboundLink(this, \'Related Posts\', \'Position #' . ($i+1) . '\', \'' . get_permalink( get_the_ID() ) . '\');" href="' .  get_permalink( get_the_ID() ) . '">'
 			            					.get_the_post_thumbnail( null, 'thumbnail' )

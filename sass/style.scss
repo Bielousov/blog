@@ -13,6 +13,7 @@
 @import "modules/header";
 @import "modules/sidebar";
 @import "modules/footer";
+@import "modules/pagination";
 
 @import "modules/translation";
 @import "modules/entry-meta";
@@ -22,7 +23,6 @@
 
 
 @import "modules/widgets/feedburner_subscription";
-@import "modules/widgets/paginator";
 @import "modules/widgets/pinterest_counter";
 @import "modules/widgets/social";
 @import "modules/widgets/top_posts";

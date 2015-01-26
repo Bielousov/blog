@@ -59,10 +59,6 @@
     background: #f2f7fc;
 }
 
-
-.hentry {
-    margin: 0 0 48px 0;
-}
 .home .sticky {
     background: #f2f7fc;
     border-top: 4px solid $dark;
@@ -191,12 +187,6 @@ body.page .edit-link {
     padding: 0;
 }
 
-#content img{
-    display: block;
-    max-width:100%;
-    height: auto;
-}
-
 #content iframe[allowfullscreen],
 #content iframe[src*=youtube],
 #content iframe[src*=vimeo]{
@@ -222,6 +212,12 @@ body.page .edit-link {
     height: auto !important;
 }
 
+.hentry img {
+    display: block;
+    max-width:100%;
+    height: auto;
+}
+
 .excerpt_thumbnails{
     display:block;
     margin-bottom:1em;
@@ -229,8 +225,9 @@ body.page .edit-link {
 }
 .excerpt_thumbnails img.thumb{
     display:inline-block;
-    height:175px !important;
-    margin-right:5px;
+    height:175px;
+    margin-top: $margin/2;
+    margin-right: $margin/2;
     overflow:hidden;
     width:175px;
 }
