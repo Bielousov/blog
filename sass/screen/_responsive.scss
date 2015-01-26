@@ -131,6 +131,17 @@
             }
         }
 
+        .excerpt_thumbnails img.thumb{
+            height: auto;
+            margin: $margin 0 0;
+            overflow:hidden;
+            width: 48%;
+
+            &:nth-of-type(odd) {
+                margin-left: 4%;
+            }
+        }
+
         .related_posts,
         #post-widget,
         .imgNumber {
@@ -171,100 +182,39 @@
             }
         }
 
-        .excerpt_thumbnails {
-            margin-left: -$side-margin;
-            margin-right: -$side-margin;
-        }
+        // .excerpt_thumbnails {
+        //     margin-left: -$side-margin;
+        //     margin-right: -$side-margin;
+        // }
     }
 
     // Pagination
     // ----------
-    .navigation {
-        position: relative;
+    .x-pagination {
+        margin-top: 0;
 
-        &#nav-above {
+        .x-pagination__all {
+            margin-bottom: 0;
+        }
+
+        .x-pagination__arrow {
+            position: static;
+            display: block;
+
+            margin: 0;
+            padding: $margin;
+            font-size: $xlarge-text;
+            line-height: 1;
+        }
+        .x-pagination__hint,
+        .x-pagination__arrow-hint {
             display: none;
         }
 
-        &#nav-below {
-            margin-top: 0;
+        .x-pagination__prev,
+        .x-pagination__next {
+            padding: 0;
         }
-
-        &:before,
-        &:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            height: 100%;
-            width: $side-margin;
-            pointer-events: none;
-        }
-
-        &:before {
-            left: -$side-margin;
-            @include background-image(linear-gradient(to right, white, rgba(white, 0)));
-        }
-        &:after {
-            right: -$side-margin;
-            @include background-image(linear-gradient(to left, white, rgba(white, 0)));
-        }
-
-        // Paginator plugin
-        #paginator {
-            width: auto;
-            margin: $margin (-$side-margin);
-            padding: $margin $side-margin;
-
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-
-
-
-            table {
-                width: auto;
-
-                td span strong {
-                    display: block;
-                    padding: $margin/2 $margin;
-                }
-            }
-        }
-        .scroll_bar,
-        .paginator_pages,
-        .nav-hint {
-            display: none;
-        }
-
-        .nav-previous,
-        .nav-next {
-            width: 50%;
-            padding: 0 1.2em;
-
-            a {
-                position: relative;
-
-                display: block;
-                height: 32px;
-                overflow: hidden;
-                padding-left: 100%;
-
-                .meta-nav {
-                    position: absolute;
-                    top: 0;
-                    margin: 0;
-                    font-size: $xlarge-text;
-                }
-            }
-        }
-
-        .nav-previous a .meta-nav {
-            left: 0;
-        }
-        .nav-next a .meta-nav {
-            right: 0;
-        }
-
     }
 
     // Sidebar

@@ -12,7 +12,12 @@ UI =
         UI.initTracking();
         UI.initTranslateOverlay();
         UI.initTravelMap();
+
+        // Pagination
+        UI.initPagination();
         UI.initKeyboardNavigation();
+        UI.bindPaginationReset();
+
         UI.initImageNumbers();
 	    UI.initPanorama();
 	    UI.initShareSnippet();
@@ -93,33 +98,65 @@ UI =
     initKeyboardNavigation:function(){
         // console.log('initKeyboardNavigation');
 
-        var $navBar = $j('#nav-below'),
-            $navPrev = $navBar.find('a[rel=prev]'),
-            $navNext = $navBar.find('a[rel=next]');
-        if(!$navBar.length)
+        var $navBar = jQuery('.x-pagination__prev-next'),
+            $navPrev = $navBar.find('.x-pagination__prev'),
+            $navPrevLink = $navPrev.find('a'),
+            $navNext = $navBar.find('.x-pagination__next'),
+            $navNextLink = $navNext.find('a');
+
+        if (!$navBar.length) {
             return false;
+        }
 
         // hide arrows if next or prev is missing
-        if(!$navPrev.length)
-            $navBar.find('.x-prev').hide()
-        if(!$navNext.length)
-            $navBar.find('.x-next').hide()
+        if (!$navPrevLink.length) {
+            $navPrev.hide();
+        }
+        if (!$navNextLink.length) {
+            $navNext.hide();
+        }
 
-        $j(document).keydown(function (e){
-            if(!$j('body').hasClass('theater-mode') && (event.metaKey || event.ctrlKey)) {
-                switch(e.keyCode) {
-                    case 37:
-                        e.preventDefault();
-                        if($navPrev.length)
-                            window.location = $navPrev.attr('href')
-                        break;
-                    case 39:
-                        e.preventDefault();
-                        if($navNext.length)
-                            window.location = $navNext.attr('href');
-                        break;
-                }
+        jQuery(document).keydown(function (e){
+            if($j('body').hasClass('theater-mode') || !(event.metaKey || event.ctrlKey)) {
+                return;
             }
+
+            switch(e.keyCode) {
+                case 37:
+                    e.preventDefault();
+                    if ($navPrevLink.length) {
+                        window.location = $navPrevLink.attr('href')
+                    }
+                    break;
+                case 39:
+                    e.preventDefault();
+                    if ($navNext.length) {
+                        window.location = $navNextLink.attr('href');
+                    }
+                    break;
+            }
+        });
+    },
+
+    // Scroll pagination to current page
+    initPagination: function() {
+        var $navPagination = $j('.x-pagination__all ul.page-numbers');
+        var $currentPage = $navPagination.find('li:has(.page-numbers.current)');
+
+        if (!$navPagination.length || !$currentPage.length) {
+            return;
+        }
+
+        var currentPageLeft = $currentPage.position().left + $navPagination.scrollLeft();
+        var centerPosition = currentPageLeft - $navPagination.width()/2 + $currentPage.width()/2;
+        $navPagination.scrollLeft(centerPosition);
+    },
+
+    bindPaginationReset: function() {
+        $j(window).on('resize', function(){
+            window.setTimeout(function(){
+                UI.initPagination();
+            }, 100);
         });
     },
 

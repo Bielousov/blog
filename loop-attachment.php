@@ -91,10 +91,16 @@
 							echo wp_get_attachment_image( $post->ID, array( $attachment_width, $attachment_height ) ); // filterable image width with, essentially, no limit for image height.
 						?></a></p>
 
-						<div id="nav-below" class="navigation">
-							<div class="nav-previous"><?php previous_image_link( false ); ?></div>
-							<div class="nav-next"><?php next_image_link( false ); ?></div>
-						</div><!-- #nav-below -->
+						<nav class="x-pagination">
+							<div class="x-pagination__prev-next">
+								<div class="x-pagination__prev">
+									<?php previous_image_link( false ); ?>
+								</div>
+								<div class="x-pagination__next">
+									<?php next_image_link( false ); ?>
+								</div>
+							</div>
+						</nav>
 <?php else : ?>
 						<a href="<?php echo wp_get_attachment_url(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php echo basename( get_permalink() ); ?></a>
 <?php endif; ?>

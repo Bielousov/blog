@@ -19,14 +19,6 @@
  */
 ?>
 
-<?php /* Display navigation to next/previous pages when applicable */ ?>
-<?php if ( $wp_query->max_num_pages > 1 ) : ?>
-	<div id="nav-above" class="navigation">
-		<div class="nav-previous"><?php previous_posts_link( __( '<span class="meta-nav">&larr;</span> Назад в будущее', 'myblog' ) ); ?></div>
-		<div class="nav-next"><?php next_posts_link( __( 'Дальше в прошлое <span class="meta-nav">&rarr;</span>', 'myblog' ) ); ?></div>
-	</div><!-- #nav-above -->
-<?php endif; ?>
-
 <?php /* If there are no posts to display, such as an empty archive page */ ?>
 <?php if ( ! have_posts() ) : ?>
 	<div id="post-0" class="post error404 not-found">
@@ -65,7 +57,7 @@
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<h2 class="entry-title rublog-title--post"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Постоянная ссылка на %s', 'myblog' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 
-			<?php 
+			<?php
 				// Entry Meta
 				get_template_part( '_entry-meta');
 			?>
@@ -77,7 +69,7 @@
 					<div class="entry-summary">
 						<?php
 							if ( function_exists('my_excerpt_thumbnails') ) {
-		   						my_excerpt_thumbnails($id, 4); 
+		   						my_excerpt_thumbnails($id, 4);
 							}
 							the_excerpt();
 						?>
@@ -85,7 +77,7 @@
 				<?php endif; ?>
 			</div><!-- .entry-content -->
 
-			<?php 
+			<?php
 				// Entry Meta Utility
 				get_template_part( '_entry-utility');
 			?>
@@ -105,8 +97,8 @@
 					<?php the_title(); ?>
 				</a>
 			</h2>
-			
-			<?php 
+
+			<?php
 				// Entry Meta
 				get_template_part( '_entry-meta');
 			?>
@@ -117,14 +109,14 @@
 				<div class="entry-summary">
 					<?php
 						if ( function_exists('my_excerpt_thumbnails') ) {
-	   						my_excerpt_thumbnails($id, 4); 
+	   						my_excerpt_thumbnails($id, 4);
 						}
 						the_excerpt();
 					?>
 				</div>
 			<?php endif; ?>
 
-			<?php 
+			<?php
 				// Entry Meta Utility
 				get_template_part( '_entry-utility');
 			?>
@@ -143,16 +135,16 @@
 					<small class="rublog-sponsored-subtitle">Обновленный пост</small>
 				</a>
 			</h2>
-			
-			<?php 
+
+			<?php
 				// Entry Meta
 				get_template_part( '_entry-meta');
 			?>
 
 			<div class="entry-content">
-				<?php 
+				<?php
 					if ( function_exists('my_excerpt_thumbnails') ) {
-   						my_excerpt_thumbnails($id, 0); 
+   						my_excerpt_thumbnails($id, 0);
 					}
 					the_excerpt();
 					//the_advanced_excerpt();
@@ -161,7 +153,7 @@
 				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Страницы:', 'myblog' ), 'after' => '</div>' ) ); ?>
 			</div><!-- .entry-content -->
 
-			<?php 
+			<?php
 				// Entry Meta Utility
 				get_template_part( '_entry-utility');
 			?>
@@ -176,26 +168,26 @@
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<h2 class="entry-title rublog-title--post"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Постоянная ссылка на %s', 'myblog' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 
-			<?php 
+			<?php
 				// Entry Meta
 				get_template_part( '_entry-meta');
 			?>
-			
+
 
 	<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
 			<div class="entry-summary">
-				<?php 
+				<?php
 					if ( function_exists('my_excerpt_thumbnails') ) {
-   						my_excerpt_thumbnails($id, 4); 
+   						my_excerpt_thumbnails($id, 4);
 					}
 					the_excerpt();
 				?>
 			</div><!-- .entry-summary -->
 	<?php else : ?>
 			<div class="entry-content">
-				<?php 
+				<?php
 					if ( function_exists('my_excerpt_thumbnails') ) {
-   						my_excerpt_thumbnails($id, 0); 
+   						my_excerpt_thumbnails($id, 0);
 					}
 
 					// Use Advanced excerpts plugion if available
@@ -210,7 +202,7 @@
 			</div><!-- .entry-content -->
 	<?php endif; ?>
 
-			<?php 
+			<?php
 				// Entry Meta Utility
 				get_template_part( '_entry-utility');
 			?>
@@ -223,12 +215,8 @@
 
 <?php endwhile; // End the loop. Whew. ?>
 
-<?php /* Display navigation to next/previous pages when applicable */ ?>
-<?php if (  $wp_query->max_num_pages > 1 ) : ?>
-				<div id="nav-below" class="navigation">
-					<?php if(function_exists('wp_paginator')) { wp_paginator();} ?>	
-					<div class="nav-previous"><?php previous_posts_link( __( '<span class="meta-nav">&larr;</span> Назад в будущее', 'myblog' ) ); ?></div>
-					<div class="nav-next"><?php next_posts_link( __( 'Дальше в прошлое <span class="meta-nav">&rarr;</span>', 'myblog' ) ); ?></div>
-					<div class="nav-hint"><span class="x-prev">&larr;</span> <span class="x-pc">Ctrl</span> / <span class="x-os">&#8984;</span> <span class="x-next">&rarr;</span></div>
-				</div><!-- #nav-below -->
-<?php endif; ?>
+
+<?php
+	// Entry Meta Utility
+	get_template_part('_pagination');
+?>
