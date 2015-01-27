@@ -63,6 +63,7 @@ function myblog_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Navigation', 'myblog' ),
+		'mobile' => __( 'Mobile Navigation', 'myblog' ),
 	) );
 
 	// Your changeable header business starts here

@@ -18,6 +18,9 @@ UI =
         UI.initKeyboardNavigation();
         UI.bindPaginationReset();
 
+        // Mobile only
+        UI.initMobileNav();
+
         UI.initImageNumbers();
 	    UI.initPanorama();
 	    UI.initShareSnippet();
@@ -158,6 +161,26 @@ UI =
                 UI.initPagination();
             }, 100);
         });
+    },
+
+
+    // Mobile only nav
+    initMobileNav: function() {
+        var $mobileNavToggle = $j('.js-mobile-nav-toggle');
+        var $mobileNav = $j('.js-mobile-nav');
+
+        if (!$mobileNavToggle.length || !$mobileNav.length) {
+            return;
+        }
+
+        $mobileNavToggle.on('click', function(e) {
+            e.preventDefault();
+
+            $mobileNav.toggleClass('x--active');
+            $mobileNavToggle.toggleClass('x--active', $mobileNav.hasClass('x--active'));
+        });
+
+        $mobileNav.find('input.field').attr('placeholder', 'Поиск в блоге…');
     },
 
     // POST: Numbers after image image to reffer to

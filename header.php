@@ -47,28 +47,38 @@
 <header id="masthead" class="site-header" role="banner">
 	<div class="header-wrapper">
 		<hgroup class="content-wrapper notranslate">
-			<?php  if(is_home() || is_front_page()) { ?>
-				<h1 class="rublog-title--blog">
-					<ins></ins>
-					<big data-lang="ru">Непутевая Канада</big>
-					<small data-lang="ru">Блог <a href="/author" rel="author">Антона Белоусова</a></small>
-					<big data-lang="en">Shiftless Canada</big>
-					<small data-lang="en"><a href="/" rel="home">www.rublog.ca</a></small>
-					<a href="http://feeds.feedburner.com/Bielousov" target="_blank" rel="nofollow" onclick="return trackOutboundLink(this, 'RSS', 'Click RSS Link', false, false);" rel="nofollow" title="Подпишитесь на RSS-рассылку и не пропускайте ни одного поста." class="rss-feed"></a>
-				</h1>
-			<?php } else { ?>
-				<div class="rublog-title--blog">
-					<ins></ins>
-					<big data-lang="ru"><a href="/" rel="home" >Непутевая Канада</a></big>
-					<small data-lang="ru">Блог <a href="/author" rel="author">Антона Белоусова</a></small>
-					<big data-lang="en"><a href="/" rel="home" >Russian Canadian</a></big>
-					<small data-lang="en"><a href="/" rel="home">www.rublog.ca</a></small>
-					<a href="http://feeds.feedburner.com/Bielousov" target="_blank" rel="nofollow" onclick="return trackOutboundLink(this, 'RSS', 'Click RSS Link', false, false);" rel="nofollow" title="Подпишитесь на RSS-рассылку и не пропускайте ни одного поста." class="rss-feed"></a>
-				</div>
-			<?php } ?>
+			<div class="rublog-title--blog">
+				<?php  if(is_home() || is_front_page()) { ?>
+					<h1 data-lang="ru">
+						<ins></ins>
+						<big>Непутевая Канада</big>
+						<small>Блог <a href="/author" rel="author">Антона Белоусова</a></small>
+					</h1>
+					<h1 data-lang="en" class="rublog-title--blog">
+						<ins></ins>
+						<big>Shiftless Canada</big>
+						<small><a href="/" rel="home">www.rublog.ca</a></small>
+					</h1>
+				<?php } else { ?>
+					<div  data-lang="ru">
+						<ins></ins>
+						<big><a href="/" rel="home">Непутевая Канада</a></big>
+						<small>Блог <a href="/author" rel="author">Антона Белоусова</a></small>
+					</div>
+					<div  data-lang="en" class="rublog-title--blog">
+						<ins></ins>
+						<big><a href="/" rel="home">Oooh, Canada</a></big>
+						<small><a href="/" rel="home">www.rublog.ca</a></small>
+					</div>
+				<?php } ?>
+
+				<a class="rss-feed" href="http://feeds.feedburner.com/Bielousov" target="_blank" rel="nofollow" onclick="return trackOutboundLink(this, 'RSS', 'Click RSS Link', false, false);" rel="nofollow" title="Подпишитесь на RSS-рассылку и не пропускайте ни одного поста."></a>
+			</div>
+
+			<a class="x-mobile-nav-toggle js-mobile-nav-toggle"></a>
 		</hgroup>
 
-		<nav role="navigation">
+		<nav role="navigation" class="x-navigation x--desktop">
 			<?php
 				// Primary Menu
 				wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) );
@@ -86,8 +96,17 @@
 			</div>
 		</nav>
 	</div>
-
 </header>
 
 <div id="wrapper" class="hfeed">
 	<div id="main" class="content-wrapper">
+
+		<nav role="navigation" class="x-navigation x--mobile js-mobile-nav">
+			<?php
+				// Search form
+				include (TEMPLATEPATH . '/searchform.php');
+
+				// Primary Menu
+				wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'mobile' ) );
+			?>
+		</nav>

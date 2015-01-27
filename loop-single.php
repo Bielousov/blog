@@ -117,7 +117,7 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 <div id="main-related">
 	<div class="content">
-		<div class="clearfix">
+
 			<?php comments_template( '', true ); ?>
 
 			<?php
@@ -133,7 +133,7 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 			    $my_query = new WP_Query( $args );
 			    if ( $my_query->have_posts() ) {
 
-			    	$str='<div class="related_posts"><h6>Читайте также:</h6><ul>';
+			    	$str='<section class="x-related-posts"><h6>Читайте также:</h6><ul>';
 
 			    	$i = 0;
 
@@ -160,7 +160,7 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 				        	$i++;
 				        }
 			        }
-			        $str .= '</ul></div>';
+			        $str .= '</ul></section>';
 			        echo $str;
 			    }
 			?>

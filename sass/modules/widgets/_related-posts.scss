@@ -1,0 +1,57 @@
+/**** Related Posts ****/
+
+.x-related-posts {
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    h6{
+        color:#333;
+        font-size:16pt;
+        margin-bottom:0;
+    }
+    ul{
+        margin:0 0 2em -15px;
+
+        li{
+            float:left;
+            list-style:none;
+            margin-right:0px;
+            line-height:130%;
+            font-size:9pt;
+            padding:0 0 18px 0;
+
+            a{
+                display:block;
+                width:240px;
+                padding:15px;
+                text-decoration:none !important;
+                color:#555;
+
+                &:hover{
+                    color:#333;
+                    background:#f6f6f6;
+                    border-radius:10px;
+                    -moz-border-radius:10px;
+                    -webkit-border-radius:10px;
+                }
+
+                strong{
+                    font-size:10pt;
+                    padding:.25em 0 .5em;
+                    display:block;
+                    color:#222;
+                    text-decoration:underline;
+                }
+
+                img{
+                    -webkit-border-radius:4px;
+                    -moz-border-radius:4px;
+                    border-radius:4px;
+                }
+            }
+        }
+    }
+}
