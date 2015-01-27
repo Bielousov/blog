@@ -16,7 +16,9 @@
 }
 
 
-/* Smartphone */
+/*
+    Smartphones
+*/
 @media screen and (max-width: 480px){
 
     // Fix Admin bar position issue caused by Google Translate bar
@@ -35,6 +37,8 @@
     // Header
     // ------
     header.site-header {
+        z-index: 1000;
+
         &,
         .header-wrapper {
             min-width: 0;
@@ -43,10 +47,6 @@
         .content-wrapper {
             width: auto;
             padding: 0 $side-margin;
-        }
-
-        nav {
-            display: none;
         }
 
         .rublog-title--blog {
@@ -61,11 +61,12 @@
             }
 
             ins {
-                position: absolute;
-                right: 0;
-                height: 50px;
-                width: 50px;
-                margin-right: 0;
+                display: none;
+                // position: absolute;
+                // right: 0;
+                // height: 50px;
+                // width: 50px;
+                // margin-right: 0;
             }
 
             big {
@@ -78,6 +79,136 @@
             }
         }
     }
+
+    // Navigation
+    // ----------
+    .x-navigation {
+        &.x--desktop {
+            display: none;
+        }
+
+        &.x--mobile {
+            position: absolute;
+            top: 0;
+            left: -$side-margin;
+            right: -$side-margin;
+            z-index: 999;
+
+            display: block;
+            width: auto;
+            max-height: 0;
+            overflow: hidden;
+
+            background: #f8f8f8;
+
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+
+            transition: max-height .3s;
+            -webkit-transition: max-height .3s;
+
+            -webkit-backface-visibility: hidden;
+
+
+            &.x--active {
+                max-height: 999px;
+                border-bottom: solid 1px $gray;
+                box-shadow: $gray 0 0 10px;
+            }
+
+            .menu-header {
+                ul {
+                    margin: 0;
+                    list-style: none;
+
+                    li {
+                        a {
+                            display: block;
+                            padding: $side-margin;
+
+                            border-top: solid 1px $light;
+
+                            font-size: $mobile-text;
+                            text-decoration: none;
+                            text-shadow: 0 -1px white;
+
+                            &:before {
+                                content: '›';
+                                float: right;
+                                font-size: $text;
+                                line-height: 1;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .x-search-form {
+                position: relative;
+                padding: $margin $side-margin;
+
+                input.field {
+                    width: 100%;
+                    padding: $margin;
+                    padding-right: 32px;
+                    background: white;
+                }
+
+                input.submit {
+                    position: absolute;
+                    top: $margin;
+                    right: $side-margin;
+                    height: 30px;
+                    width: 30px;
+                    overflow: hidden;
+                    outline: none;
+
+                    margin: 1px;
+                    padding: $margin*2;
+
+                    @include sprite;
+                    background-position: -128px center;
+                    border:none;
+                    cursor:pointer;
+                    text-indent:99px;
+                }
+            }
+        }
+    }
+
+    .x-mobile-nav-toggle {
+        position: absolute;
+        top: 5px;
+        right: $side-margin;
+        display: block;
+        height: 2em;
+        width: 2em;
+
+        margin-right: 0;
+
+        background: white;
+        border: solid 1px border;
+        border-radius: 3px;
+
+        color: $gray;
+        font-size: $medium-text;
+        line-height: 32px;
+        text-align: center;
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: .5em;
+            top: .7em;
+            width: 1em;
+            height: 0.15em;
+            background: $gray;
+            box-shadow:
+                0 0.25em 0 0 $gray,
+                0 0.5em 0 0 $gray;
+        }
+    }
+
 
     // Content
     // -------
@@ -122,12 +253,25 @@
             font-size: $mobile-text + 1;
         }
 
-        .entry-content img {
-            margin: 0 -15px;
-            max-width: 112%;
+        .entry-content {
+            img {
+                margin: 0 -15px;
+                max-width: 112%;
 
-            &.zoom {
-                pointer-events: none;
+                &.zoom {
+                    pointer-events: none;
+                }
+            }
+
+            iframe {
+                max-width: 100%;
+            }
+        }
+
+        /**** Panoramic photos ****/
+        #content .panorama-canvas{
+            img.panorama {
+                max-width: 320px;
             }
         }
 
@@ -142,7 +286,6 @@
             }
         }
 
-        .related_posts,
         #post-widget,
         .imgNumber {
             display: none;
@@ -181,11 +324,49 @@
                 }
             }
         }
+    }
 
-        // .excerpt_thumbnails {
-        //     margin-left: -$side-margin;
-        //     margin-right: -$side-margin;
-        // }
+    // Comments
+    // --------
+    #main-related .content {
+        width: auto;
+    }
+    #disqus_thread {
+        width: auto;
+        padding: $margin $side-margin;
+    }
+
+    // Related posts
+    // -------------
+    .x-related-posts {
+        padding: $margin $side-margin;
+
+        ul {
+            margin: 0;
+
+            li {
+                float: none;
+
+                + li {
+                    border-top: solid 1px $border;
+                }
+
+                a {
+                    display: inline-block;
+                    width: 100%;
+
+                    padding-left: 130px;
+
+                    img {
+                        float: left;
+                        width: 100px;
+                        height: auto;
+
+                        margin-left: -115px;
+                    }
+                }
+            }
+        }
     }
 
     // Pagination
@@ -206,6 +387,7 @@
             font-size: $xlarge-text;
             line-height: 1;
         }
+        .x-pagination__post-title,
         .x-pagination__hint,
         .x-pagination__arrow-hint {
             display: none;
@@ -227,7 +409,7 @@
     // ------
     #footer {
         width: auto;
-        margin: $margin (-$side-margin);
+        margin: 0;
         padding: $margin $side-margin;
 
         #colophon {

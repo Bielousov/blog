@@ -12,7 +12,7 @@
 ?>
 	</div><!-- #main -->
 
-	<div id="footer" role="contentinfo">
+	<footer id="footer" role="contentinfo">
 		<div id="colophon">
 
 <?php
@@ -23,7 +23,7 @@
 ?>
 
 		</div><!-- #colophon -->
-	</div><!-- #footer -->
+	</footer><!-- #footer -->
 
 </div><!-- #wrapper -->
 

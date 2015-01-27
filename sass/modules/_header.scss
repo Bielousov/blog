@@ -34,6 +34,10 @@ header.site-header {
         line-height: 1em;
         text-decoration: none;
 
+        h1 {
+            margin: 0;
+        }
+
         ins {
             display: inline-block;
             height: 100px;
@@ -87,76 +91,6 @@ header.site-header {
 
         @include sprite;
         background-position: 0 0;
-    }
-
-    // Menu
-    nav {
-        position: absolute;
-        top: 0;
-        right: 90px;
-        margin-top: 32px;
-        font-size: 14px;
-        font-weight: 300;
-        white-space: nowrap;
-
-        .menu-header,
-        .menu-header ul,
-        .menu-header ul li {
-            display: inline;
-        }
-        .menu-header ul li:after {
-            content: ', ';
-        }
-        .menu-header ul li:last-child:after {
-            content: ' и ';
-            margin-right: .1em;
-        }
-        a {
-            color: $med;
-        }
-    }
-
-    // Search Form
-    #searchform{
-        display: inline-block;
-        position: relative;
-        top: -1px;
-
-        input.field{
-            margin: 0;
-            padding: 3px 35px 3px 7px;
-            outline: none;
-            width: 180px;
-
-            font-size: 13px;
-            font-weight: 300;
-
-            &:-webkit-input-placeholder,
-            &:-moz-placeholder,
-            &:-ms-input-placeholder {
-                color:#ccc;
-            }
-
-            &::-webkit-search-decoration,
-            &::-webkit-search-cancel-button {
-                display: none;
-            }
-        }
-
-        input.submit{
-            position: absolute;
-            top: 0;
-            right: 4px;
-            height: 24px;
-            width: 30px;
-            overflow: hidden;
-
-            @include sprite;
-            background-position: -128px center;
-            border:none;
-            cursor:pointer;
-            text-indent:99px;
-        }
     }
 
     // Google Plus
