@@ -10,7 +10,7 @@ iSlide =
 	title: String,
 
 	pinterest: true,
-	useFullscreen: false,
+	useFullscreen: true,
 
 	init: function()
 	{
@@ -41,7 +41,8 @@ iSlide =
 		$j(document).keydown(function(e) {
 			if(iSlide.is_active()){
 				if(e.keyCode == 27) {
-					iSlide.exit();
+					e.preventDefault();
+					iSlide.fullscreen(false);
 				}
 				if(e.keyCode == 39) {
 					if(event.metaKey || event.ctrlKey)
@@ -99,7 +100,7 @@ iSlide =
 	create: function() {
 		iSlide.container = $j('<section id="Slideshow"></section>');
 		iSlide.container.html('<menu><a class="exit">(Esc)<ins></ins></a></menu><ul class="thumbnails" rel="nav"></ul>');
-		iSlide.container.find('.exit').click(function(){
+		iSlide.container.find('.exit').on('click', function(){
 			iSlide.exit();
 		});
 		iSlide.images.each(function(i){
@@ -142,10 +143,13 @@ iSlide =
 	    	return false;
 
 		if(iSlide.useFullscreen){
-			iSlide.fullscreen(false);
-		} else {
-			iSlide.container.fadeOut(100);
+			window.setTimeout(function() {
+				iSlide.fullscreen(false);
+			}, 1);
 		}
+		
+		// iSlide.container.fadeOut(100);
+		iSlide.container.hide();
 		$j('body').removeClass('theater-mode');
 	},
 
@@ -164,11 +168,16 @@ iSlide =
 			}
 		});
 		iSlide.select(index);
-		iSlide.container.fadeIn(200);
+		//iSlide.container.fadeIn(200);
+		iSlide.container.show();
 		$j('body').addClass('theater-mode');
 		iSlide.select(index);
-		if(iSlide.useFullscreen)
-			iSlide.fullscreen(true);
+
+		if(iSlide.useFullscreen) {
+			window.setTimeout(function() {
+				iSlide.fullscreen(true);
+			}, 1);
+		}
 
 		return trackEvent('Slideshow', 'View Slideshow', 'Post', window.location);
 	},
