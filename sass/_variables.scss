@@ -62,5 +62,5 @@ $font-monospace: "Courier 10 Pitch", Courier, monospace;
 }
 @mixin sprite2x {
     background:url($theme + 'images/s/sprite@2x.png') no-repeat 0 0;
-    background-size: auto 32px;
+    background-size: 45px auto;
 }

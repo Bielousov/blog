@@ -14,10 +14,15 @@ No changes required on back-end.
 ### Usage
 Just include scripts/slideshow.js and css/slideshow.css
 
-  
+
 
 
 ## CHANGELOG
+### v. 3.0
+(March 3, 2015)
+ - Responsive mobile build
+ - New pagination (get rid of Paginator)
+
 ### v. 2.1.20
 (June 11, 2014)
  - Fixed Advanced Excerpt plugin dependency in theme
@@ -76,7 +81,7 @@ Just include scripts/slideshow.js and css/slideshow.css
  - Style: Fixed Slideshow title text colour
  - Share: Styled new Facebook Share button
 
-### v. 2.1.11 
+### v. 2.1.11
 (July 30, 2013)
  - Share: Added Tweet Ideas block
  - Style: Refactored post titles SCSS

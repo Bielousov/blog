@@ -1,30 +1,43 @@
 <?php
-/**
- * The template for displaying Category Archive pages.
- *
- * @package WordPress
- * @subpackage Twenty_Ten
- * @since Twenty Ten 1.0
- */
+    /**
+     * The template for displaying Category Archive pages.
+     *
+     * @package WordPress
+     * @subpackage MyBlog
+     * @since 3.0
+     */
 
-get_header(); ?>
+    get_template_part( '_head' );
+?>
 
+<body <?php body_class(); ?>>
+
+<?php
+    get_header();
+?>
+
+<div id="wrapper" class="hfeed">
+    <div id="main" class="content-wrapper">
 		<div id="container">
 			<div id="content" role="main">
 
-				<h1 class="page-title rublog-title--category"><?php
-					printf( __( 'Публикации в категории %s', 'myblog' ), '<span>&laquo;' . single_cat_title( '', false ) . '&raquo;</span>' );
-				?></h1>
-				<?php
-					$category_description = category_description();
-					if ( ! empty( $category_description ) )
-						echo '<div class="archive-meta">' . $category_description . '</div>';
+				<h1 class="page-title rublog-title--category">
+                    <?php
+					   printf( __( 'Публикации в категории %s', 'myblog' ), '<span>&laquo;' . single_cat_title( '', false ) . '&raquo;</span>' );
+				    ?>
+                </h1>
 
-				/* Run the loop for the category page to output the posts.
-				 * If you want to overload this in a child theme then include a file
-				 * called loop-category.php and that will be used instead.
-				 */
-				get_template_part( 'loop', 'category' );
+                <?php
+					$category_description = category_description();
+					if ( ! empty( $category_description ) ) {
+						echo '<div class="archive-meta">' . $category_description . '</div>';
+                    }
+
+    				/* Run the loop for the category page to output the posts.
+    				 * If you want to overload this in a child theme then include a file
+    				 * called loop-category.php and that will be used instead.
+    				 */
+    				get_template_part( 'loop', 'category' );
 				?>
 
 			</div><!-- #content -->
@@ -36,4 +49,12 @@ get_header(); ?>
             <?php get_sidebar('secondary'); ?>
         </div>
 
-<?php get_footer(); ?>
+    </div><!-- #main -->
+
+    <?php get_footer(); ?>
+
+</div><!-- #wrapper -->
+
+<?php wp_footer(); ?>
+
+</body></html>
