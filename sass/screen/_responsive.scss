@@ -31,7 +31,7 @@
     }
 
     #wpadminbar {
-        top: -46px;
+        top: -46px !important;
     }
 
     // Header
@@ -339,6 +339,10 @@
                     margin-right: $margin;
                 }
             }
+        }
+
+        blockquote {
+            padding-left: 2em;
         }
     }
 
