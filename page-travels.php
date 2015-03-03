@@ -1,14 +1,24 @@
 <?php
 /*
-Template Name: Travels Map
-*/
+ *Template Name: Travels Map
+ * @subpackage MyBlog
+ * @since 3.0
+ */
 
+    get_template_part( '_head' );
+?>
 
-get_header(); ?>
+<body <?php body_class(); ?>>
 
+<?php
+    get_header();
+?>
+
+<div id="wrapper" class="hfeed">
+    <div id="main" class="content-wrapper">
 		<div id="container" class="one-column">
 			<div id="content" role="main">
-                                
+
                 <?php
                 /* Run the loop to output the page.
                  * If you want to overload this in a child theme then include a file
@@ -19,4 +29,12 @@ get_header(); ?>
 
 			</div><!-- #content -->
 		</div><!-- #container -->
-<?php get_footer(); ?>
+    </div><!-- #main -->
+
+    <?php get_footer(); ?>
+
+</div><!-- #wrapper -->
+
+<?php wp_footer(); ?>
+
+</body></html>

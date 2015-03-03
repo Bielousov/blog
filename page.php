@@ -8,15 +8,24 @@
  * different template.
  *
  * @package WordPress
- * @subpackage Twenty_Ten
- * @since Twenty Ten 1.0
+ * @subpackage MyBlog
+ * @since 3.0
  */
 
-get_header(); ?>
+    get_template_part( '_head' );
+?>
 
+<body <?php body_class(); ?>>
+
+<?php
+    get_header();
+?>
+
+<div id="wrapper" class="hfeed">
+    <div id="main" class="content-wrapper">
 		<div id="container">
 			<div id="content" role="main">
-			
+
 			<?php
 			/* Run the loop to output the page.
 			 * If you want to overload this in a child theme then include a file
@@ -28,6 +37,12 @@ get_header(); ?>
 			</div><!-- #content -->
 		</div><!-- #container -->
 
-<?php // get_sidebar(); ?>
-<?php get_sidebar('secondary'); ?>
-<?php get_footer(); ?>
+		<?php get_sidebar('secondary'); ?>
+	</div><!-- #main -->
+		<?php get_footer(); ?>
+
+</div><!-- #wrapper -->
+
+<?php wp_footer(); ?>
+
+</body></html>

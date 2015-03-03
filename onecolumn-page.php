@@ -8,12 +8,21 @@
  * from a dropdown menu on the edit page screen.
  *
  * @package WordPress
- * @subpackage Twenty_Ten
- * @since Twenty Ten 1.0
+ * @subpackage MyBlog
+ * @since 3.0
  */
 
-get_header(); ?>
+    get_template_part( '_head' );
+?>
 
+<body <?php body_class(); ?>>
+
+<?php
+    get_header();
+?>
+
+<div id="wrapper" class="hfeed">
+    <div id="main" class="content-wrapper">
 		<div id="container" class="one-column">
 			<div id="content" role="main">
 
@@ -27,5 +36,12 @@ get_header(); ?>
 
 			</div><!-- #content -->
 		</div><!-- #container -->
+    </div><!-- #main -->
 
-<?php get_footer(); ?>
+    <?php get_footer(); ?>
+
+</div><!-- #wrapper -->
+
+<?php wp_footer(); ?>
+
+</body></html>

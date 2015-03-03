@@ -8,12 +8,21 @@
  * different template.
  *
  * @package WordPress
- * @subpackage Twenty_Ten
- * @since Twenty Ten 1.0
+ * @subpackage MyBlog
+ * @since 3.0
  */
 
-get_header(); ?>
+    get_template_part( '_head' );
+?>
 
+<body <?php body_class(); ?>>
+
+<?php
+    get_header();
+?>
+
+<div id="wrapper" class="hfeed">
+    <div id="main" class="content-wrapper">
 		<div id="container">
 			<div id="content" role="main">
 
@@ -33,14 +42,21 @@ get_header(); ?>
             <?php get_sidebar('microblog'); ?>
         </div>
 
-	
+
 	</div><!-- #main -->
+
 	<div id="main-related">
 		<div class="content">
 			<div class="clearfix">
 				<?php comments_template( '', true ); ?>
 			</div>
 		</div>
-	
+    </div><!-- #main -->
 
-<?php get_footer(); ?>
+    <?php get_footer(); ?>
+
+</div><!-- #wrapper -->
+
+<?php wp_footer(); ?>
+
+</body></html>
