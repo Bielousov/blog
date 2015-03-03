@@ -9,23 +9,31 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
- * @subpackage Twenty_Ten
- * @since Twenty Ten 1.0
+ * @subpackage MyBlog
+ * @since 3.0
  */
 
-$version = '2.1.21';
+    get_template_part( '_head' );
+?>
 
-get_header(); ?>
+<body <?php body_class(); ?>>
 
+<?php
+    get_header();
+?>
+
+<div id="wrapper" class="hfeed">
+    <div id="main" class="content-wrapper">
 		<div id="container">
 			<div id="content" role="main">
 
-			<?php
-			/* Run the loop to output the posts.
-			 * If you want to overload this in a child theme then include a file
-			 * called loop-index.php and that will be used instead.
-			 */
-			 get_template_part( 'loop', 'index' );
+    		<?php
+    			/* Run the loop to output the posts.
+    			 * If you want to overload this in a child theme then include a file
+    			 * called loop-index.php and that will be used instead.
+    			 */
+
+    			get_template_part( 'loop', 'index' );
 			?>
 
 			</div><!-- #content -->
@@ -36,4 +44,13 @@ get_header(); ?>
             <?php get_sidebar('microblog'); ?>
             <?php get_sidebar('secondary'); ?>
         </div>
-<?php get_footer(); ?>
+    </div><!-- #main -->
+
+    <?php get_footer(); ?>
+
+</div><!-- #wrapper -->
+
+<?php wp_footer(); ?>
+
+</body></html>
+
