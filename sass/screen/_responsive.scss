@@ -348,8 +348,12 @@
 
     // Comments
     // --------
-    #main-related .content {
-        width: auto;
+    #main-related {
+        margin: 2em 0 0;
+
+        .content {
+            width: auto;
+        }
     }
     #disqus_thread {
         width: auto;
