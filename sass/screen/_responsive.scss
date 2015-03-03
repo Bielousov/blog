@@ -277,6 +277,15 @@
                 &.zoom {
                     pointer-events: none;
                 }
+
+                &.alignleft,
+                &.alignright {
+                    display: block;
+                    float: none;
+                    max-width: 100%;
+                    margin: 1em auto;
+
+                }
             }
 
             iframe {
