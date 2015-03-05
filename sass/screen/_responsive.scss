@@ -183,16 +183,11 @@
 
     .x-mobile-nav-toggle {
         position: absolute;
-        top: 5px;
+        top: 7px;
         right: $side-margin;
         display: block;
 
         margin-right: 0;
-
-        background: white;
-        border: solid 1px border;
-        border-radius: 3px;
-        box-shadow: $gray 1px 1px 3px;
 
         &:before {
             content: "";
@@ -207,8 +202,6 @@
         }
 
         &.x--active {
-            box-shadow: $gray 1px 0 2px;
-
             &:before {
                 background-position: 0 -64px;
             }
