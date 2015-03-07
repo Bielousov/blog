@@ -82,7 +82,12 @@ html.translated-ltr {
         opacity:1;
     }
 
+    img {
+        display: inline-block;
+    }
+
     a.goog-te-menu-value{
+        margin-right: 0 !important;
         text-decoration:none !important;
     }
 
