@@ -5,11 +5,12 @@
 /* =Mixins
     -------------------------------------------------------------- */
 
-@mixin sprite {
+@mixin sprite-icon {
 	display: inline-block;
 	height: 32px;
 	width: 32px;
-    background: url($theme + 'images/sprite.png') no-repeat 0 0;
+
+	@include sprite;
 }
 
 
@@ -29,7 +30,7 @@ body.theater-mode{
 		cursor: pointer;
 	}
 	.zoomIcon{
-		@include sprite;
+		@include sprite-icon;
 		@include single-transition(opacity linear 1s);
 
 		cursor: pointer;
@@ -103,7 +104,7 @@ body.theater-mode{
 			}
 
 			ins{
-				@include sprite;
+				@include sprite-icon;
 
 				background-position: 32px 32px;
 
