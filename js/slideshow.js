@@ -54,9 +54,9 @@ iSlide =
 						e.preventDefault();
 					iSlide.previous();
 				}
-				if(iSlide.useFullscreen && e.keyCode == 13) {
-					iSlide.fullscreen(!$j('body').hasClass('fullscreen'));
-				}
+				// if(iSlide.useFullscreen && e.keyCode == 13) {
+				// 	iSlide.fullscreen(!$j('body').hasClass('fullscreen'));
+				// }
 			}
         });
 
@@ -99,7 +99,7 @@ iSlide =
 
 	create: function() {
 		iSlide.container = $j('<section id="Slideshow"></section>');
-		iSlide.container.html('<menu><a class="exit">(Esc)<ins></ins></a></menu><ul class="thumbnails" rel="nav"></ul>');
+		iSlide.container.html('<nav><a class="exit">(Esc)<ins></ins></a></nav><ul class="thumbnails" rel="nav"></ul>');
 		iSlide.container.find('.exit').on('click', function(){
 			iSlide.exit();
 		});
