@@ -118,7 +118,7 @@ iSlide =
 												+ (iSlide.pinterest ? '<div class="pin"><a href="http://pinterest.com/pin/create/button/?url='+encodeURIComponent(window.location.href.split('#')[0])+'&media='+encodeURIComponent(img_url[1])+'&description='+encodeURIComponent(iSlide.title+(img_title.length>0 ? ' — ' + img_title : ''))+'" class="pin-it-button" count-layout="vertical" always-show-count="true"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></div>' : '')
 												+'<h2>'+iSlide.title+'</h2>'
 												+'<p>'+img_title+'</p>'
-												+'<small class="copy">'+iSlide.copyright+'</span>'
+												+'<small class="copy">'+iSlide.copyright+'</small>'
 											+'</div>'
 											+'<img class="fit-h" src="'+img_url[1]+'" alt="'+$img.attr('alt')+'" />'
 											+'<img class="fit-w" src="'+img_url[1]+'" alt="'+$img.attr('alt')+'" />'

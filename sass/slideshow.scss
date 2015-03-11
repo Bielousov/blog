@@ -31,7 +31,7 @@ body.theater-mode{
 	}
 	.zoomIcon{
 		@include sprite-icon;
-		@include single-transition(opacity linear 1s);
+		@include single-transition(opacity, 1s, linear);
 
 		cursor: pointer;
 
@@ -88,7 +88,7 @@ body.theater-mode{
 		line-height: 32px;
 
 		a{
-			@include single-transition(opacity linear .75s);
+			@include single-transition(opacity, .75s, linear);
 
 			margin-left: 1.5em;
 			opacity: .75;
@@ -124,7 +124,7 @@ body.theater-mode{
 		@include perspective(1000);
    		@include transform(translateZ(0));
 		@include backface-visibility(hidden);
-		@include single-transition(opacity linear .25s);
+		@include single-transition(opacity, .2s, linear, .3s);
 
 		position: absolute;
 		left: 0;
@@ -224,7 +224,7 @@ body.theater-mode{
 	// THUMBNAILS
 	.thumbnails{
 		@include transform(translateZ(0));
-		@include single-transition(left linear .5s);
+		@include single-transition(left, .25s, linear);
 
 		position: absolute;
 		bottom: 0;
@@ -247,10 +247,11 @@ body.theater-mode{
 
 			opacity: .3;
 
-			-webkit-transition: .5s linear;
-			-moz-transition: .5s linear;
-			-o-transition: .5s linear;
-			transition: .5s linear;
+			-webkit-transition: .3s linear;
+			-moz-transition: .3s linear;
+			-o-transition: .3s linear;
+			transition: .3s linear;
+
 			-webkit-transition-property: opacity, height, width;
 			-moz-transition-property: opacity, height, width;
 			-o-transition-property: opacity, height, width;
