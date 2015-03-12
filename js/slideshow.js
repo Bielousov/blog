@@ -1,7 +1,9 @@
-// Init slideshow by calling iSlide.init(); when document is ready
-iSlide =
-{
-	version: "1.1",
+/*! iSlide - v1.2 - 2015-03-11
+* http://www.bielousov.com
+* Copyright © 2012 Anton Bielousov; */
+
+iSlide = {
+	version: "1.2",
 	copyright: '&copy; Anton Bielousov',
 	container: Object,
 	images: Object,
@@ -24,7 +26,7 @@ iSlide =
 
 		iSlide.images = $j(iSlide.imgSelector+'.zoom');
 
-		if(iSlide.images.length==0)
+		if (iSlide.images.length === 0)
 			return;
 
 
@@ -40,21 +42,21 @@ iSlide =
 	initEvents: function(){
 		$j(document).keydown(function(e) {
 			if(iSlide.is_active()){
-				if(e.keyCode == 27) {
+				if(e.keyCode === 27) {
 					e.preventDefault();
 					iSlide.fullscreen(false);
 				}
-				if(e.keyCode == 39) {
+				if(e.keyCode === 39) {
 					if(event.metaKey || event.ctrlKey)
 						e.preventDefault();
 					iSlide.next();
 				}
-				if(e.keyCode == 37) {
+				if(e.keyCode === 37) {
 					if(event.metaKey || event.ctrlKey)
 						e.preventDefault();
 					iSlide.previous();
 				}
-				// if(iSlide.useFullscreen && e.keyCode == 13) {
+				// if(iSlide.useFullscreen && e.keyCode === 13) {
 				// 	iSlide.fullscreen(!$j('body').hasClass('fullscreen'));
 				// }
 			}
@@ -147,7 +149,7 @@ iSlide =
 				iSlide.fullscreen(false);
 			}, 1);
 		}
-		
+
 		// iSlide.container.fadeOut(100);
 		iSlide.container.hide();
 		$j('body').removeClass('theater-mode');
@@ -162,7 +164,7 @@ iSlide =
 			iSlide.create();
 
 		iSlide.images.each(function(i,el){
-			if($j(el).attr('src')==src){
+			if ($j(el).attr('src') === src){
 				index = i;
 				return;
 			}
@@ -179,7 +181,7 @@ iSlide =
 			}, 1);
 		}
 
-		return trackEvent('Slideshow', 'View Slideshow', 'Post', window.location);
+		iSlide.track();
 	},
 
 	fullscreen: function(a) {
@@ -249,7 +251,7 @@ iSlide =
 			iSlide.load(parseInt(index)-1, false);
 	},
 
-	load: function(index, preload){
+	load: function(index, preload) {
 		var $slide = iSlide.getSlide(index),
 			$thumb = iSlide.container.find('.thumbnails li a[data-index='+index+']').parent(),
 			imgUrl = $slide.attr('data-image');
@@ -277,11 +279,20 @@ iSlide =
 			});
 	},
 
+	track: function() {
+		// Analytics tracking function
+		// feel free to update
+		if (typeof(window.trackEvent) !== 'undefined') {
+			window.trackEvent('Slideshow', 'View Slideshow', 'Post', window.location);
+		}
+	},
+
 	getSlide: function(index){
 		return iSlide.container.find('#slide-'+index);
 	}
 }
 
-jQuery(function(){
+jQuery(function() {
+	// Init on load
 	iSlide.init();
 });
