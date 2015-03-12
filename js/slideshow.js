@@ -9,6 +9,7 @@ iSlide = {
 	images: Object,
 	imgSelector: '.one-column .entry-content img.size-large[src*=".jpg"]',
 	imgPattern: /-\d{3,4}x\d{3,4}./,
+	imgExcludePattern: /-\d{3}x\d{4}./, // do not include tall images e.g.omage-900x1280.jpg
 	title: String,
 
 	pinterest: true,
@@ -17,30 +18,32 @@ iSlide = {
 	init: function()
 	{
 		iSlide.container = false;
-		iSlide.title = $j('h1.entry-title').text();
+		iSlide.title = jQuery('h1.entry-title').text();
 
-		$j(iSlide.imgSelector).each(function(i,el){
-			if(!/-\d{3}x\d{4}./.test($j(el).attr('src')))
-				$j(this).addClass('zoom').after('<span data-src="'+$j(el).attr('src')+'" class="zoomIcon"></span>');
+		jQuery(iSlide.imgSelector).each(function(i,el){
+			if (!iSlide.imgExcludePattern.test(jQuery(el).attr('src'))) {
+				jQuery(this).addClass('zoom').after('<span data-src="'+jQuery(el).attr('src')+'" class="zoomIcon"></span>');
+			}
 		});
 
-		iSlide.images = $j(iSlide.imgSelector+'.zoom');
+		iSlide.images = jQuery(iSlide.imgSelector+'.zoom');
 
-		if (iSlide.images.length === 0)
-			return;
+		if (iSlide.images.length === 0) {
+			return false;
+		}
 
 
 		iSlide.images.click(function(){
-			iSlide.open($j(this).attr('src'));
+			iSlide.open(jQuery(this).attr('src'));
 		});
 
-		$j('.zoomIcon').click(function(){
-			iSlide.open($j(this).attr('data-src'));
+		jQuery('.zoomIcon').click(function(){
+			iSlide.open(jQuery(this).attr('data-src'));
 		});
 	},
 
 	initEvents: function(){
-		$j(document).keydown(function(e) {
+		jQuery(document).keydown(function(e) {
 			if(iSlide.is_active()){
 				if(e.keyCode === 27) {
 					e.preventDefault();
@@ -57,29 +60,29 @@ iSlide = {
 					iSlide.previous();
 				}
 				// if(iSlide.useFullscreen && e.keyCode === 13) {
-				// 	iSlide.fullscreen(!$j('body').hasClass('fullscreen'));
+				// 	iSlide.fullscreen(!jQuery('body').hasClass('fullscreen'));
 				// }
 			}
         });
 
 		// Thumbnails click event
         iSlide.container.find('.thumbnails li a').click(function(){
-			iSlide.select($j(this).attr('data-index'));
+			iSlide.select(jQuery(this).attr('data-index'));
 		});
 
         // On fullscreen mode change
-        $j(document).on("webkitfullscreenchange mozfullscreenchange fullscreenchange",function(){
+        jQuery(document).on("webkitfullscreenchange mozfullscreenchange fullscreenchange",function(){
         	if(iSlide.useFullscreen && iSlide.is_active()){
 				if (document.webkitIsFullScreen || document.mozFullScreen || document.fullscreen) {
-					$j('body').addClass('fullscreen');
+					jQuery('body').addClass('fullscreen');
 				} else {
-					$j('body').removeClass('fullscreen');
+					jQuery('body').removeClass('fullscreen');
 					iSlide.exit();
 				}
 			}
         });
 
-        $j(window).resize(function(){
+        jQuery(window).resize(function(){
         	if(iSlide.is_active()){
 	        	iSlide.loadCurrent();
 	        }
@@ -89,24 +92,25 @@ iSlide = {
             return false;
         });*/
 
-        $j(window).unload(function() {
+        jQuery(window).unload(function() {
 		  if(iSlide.useFullscreen && iSlide.is_active())
 		  	iSlide.fullscreen(false);
 		});
 	},
 
 	is_active: function() {
-		return ($j('body').hasClass('theater-mode') && iSlide.container!=false);
+		return (jQuery('body').hasClass('theater-mode') && iSlide.container!=false);
 	},
 
 	create: function() {
-		iSlide.container = $j('<section id="Slideshow"></section>');
+		iSlide.container = jQuery('<section id="Slideshow"></section>');
 		iSlide.container.html('<nav><a class="exit">(Esc)<ins></ins></a></nav><ul class="thumbnails" rel="nav"></ul>');
 		iSlide.container.find('.exit').on('click', function(){
 			iSlide.exit();
 		});
+
 		iSlide.images.each(function(i){
-			var $img = $j(this),
+			var $img = jQuery(this),
 				img_title = ($img.attr('title') ? $img.attr('title') : ''),
 				img_src = $img.attr('src'),
 				img_url = [
@@ -114,6 +118,14 @@ iSlide = {
 							img_src,
 							img_src.replace(iSlide.imgPattern,'.')
 						];
+
+			// NOTE:
+			// Yes, script creates 2 images with same source,
+			// one is stretched 100% high,
+			// the other one is stretched 100% wide
+			// CSS does the magic figuring out which should be disaplyed
+			// this allows avoiding with and height calculations with script
+			// in cost of some performance though.
 			iSlide.container.append('<div id="slide-'+i+'" class="slide" data-image="'+img_url[2]+'">'
 											+'<ins></ins>'
 											+'<div class="meta">'
@@ -132,16 +144,16 @@ iSlide = {
 		iSlide.initEvents();
 
 		// Append Slideshow into body
-		iSlide.container.appendTo($j('body'));
+		iSlide.container.appendTo(jQuery('body'));
 
 		// Load pinterest code
 		if(iSlide.pinterest){
-			$j.getScript("//assets.pinterest.com/js/pinit.js");
+			jQuery.getScript("//assets.pinterest.com/js/pinit.js");
 		}
 	},
 
 	exit: function() {
-	    if(!$j('body').hasClass('theater-mode'))
+	    if(!jQuery('body').hasClass('theater-mode'))
 	    	return false;
 
 		if(iSlide.useFullscreen){
@@ -152,7 +164,7 @@ iSlide = {
 
 		// iSlide.container.fadeOut(100);
 		iSlide.container.hide();
-		$j('body').removeClass('theater-mode');
+		jQuery('body').removeClass('theater-mode');
 	},
 
 	open: function(src) {
@@ -164,7 +176,7 @@ iSlide = {
 			iSlide.create();
 
 		iSlide.images.each(function(i,el){
-			if ($j(el).attr('src') === src){
+			if (jQuery(el).attr('src') === src){
 				index = i;
 				return;
 			}
@@ -172,7 +184,7 @@ iSlide = {
 		iSlide.select(index);
 		//iSlide.container.fadeIn(200);
 		iSlide.container.show();
-		$j('body').addClass('theater-mode');
+		jQuery('body').addClass('theater-mode');
 		iSlide.select(index);
 
 		if(iSlide.useFullscreen) {
@@ -255,7 +267,7 @@ iSlide = {
 		var $slide = iSlide.getSlide(index),
 			$thumb = iSlide.container.find('.thumbnails li a[data-index='+index+']').parent(),
 			imgUrl = $slide.attr('data-image');
-		if($slide.hasClass('loaded') || $slide.hasClass('preloading') || ($j(window).width()<=$j(iSlide.images.get(index)).width() && $j(window).height()<=$j(iSlide.images.get(index)).height())){
+		if($slide.hasClass('loaded') || $slide.hasClass('preloading') || (jQuery(window).width() <= jQuery(iSlide.images.get(index)).width() && jQuery(window).height() <= jQuery(iSlide.images.get(index)).height())){
 			if(preload)
 				iSlide.preload(index);
 			return;
@@ -263,7 +275,8 @@ iSlide = {
 
 		$slide.addClass('preloading');
 		$thumb.addClass('preloading');
-		$j('<img />')
+
+		jQuery('<img />')
 			.attr({src: imgUrl,
 					id: 'preload-slide-'+index,
 					class: 'preload'})
@@ -272,7 +285,7 @@ iSlide = {
 				$slide.find('img.fit-h, img.fit-w').attr('src', imgUrl);
 				$slide.removeClass('preloading').addClass('loaded');
 				$thumb.removeClass('preloading').addClass('loaded');
-				$j(this).remove();
+				jQuery(this).remove();
 
 				if(preload)
 					iSlide.preload(index);
