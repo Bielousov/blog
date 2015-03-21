@@ -100,6 +100,17 @@ function myblog_admin_header_style() {
 endif;
 
 
+add_filter( 'wp_default_scripts', 'remove_jquery_migrate' );
+
+function remove_jquery_migrate( &$scripts)
+{
+    if(!is_admin())
+    {
+        $scripts->remove( 'jquery');
+        $scripts->add( 'jquery', false, array( 'jquery-core' ), '1.10.2' );
+    }
+}
+
 function wpEnqueueScripts(){
     // Adds external JS helper functions
     wp_register_script('helpers-script', get_template_directory_uri() . '/js/helpers.js', array('jquery'));
