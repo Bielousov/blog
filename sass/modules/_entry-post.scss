@@ -118,7 +118,7 @@
     margin: -$margin 0 $margin*2;
 }
 
-.entry-content iframe[id*=twitter-widget] {
+.entry-content iframe.twitter-tweet {
     display: inline-block !important;
     max-width: 49% !important;
     margin-right: 2% !important;
@@ -187,18 +187,15 @@ body.page .edit-link {
     padding: 0;
 }
 
-#content iframe[allowfullscreen],
 #content iframe[src*=youtube],
 #content iframe[src*=vimeo]{
     width:100%;
     height:435px;
 }
-.one-column #content iframe[allowfullscreen],
 .one-column #content iframe[src*=youtube],
 .one-column #content iframe[src*=vimeo]{
     height:548px;
 }
-.one-column #content .entry-summary iframe[allowfullscreen],
 .one-column #content .entry-summary iframe[src*=youtube],
 .one-column #content .entry-summary iframe[src*=vimeo]{
     width:256px;
