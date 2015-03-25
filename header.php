@@ -43,7 +43,7 @@
 
 			<div id="google_plusone">
 				<!-- Place this tag in your head or just before your close body tag -->
-				<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+				<script type="text/javascript" src="https://apis.google.com/js/plusone.js" async></script>
 
 				<!-- Place this tag where you want the +1 button to render -->
 				<g:plusone size="tall" href="http://www.bielousov.com"></g:plusone>
