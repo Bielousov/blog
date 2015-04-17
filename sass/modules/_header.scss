@@ -20,8 +20,9 @@ header.site-header {
     .header-wrapper {
         position: relative;
         width: auto;
-        max-width:1140px;
-        min-width:1000px;
+        /*max-width:1140px;
+        min-width:1000px;*/
+        width: 980px;
         margin: 0 auto;
     }
 
@@ -94,10 +95,10 @@ header.site-header {
     }
 
     // Google Plus
-    #google_plusone{
-        position: absolute;
-        bottom: -4px;
-        left: 100%;
-        margin-left: 20px;
-    }
+    // #google_plusone{
+    //     position: absolute;
+    //     bottom: -4px;
+    //     left: 100%;
+    //     margin-left: 20px;
+    // }
 }
