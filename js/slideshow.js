@@ -8,8 +8,8 @@ iSlide = {
 	container: Object,
 	images: Object,
 	imgSelector: '.one-column .entry-content img.size-large[src*=".jpg"]',
-	imgPattern: /-\d{3,4}x\d{3,4}./,
-	imgExcludePattern: /-\d{3}x\d{4}./, // do not include tall images e.g.omage-900x1280.jpg
+	imgPattern: /-\d{3,4}x\d{3,4}\./,
+	imgExcludePattern: /-\d{3}x\d{4}\./, // do not include tall images e.g.omage-900x1280.jpg
 	title: String,
 
 	pinterest: true,
@@ -257,10 +257,10 @@ iSlide = {
 	},
 
 	preload: function(index){
-		if(index<iSlide.images.length-1)
-			iSlide.load(parseInt(index)+1, false);
-		if(index>0)
-			iSlide.load(parseInt(index)-1, false);
+		if(index < iSlide.images.length - 1)
+			iSlide.load(parseInt(index) + 1, false);
+		if(index > 0)
+			iSlide.load(parseInt(index) - 1, false);
 	},
 
 	load: function(index, preload) {

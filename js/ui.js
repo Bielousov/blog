@@ -21,9 +21,11 @@ UI =
         // Mobile only
         UI.initMobileNav();
 
+        // Retina display
+        UI.initRetinaAssets();
+
         UI.initImageNumbers();
 	    UI.initPanorama();
-	    UI.initShareSnippet();
 	    $j('body').addClass('x-loaded');
 
 	},
@@ -183,8 +185,57 @@ UI =
         $mobileNav.find('input.field').attr('placeholder', 'Поиск в блоге…');
     },
 
+    // All pages: update image sources to high res for retina display desktops in lazy mode
+    initRetinaAssets: function() {
+        var retinaDelay;
+        var $window = $j(window);
+        var $images = $j('.entry-content img.size-large[src*=".jpg"]');
+        var imageURLPattern = /-\d{3,4}x\d{3,4}\./;
+
+        function getImagesInViewport() {
+            var visibleArea = {
+                top: $window.scrollTop() - $window.height(),
+                bottom: $window.scrollTop() + $window.height() * 1.5
+            }
+
+            return $images.filter(function() {
+                var imageTop = $j(this).offset().top;
+                return imageTop > visibleArea.top && imageTop < visibleArea.bottom;
+            });
+        };
+
+        function getRetinaImages() {
+            var $visibleImages = getImagesInViewport();
+
+            $visibleImages.each(function(_, img) {
+                var $img = $j(img);
+                var imgSrc = $img.attr('data-orig-src') || $img.attr('src');
+
+                $img.attr('srcset', imgSrc + ' 1x, ' + imgSrc.replace(imageURLPattern, '.') + ' 2x');
+            });
+        };
+
+        function lazyRetinaLoad() {
+            if($j(window).width() < 720) {
+                return false;
+            }
+
+            window.clearTimeout(retinaDelay);
+            retinaDelay = window.setTimeout(getRetinaImages, 300);
+        };
+
+        if (window.devicePixelRatio > 1) {
+            $window.on('load', function() {
+                $j(window).on('scroll resize', lazyRetinaLoad);
+                $j(window).trigger('scroll');
+            });
+        }
+
+
+    },
+
     // POST: Numbers after image image to reffer to
-    initImageNumbers:function(){
+    initImageNumbers: function() {
         // console.log('initImageNumbers');
 
         var $postImages = $j('.one-column .entry-content img');
@@ -196,7 +247,7 @@ UI =
     },
 
     // POST: Panoramic images scrolling feature
-	initPanorama:function(){
+	initPanorama: function() {
         // console.log('initPanorama');
 
         var $img = $j('img.panorama');
@@ -244,44 +295,7 @@ UI =
 
             // Hide Icon if entire image is shown
             $panorama.next('.panoramaIcon').toggleClass('panoramaIcon--hide', $panorama.find('img.panorama').width() < width);
-        },
-
-    // POST: Floating share widget
-	initShareSnippet:function(){
-        // console.log('initShareSnippet');
-
-        var $container = $j('#container'),
-            $widget = $j('#post-widget'),
-            $shareSnippet = $j('#ShareSnippet', $widget),
-        	shift = 48;
-
-        if(!$shareSnippet.length)
-        	return false;
-
-        var top = $container.offset().top - shift,
-        	maxTop;
-
-		var updateShareSnippet = function(){
-			//maxTop = top + container.height() - $j('dl', shareSnippet).height();
-            maxTop = $container.height() - $j('#post-widget:not(.floated)').height()*1.5 - window.innerHeight*.75;
-
-			if(top < document.body.scrollTop){
-			    if(document.body.scrollTop < maxTop) { //-shift)
-                    $widget.addClass('floated');
-                    $shareSnippet.addClass('fixed').css('top', shift);
-                }
-                else {
-                    $shareSnippet.removeClass('fixed').css('top', maxTop - top);
-                    $widget.removeClass('floated');
-                }
-            }
-            else {
-                $shareSnippet.removeClass('fixed').css('top', shift);
-                $widget.addClass('floated');
-            }
-		};
-    	$j(window).bind('load resize scroll', updateShareSnippet);
-    }
+        }
 }
 
 jQuery(function(){
