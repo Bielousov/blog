@@ -25,6 +25,7 @@
     body {
         top: 0 !important;
         position: relative;
+        min-width: 280px;
     }
 
     .skiptranslate {
@@ -39,6 +40,7 @@
     // ------
     header.site-header {
         z-index: 1000;
+        min-width: 0;
 
         &,
         .header-wrapper {

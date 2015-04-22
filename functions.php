@@ -244,19 +244,7 @@ function myblog_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 
-
-	// Area 3, located after the post.
-	register_sidebar( array(
-		'name' => __( 'Post Bottom Widget Area', 'myblog' ),
-		'id' => 'post-widget-area',
-		'description' => __( 'Post bottom widget area', 'myblog' ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
-
-	// Area 4, located in the footer. Empty by default.
+	// Area 3, located in the footer. Empty by default.
 	register_sidebar( array(
 		'name' => __( 'Main Footer Widget Area', 'myblog' ),
 		'id' => 'first-footer-widget-area',
@@ -267,7 +255,7 @@ function myblog_widgets_init() {
 		'after_title' => '</h4>',
 	) );
 
-	// Area 5, located in the footer. Empty by default.
+	// Area 4, located in the footer. Empty by default.
 	register_sidebar( array(
 		'name' => __( 'Additional Footer Widget Area', 'myblog' ),
 		'id' => 'second-footer-widget-area',

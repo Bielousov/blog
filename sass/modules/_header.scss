@@ -2,7 +2,8 @@ header.site-header {
     position: relative;
     z-index: 10;
     display: block;
-    min-width:1000px;
+    min-width: 1000px;
+
     padding: 15px 0 10px;
     background: #f5f5f5 url($theme + 'images/h/header-totems.jpg') no-repeat center center;
     background-size: cover;
@@ -19,10 +20,7 @@ header.site-header {
 
     .header-wrapper {
         position: relative;
-        width: auto;
-        /*max-width:1140px;
-        min-width:1000px;*/
-        width: 980px;
+        max-width: 1000px;
         margin: 0 auto;
     }
 

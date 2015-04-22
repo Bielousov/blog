@@ -56,6 +56,9 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 				</div>
 
 				<?php
+					// Social share
+					get_template_part( '_share');
+
 					// Entry Meta
 					get_template_part( '_entry-utility');
 
@@ -64,12 +67,6 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 						get_template_part( 'ad_google' );
 					}
 				?>
-
-				<div id="post-widget" class="widget-area sans-serif" role="complementary">
-                    <ul class="xoxo">
-                        <?php dynamic_sidebar( 'post-widget-area' ); ?>
-                    </ul>
-                </div>
 
                 <?php
 					// Tweet ideas
