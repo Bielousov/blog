@@ -225,10 +225,8 @@ UI =
         };
 
         if (window.devicePixelRatio > 1) {
-            $window.on('load', function() {
-                $j(window).on('scroll resize', lazyRetinaLoad);
-                $j(window).trigger('scroll');
-            });
+            $j(window).on('scroll resize', lazyRetinaLoad);
+            $j(window).trigger('scroll');
         }
 
 
