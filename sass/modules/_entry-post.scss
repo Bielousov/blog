@@ -118,14 +118,17 @@
     margin: -$margin 0 $margin*2;
 }
 
-.entry-content iframe.twitter-tweet {
-    display: inline-block !important;
-    max-width: 49% !important;
-    margin-right: 2% !important;
-    vertical-align: top;
+.entry-content {
+    .instagram-media,
+    .twitter-tweet {
+        display: inline-block !important;
+        max-width: 48.5% !important;
+        margin-right: 2% !important;
+        vertical-align: top;
 
-    &:nth-of-type(even) {
-        margin-right: 0 !important;
+        &:nth-of-type(even) {
+            margin-right: 0 !important;
+        }
     }
 }
 
