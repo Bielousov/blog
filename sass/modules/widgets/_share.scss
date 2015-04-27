@@ -2,3 +2,9 @@
 .shareaholic-canvas .shareaholic-share-buttons-container:not(.vertical) .shareaholic-share-button-container {
     margin: 0 10px;
 }
+
+@media screen and (max-width: 1080px) {
+    .shareaholic-share-buttons-container.floated {
+        display: none;
+    }
+}

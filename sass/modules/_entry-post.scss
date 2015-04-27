@@ -84,45 +84,23 @@
 #content .entry-summary p:last-child {
     margin-bottom: 12px;
 }
-.entry-content fieldset {
-    border: 1px solid #e7e7e7;
-    margin: 0 0 24px 0;
-    padding: 24px;
-}
-.entry-content fieldset legend {
-    background: #fff;
-    color: $dark;
-    font-weight: bold;
-    padding: 0 24px;
-}
-.entry-content input {
-    margin: 0 0 24px 0;
-}
-.entry-content input.file,
-.entry-content input.button {
-    margin-right: 24px;
-}
-.entry-content label {
-    color: #888;
-    font-size: $text;
-}
-.entry-content select {
-    margin: 0 0 24px 0;
-}
-.entry-content sup,
-.entry-content sub {
-    font-size: $small-text;
-}
 
-.entry-content div[data-twttr-id] {
-    margin: -$margin 0 $margin*2;
-}
 
 .entry-content {
+    div[data-twttr-id] {
+        margin: -$margin 0 $margin*2;
+    }
+
+    sup,
+    sub {
+        font-size: $small-text;
+    }
+
     .instagram-media,
     .twitter-tweet {
         display: inline-block !important;
         max-width: 48.5% !important;
+        margin: 20px 0 !important;
         margin-right: 2% !important;
         vertical-align: top;
 

@@ -19,7 +19,7 @@
 /*
     Smartphones
 */
-@media screen and (max-width: 480px){
+@media screen and (max-width: 480px) {
 
     // Fix Admin bar position issue caused by Google Translate bar
     body {
@@ -291,6 +291,14 @@
             iframe {
                 max-width: 100%;
             }
+
+            .instagram-media,
+            .twitter-tweet {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-right: 0 !important;
+            }
+
         }
 
         /**** Panoramic photos ****/
