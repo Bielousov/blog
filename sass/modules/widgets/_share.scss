@@ -1,6 +1,12 @@
 /**** AddThis Post Snippet ****/
-.shareaholic-canvas .shareaholic-share-buttons-container:not(.vertical) .shareaholic-share-button-container {
-    margin: 0 10px;
+.shareaholic-canvas .shareaholic-share-buttons-container:not(.vertical) {
+    .shareaholic-share-button-container {
+        margin: 0 10px;
+    }
+
+    ul.shareaholic-share-buttons li.shareaholic-share-button i.shareaholic-service-icon {
+        float: left;
+    }
 }
 
 @media screen and (max-width: 1080px) {
