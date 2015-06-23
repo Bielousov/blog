@@ -296,7 +296,8 @@ UI =
         }
 }
 
-jQuery(function(){
+
+jQuery(document).ready( function() {
     $j=jQuery.noConflict();
     UI.init();
 });
