@@ -28,8 +28,10 @@
                     border-bottom: none;
                 }
 
-                a.addthis_button_tweet {
-                    position: absolute;
+                // NOTES:
+                // 1. Overwrite inline styles for rendered iframe
+                .twitter-share-button {
+                    position: absolute !important; // 1
                     left: 0;
                     top: 0;
                 }
