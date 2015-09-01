@@ -32,10 +32,6 @@ header.site-header {
         line-height: 1em;
         text-decoration: none;
 
-        h1 {
-            margin: 0;
-        }
-
         ins {
             display: inline-block;
             height: 100px;
@@ -48,23 +44,33 @@ header.site-header {
             vertical-align: middle;
         }
 
-        big{
+        h1,
+        h4 {
             display: inline-block;
+            padding: 0;
+            margin: 0;
+
             color: $dark;
-            font-size: 28pt;
+            font-size: 30pt;
+            font-weight: normal;
             line-height: 1.1;
             vertical-align: bottom;
+
             a {
                 color: $dark;
                 text-decoration: none;
             }
         }
 
-        small{
+        h5 {
             @extend .sans-serif;
             position: absolute;
-            left: 148px;
+            left: 150px;
             top: 5px;
+
+            padding: 0;
+            margin: 0;
+
             color: $med;
             font-size: 10pt;
             font-weight: 300;
