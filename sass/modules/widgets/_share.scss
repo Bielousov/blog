@@ -10,7 +10,7 @@
 }
 
 @media screen and (max-width: 1080px) {
-    .shareaholic-share-buttons-container.floated {
-        display: none;
+    [data-app="floated_share_buttons"] {
+        display: none !important;
     }
 }
