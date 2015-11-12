@@ -2,14 +2,17 @@
 	<div class="header-wrapper">
 		<hgroup class="content-wrapper notranslate">
 			<div class="rublog-title--blog">
-				<ins></ins>
-				<?php  if(is_home() || is_front_page()) { ?>
+				<?php  if ((is_home() || is_front_page()) && !is_paged()) { ?>
+					<ins></ins>
 					<h1>Непутевая Канада</h1>
 				<?php } else { ?>
-					<h4><a href="/" rel="home">Непутевая Канада</a></h4>
+					<a href="/" rel="home">
+						<ins></ins>
+						<h4>Непутевая Канада</h4>
+					</a>
 				<?php } ?>
 				<h5>Блог <a href="/author" rel="author">Антона Белоусова</a></h5>
-				<a class="rss-feed" href="http://feeds.feedburner.com/Bielousov" target="_blank" rel="nofollow" onclick="return trackOutboundLink(this, 'RSS', 'Click RSS Link', false, false);" title="Подпишитесь на RSS-рассылку и не пропускайте ни одного поста."></a>
+				<a class="rss-feed" href="https://feedly.com/i/subscription/feed/http://www.bielousov.com/feed/" target="_blank" rel="nofollow" onclick="return trackOutboundLink(this, 'RSS', 'Click RSS Link', false, false);" title="Подпишитесь на RSS-рассылку (Feedly) и не пропускайте ни одного поста."></a>
 			</div>
 
 			<a class="x-mobile-nav-toggle js-mobile-nav-toggle"></a>

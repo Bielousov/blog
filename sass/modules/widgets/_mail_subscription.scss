@@ -1,0 +1,27 @@
+/**** Feedburner email subscription form ****/
+
+.x-mail-subscription {
+    border-top: solid 1px $border;
+    text-align: center;
+
+    label {
+        margin: 1em 0 .5em;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    .email {
+        margin: .5em 0;
+        color: #999;
+        font-size: 9pt;
+        font-style: italic;
+        text-align: center;
+    }
+
+    .button {
+        color: white;
+        cursor: pointer;
+    }
+}
