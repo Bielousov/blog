@@ -189,7 +189,7 @@ UI =
     initRetinaAssets: function() {
         var retinaDelay;
         var $window = $j(window);
-        var $images = $j('.entry-content img.size-large[src*=".jpg"]');
+        var $images = $j('.entry-content img').filter('.attachment-large, .size-large[src*=".jpg"]');
         var imageURLPattern = /-\d{3,4}x\d{3,4}\./;
 
         function getImagesInViewport() {
@@ -236,7 +236,8 @@ UI =
     initImageNumbers: function() {
         // console.log('initImageNumbers');
 
-        var $postImages = $j('.one-column .entry-content img');
+        var $postImages = $j('.one-column .entry-content').find('img.size-large, .wm-parallax .layer:first-of-type img.attachment-large');
+
         if($postImages.length < 3)
             return;
         $postImages.each(function(i){
