@@ -37,11 +37,12 @@
 		</div><!-- .entry-content -->
 
 		<?php
-            // Entry Share
-            get_template_part( '_entry-share');
 
 			// Entry Meta
 			get_template_part( '_entry-utility');
+
+            // Entry Share
+            get_template_part( '_entry-share');
 		?>
 	</article><!-- #post-## -->
 
