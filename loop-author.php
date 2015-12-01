@@ -17,7 +17,7 @@
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 				<?php dynamic_sidebar( 'subheader-widget-area' ); ?>
-				
+
 				<article  itemscope itemtype="http://schema.org/Person" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<h1  itemprop="name" class="entry-title"><?php the_title(); ?></h1>
 					<div class="entry-content">
@@ -26,6 +26,9 @@
 					</div><!-- .entry-content -->
 
 					<?php
+			            // Entry Share
+			            get_template_part( '_entry-share');
+
 						// Entry Meta
 						get_template_part( '_entry-utility');
 					?>

@@ -14,7 +14,7 @@ $custom_fields = get_post_custom();
 	<nav class="x-entry-utility__links">
 		<?php
 			// Comments counter
-			if (!is_single() && comments_open()) {
+			if (!is_single() && !is_page() && comments_open()) {
 				$commentsCount = 0;
 				$commentsClassName = 'x-entry-utility__comments-link';
 
@@ -36,7 +36,7 @@ $custom_fields = get_post_custom();
 
 		<?php
 			// Read More Link
-			if (!is_single()) {
+			if (!is_single() && !is_page()) {
 				printf( __( '<a href="%1$s" class="%2$s">%3$s</a>'), get_permalink(), 'x-entry-utility__more-link', __( myblog_more_text(), 'myblog' ));
 			}
 		?>

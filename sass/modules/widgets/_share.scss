@@ -1,4 +1,17 @@
-/**** AddThis Post Snippet ****/
+// SHARE WIDGET
+// ------------
+.x-share {
+    margin: 2*$tall-margin 0;
+    text-align: center;
+}
+
+.x-share__title {
+    font-family: $font-sans;
+    font-size: $xlarge-text;
+    font-weight: 300;
+}
+
+/**** Shareholic Post Snippet ****/
 .shareaholic-canvas .shareaholic-share-buttons-container:not(.vertical) {
     .shareaholic-share-button-container {
         margin: 0 10px;

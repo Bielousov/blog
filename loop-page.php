@@ -15,29 +15,34 @@
  */
 ?>
 
+
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<?php if ( is_front_page() ) { ?>
-						<h2 class="entry-title rublog-title--post"><?php the_title(); ?></h2>
-					<?php } else { ?>
-						<h1 class="entry-title rublog-title--page"><?php the_title(); ?></h1>
-					<?php } ?>
 
-                    <div id="post-top-widget" class="widget-area" role="complementary" style="margin-top:-24px;">
-                        <ul class="xoxo">
-                            <?php dynamic_sidebar( 'translate-widget-area' ); ?>
-                        </ul>
-                    </div>
+    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<?php if ( is_front_page() ) { ?>
+			<h2 class="entry-title rublog-title--post"><?php the_title(); ?></h2>
+		<?php } else { ?>
+			<h1 class="entry-title rublog-title--page"><?php the_title(); ?></h1>
+		<?php } ?>
 
-					<div class="entry-content">
-						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'myblog' ), 'after' => '</div>' ) ); ?>
-					</div><!-- .entry-content -->
+        <div id="post-top-widget" class="widget-area" role="complementary" style="margin-top:-24px;">
+            <ul class="xoxo">
+                <?php dynamic_sidebar( 'translate-widget-area' ); ?>
+            </ul>
+        </div>
 
-					<?php
-						// Entry Meta
-						get_template_part( '_entry-utility');
-					?>
-				</article><!-- #post-## -->
+		<div class="entry-content">
+			<?php the_content(); ?>
+			<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'myblog' ), 'after' => '</div>' ) ); ?>
+		</div><!-- .entry-content -->
+
+		<?php
+            // Entry Share
+            get_template_part( '_entry-share');
+
+			// Entry Meta
+			get_template_part( '_entry-utility');
+		?>
+	</article><!-- #post-## -->
 
 <?php endwhile; // end of the loop. ?>

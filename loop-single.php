@@ -56,6 +56,9 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 				</div>
 
 				<?php
+					// Entry Share
+					get_template_part( '_entry-share');
+
 					// Entry Meta
 					get_template_part( '_entry-utility');
 
