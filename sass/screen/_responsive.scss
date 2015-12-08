@@ -98,8 +98,7 @@
 
             font-weight: 300;
 
-            transform: translateZ(0);
-            -webkit-transform: translateZ(0);
+            @include transform(translateZ(0));
 
             transition: max-height .15s;
             -webkit-transition: max-height .15s;

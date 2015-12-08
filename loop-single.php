@@ -63,9 +63,6 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 					if(!isset($custom_fields['ad-free'])) {
 						get_template_part( 'ad_google' );
 					}
-
-					// Entry Share
-					get_template_part( '_entry-share');
 				?>
 
                 <?php
@@ -83,13 +80,18 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 				?>
 
 				<?php
-                    	if(strlen(strip_tags(strip_shortcodes(get_the_content()))) > 100) {
-                    ?>
+                	if(strlen(strip_tags(strip_shortcodes(get_the_content()))) > 100) {
+                ?>
                         <div id="typo-notification" class="sans-serif">
 							<h5 class="rublog-title--widget">Нашли ошибку?</h5>
 							<?php echo error_notification_action_text(); ?>
 						</div>
-					<?php } ?>
+				<?php } ?>
+
+				<?php
+					// Entry Share
+					get_template_part( '_entry-share');
+				?>
 			</article><!-- #post-## -->
 
 			<nav class="x-pagination x--post">

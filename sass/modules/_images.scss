@@ -126,8 +126,7 @@ img.aligncenter {
     overflow:auto;
     position:relative;
     width:100%;
-    transform: translateZ(0);
-    -webkit-overflow-scrolling: touch;
+    @include transform(translateZ(0));
 
     &.panorama-ready {
         min-width: 100%;

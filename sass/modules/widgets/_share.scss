@@ -1,7 +1,7 @@
 // SHARE WIDGET
 // ------------
 .x-share {
-    margin: 2*$tall-margin 0;
+    margin: $tall-margin 0 0;
     text-align: center;
 }
 
@@ -11,19 +11,76 @@
     font-weight: 300;
 }
 
-/**** Shareholic Post Snippet ****/
-.shareaholic-canvas .shareaholic-share-buttons-container:not(.vertical) {
-    .shareaholic-share-button-container {
-        margin: 0 10px;
+// SumoMe Widget
+.sumome-share-client-wrapper {
+    // Floating bar
+    &.sumome-share-client-wrapper-left-page {
+        @include transform(translateZ(0));
+
+        .sumome-share-client-share:nth-child(n+7) {
+            display: none !important;
+        }
     }
 
-    ul.shareaholic-share-buttons li.shareaholic-share-button i.shareaholic-service-icon {
-        float: left;
+    // Centered bar
+    &.sumome-share-client-wrapper-center {
+        margin-bottom: $tall-margin;
+
+        .sumome-share-client {
+            width: 100% !important;
+        }
+
+        .sumome-share-client-share-share {
+            float: none !important;
+        }
+
+        .sumome-share-client-share {
+            margin: 0 1% !important;
+        }
+    }
+
+    // Share All button
+    .sumome-share-client-share[data-sumome-share="sumome"] {
+        &:before {
+            @include sprite2x;
+
+            content: 'Share';
+
+            display: block;
+            width: 32px;
+            height: 32px;
+            margin: -2px;
+
+            overflow: hidden;
+            text-indent: 32px;
+            white-space: nowrap;
+
+            background-position: 0 -98px;
+        }
+
+        img {
+            display: none;
+        }
     }
 }
 
-@media screen and (max-width: 1080px) {
-    [data-app="floated_share_buttons"] {
+@media screen and ( max-width: 1024px ) {
+    .sumome-share-client-wrapper.sumome-share-client-wrapper-left-page {
         display: none !important;
+    }
+}
+
+
+// Subscribe scrollbox
+#sumome-modal-mask {
+    background-color: rgba(0,0,0,0.2);
+}
+.sumome-scrollbox-popup.sumome-scrollbox-bottom {
+    width: 70% !important;
+    left: 15% !important;
+    right: 15% !important;
+
+    .sumome-scrollbox-link {
+        display: none;
     }
 }
