@@ -14,7 +14,7 @@
 /**** Shareholic Post Snippet ****/
 .shareaholic-canvas .shareaholic-share-buttons-container:not(.vertical) {
     .shareaholic-share-button-container {
-        margin: 0 10px;
+        margin: 0 2px;
     }
 
     ul.shareaholic-share-buttons li.shareaholic-share-button i.shareaholic-service-icon {
@@ -22,8 +22,50 @@
     }
 }
 
-@media screen and (max-width: 1080px) {
-    [data-app="floated_share_buttons"] {
+.shareaholic-service-icon.service-all {
+    background: #2c88c9 !important;
+
+    &:before {
+        @include sprite2x;
+
+        content: 'Share';
+
+        display: block;
+        width: 32px;
+        height: 32px;
+        margin: -5px;
+
+        overflow: hidden;
+        text-indent: 32px;
+        white-space: nowrap;
+
+        background-position: 0 -98px;
+    }
+}
+
+// Floating share bar
+.shareaholic-share-buttons-container.floated {
+    @include transform(translateZ(0));
+
+    opacity:.75;
+    transition: opacity 0.2s ease-in-out;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    .shareaholic-share-button {
+        opacity: 1;
+        transition: opacity 0.2s ease-in-out;
+
+        &:hover {
+            opacity: .5;
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .shareaholic-share-buttons-container.floated {
         display: none !important;
     }
 }
