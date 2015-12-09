@@ -2,13 +2,23 @@
 // ------------
 .x-share {
     margin: 2*$tall-margin 0;
+
+    font-family: $font-sans;
     text-align: center;
+
+    .shareaholic-share-buttons-container ul.shareaholic-share-buttons {
+        padding: 0 !important;
+    }
 }
 
 .x-share__title {
-    font-family: $font-sans;
     font-size: $xlarge-text;
     font-weight: 300;
+}
+
+.x-share__link {
+    font-weight: 300;
+    text-decoration: none;
 }
 
 /**** Shareholic Post Snippet ****/
