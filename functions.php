@@ -74,32 +74,6 @@ function myblog_setup() {
 }
 endif;
 
-if ( ! function_exists( 'myblog_admin_header_style' ) ) :
-/**
- * Styles the header image displayed on the Appearance > Header admin panel.
- *
- * Referenced via add_custom_image_header() in myblog_setup().
- *
- * @since Twenty Ten 1.0
- */
-function myblog_admin_header_style() {
-?>
-<style type="text/css">
-/* Shows the same border as on front end */
-#headimg {
-	border-bottom: 1px solid #000;
-	border-top: 4px solid #000;
-}
-/* If NO_HEADER_TEXT is false, you would style the text with these selectors:
-	#headimg #name { }
-	#headimg #desc { }
-*/
-</style>
-<?php
-}
-endif;
-
-
 add_filter( 'wp_default_scripts', 'remove_jquery_migrate' );
 
 function remove_jquery_migrate( &$scripts)
@@ -367,3 +341,33 @@ function wpseo_cdn_filter( $uri ) {
 	return str_replace( 'http://www.bielousov.com', 'http://cdn.bielousov.com', $uri );
 }
 add_filter( 'wpseo_xml_sitemap_img_src', 'wpseo_cdn_filter' );
+
+
+/**
+ * Disable responsive image support (test!)
+ */
+
+// Clean the up the image from wp_get_attachment_image()
+add_filter( 'wp_get_attachment_image_attributes', function( $attr )
+{
+    if( isset( $attr['sizes'] ) )
+        unset( $attr['sizes'] );
+
+    if( isset( $attr['srcset'] ) )
+        unset( $attr['srcset'] );
+
+    return $attr;
+
+ }, PHP_INT_MAX );
+
+// Override the calculated image sizes
+add_filter( 'wp_calculate_image_sizes', '__return_false',  PHP_INT_MAX );
+
+// Override the calculated image sources
+add_filter( 'wp_calculate_image_srcset', '__return_false', PHP_INT_MAX );
+
+// Remove the reponsive stuff from the content
+remove_filter( 'the_content', 'wp_make_content_images_responsive' );
+
+// Remove custom background feature
+remove_theme_support( 'custom-background' );
