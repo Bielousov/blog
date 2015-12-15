@@ -37,6 +37,7 @@
 
     &:before {
         @include sprite2x;
+        @include transform(scale(.85));
 
         content: 'Share';
 
