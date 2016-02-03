@@ -157,7 +157,7 @@ iSlide = {
 		if(iSlide.useFullscreen){
 			window.setTimeout(function() {
 				iSlide.fullscreen(false);
-			}, 1);
+			});
 		}
 
 		// iSlide.container.fadeOut(100);
@@ -186,7 +186,9 @@ iSlide = {
 		iSlide.select(index);
 
 		if(iSlide.useFullscreen) {
-			iSlide.fullscreen(true);
+			window.setTimeout(function() {
+				iSlide.fullscreen(true);
+			}, 100);
 		}
 
 		iSlide.track();

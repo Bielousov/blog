@@ -57,7 +57,9 @@ body.theater-mode {
 #Slideshow {
 	position: fixed;
 	left: 0;
+	right: 0;
 	top: 0;
+	bottom: 0;
 	z-index: 10000002; // compete with translate bar
 
 	display: none;
