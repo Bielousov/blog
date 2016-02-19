@@ -189,7 +189,7 @@ UI =
     initRetinaAssets: function() {
         var retinaDelay;
         var $window = $j(window);
-        var $images = $j('.entry-content img').filter('.attachment-large, .size-large[src*=".jpg"]');
+        var $images = $j('.entry-content img').filter('.attachment-large, .jr-post-img, .size-large[src*=".jpg"]');
         var imageURLPattern = /-\d{3,4}x\d{3,4}\./;
 
         function getImagesInViewport() {
