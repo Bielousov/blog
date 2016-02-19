@@ -370,4 +370,17 @@ add_filter( 'wp_calculate_image_srcset', '__return_false', PHP_INT_MAX );
 remove_filter( 'the_content', 'wp_make_content_images_responsive' );
 
 // Remove custom background feature
+
+
+/**
+ * Remove customizer options.
+ *
+ * @since 1.0.0
+ * @param object $wp_customize
+ */
+function remove_customizer_options( $wp_customize ) {
+   $wp_customize->remove_section( 'themes' );
+}
+add_action( 'customize_register', 'remove_customizer_options', 30 );
+add_filter( 'wp_customize_support_script', '__return_false', 30 );
 remove_theme_support( 'custom-background' );
