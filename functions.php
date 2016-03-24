@@ -384,3 +384,4 @@ function remove_customizer_options( $wp_customize ) {
 add_action( 'customize_register', 'remove_customizer_options', 30 );
 add_filter( 'wp_customize_support_script', '__return_false', 30 );
 remove_theme_support( 'custom-background' );
+remove_custom_background();
