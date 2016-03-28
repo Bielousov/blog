@@ -80,7 +80,7 @@ UI =
             $j('.x-translate-overlay').remove();
 
             // Track event
-            trackEvent('Google Website Translator', 'Cancel Translation', false, false) ;
+            trackEvent('Google Website Translator', 'Cancel Translation', false, false);
         },
 
 
@@ -130,7 +130,7 @@ UI =
                 case 37:
                     e.preventDefault();
                     if ($navPrevLink.length) {
-                        window.location = $navPrevLink.attr('href')
+                        window.location = $navPrevLink.attr('href');
                     }
                     break;
                 case 39:
@@ -158,8 +158,8 @@ UI =
     },
 
     bindPaginationReset: function() {
-        $j(window).on('resize', function(){
-            window.setTimeout(function(){
+        $j(window).on('resize', function() {
+            window.setTimeout(function() {
                 UI.initPagination();
             }, 100);
         });
@@ -196,7 +196,7 @@ UI =
             var visibleArea = {
                 top: $window.scrollTop() - $window.height(),
                 bottom: $window.scrollTop() + $window.height() * 1.5
-            }
+            };
 
             return $images.filter(function() {
                 var imageTop = $j(this).offset().top;
@@ -216,7 +216,7 @@ UI =
         };
 
         function lazyRetinaLoad() {
-            if($j(window).width() < 720) {
+            if ($j(window).width() < 720) {
                 return false;
             }
 
@@ -238,7 +238,7 @@ UI =
 
         var $postImages = $j('.one-column .entry-content').find('img.size-large, .wm-parallax .layer:first-of-type img.attachment-large');
 
-        if($postImages.length < 3)
+        if ($postImages.length < 3)
             return;
         $postImages.each(function(i){
             $j(this).before('<ins id="img_' + (i+1) + '" class="imgNumber"><small>' + (i+1) +'</small></ins>');
@@ -260,18 +260,14 @@ UI =
 
 
             UI.stylePanorama($_panorama);
-            $j(window).on('resize', function(){
+            $j(window).on('resize', function() {
                 UI.stylePanorama($_panorama);
             });
 
 			$_img.removeClass('panorama-loading');
-            $_panorama.addClass('panorama-ready')
+            $_panorama.addClass('panorama-ready');
 			$_panorama.prop('scrollLeft', $_img.width()/2 - $_panorama.width()/2);
-			$_panorama.scrollview({
-				grab:"/wp-content/themes/myblog/images/c/openhand.cur",
-				grabbing:"/wp-content/themes/myblog/images/c/closedhand.cur"
-			});
-			$_panorama.after('<span class="panoramaIcon"></span>')
+			$_panorama.after('<span class="panoramaIcon"></span>');
 
             // Once again fix styling
             UI.stylePanorama($_panorama);
@@ -304,7 +300,10 @@ jQuery(document).ready( function() {
 });
 
 (function() {
-    function ScrollView(){ this.initialize.apply(this, arguments) }
+    function ScrollView() {
+        this.initialize.apply(this, arguments);
+    };
+
     ScrollView.prototype = {
         initialize: function(container, config){
                 // setting cursor.
@@ -337,21 +336,22 @@ jQuery(document).ready( function() {
 
                 // Set mouse events.
                 var self = this;
-                this.i.mousedown(function(e){
+                this.i.mousedown(function(e) {
                         self.startgrab();
                         this.xp = e.pageX;
                         this.yp = e.pageY;
                         return false;
-                }).mousemove(function(e){
+                }).mousemove(function(e) {
                         if (!self.isgrabbing) return true;
                         self.scrollTo(this.xp - e.pageX, this.yp - e.pageY);
                         this.xp = e.pageX;
                         this.yp = e.pageY;
                         return false;
-                })
-                .mouseout(function(){ self.stopgrab() })
-                .mouseup(function(){ self.stopgrab() })
-                .dblclick(function(){
+                }).mouseout(function() {
+                    self.stopgrab()
+                }).mouseup(function() {
+                    self.stopgrab()
+                }).dblclick(function() {
                         var _m = self.m;
                         var off = _m.offset();
                         var dx = this.xp - off.left - _m.width() / 2;
@@ -372,21 +372,21 @@ jQuery(document).ready( function() {
 
                 this.centering();
         },
-        centering: function(){
+        centering: function() {
                 var _m = this.m;
                 var w = this.i.width() - _m.width();
                 var h = this.i.height() - _m.height();
                 _m.scrollLeft(w / 2).scrollTop(h / 2);
         },
-        startgrab: function(){
+        startgrab: function() {
                 this.isgrabbing = true;
                 this.i.css("cursor", this.grabbing);
         },
-        stopgrab: function(){
+        stopgrab: function() {
                 this.isgrabbing = false;
                 this.i.css("cursor", this.grab);
         },
-        scrollTo: function(dx, dy){
+        scrollTo: function(dx, dy) {
                 var _m = this.m;
                 var x = _m.scrollLeft() + dx;
                 var y = _m.scrollTop() + dy;
