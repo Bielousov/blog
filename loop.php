@@ -132,7 +132,7 @@
 			<h2 class="entry-title rublog-title--post">
 				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Постоянная ссылка на %s', 'myblog' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
 					<?php the_title(); ?>
-					<small class="rublog-sponsored-subtitle">Обновленный пост</small>
+					<small class="rublog-sponsored-subtitle">(обновленный пост)</small>
 				</a>
 			</h2>
 
