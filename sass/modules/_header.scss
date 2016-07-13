@@ -4,7 +4,7 @@ header.site-header {
     display: block;
     min-width: 1000px;
 
-    padding: 15px 0 10px;
+    padding: 10px 0 5px;
     background: #f5f5f5 url($theme + 'images/h/header-mountains.jpg') no-repeat center center;
     background-size: cover;
     @include box-shadow(0 0 10px $light-gray);
@@ -34,12 +34,13 @@ header.site-header {
 
         ins {
             display: inline-block;
-            height: 100px;
-            width: 100px;
-            margin-left: -10px;
+            height: 80px;
+            width: 80px;
+            margin-left: 0px;
             margin-right: 10px;
-            margin-bottom: -35px;
-            background: transparent url($theme + 'images/a/moose-crossing@2x.png') no-repeat center center;
+            margin-bottom: -12px;
+            margin-top: -5px;
+            background: transparent url($theme + 'images/a/maple-leaf@2x.png') no-repeat center center;
             background-size: contain;
             vertical-align: middle;
         }
@@ -65,7 +66,7 @@ header.site-header {
         h5 {
             @extend .sans-serif;
             position: absolute;
-            left: 150px;
+            left: 130px;
             top: 5px;
 
             padding: 0;
