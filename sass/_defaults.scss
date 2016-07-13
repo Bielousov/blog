@@ -509,6 +509,10 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
     height: 11px;
 }
 
+#wpadminbar {
+    z-index: 999;
+}
+
 
 img#wpstats {
     display: block;

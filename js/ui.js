@@ -5,27 +5,29 @@
     v. 1.2 — April 11, 2013
                 • Added translation overlay
 */
-UI =
-{
+var UI = {
 	init: function()
 	{
-        UI.initTracking();
-        UI.initTranslateOverlay();
-        UI.initTravelMap();
+        // Mobile Navigation
+        UI.initMobileNav();
 
         // Pagination
         UI.initPagination();
-        UI.initKeyboardNavigation();
         UI.bindPaginationReset();
-
-        // Mobile only
-        UI.initMobileNav();
 
         // Retina display
         UI.initRetinaAssets();
 
+        // Images
         UI.initImageNumbers();
 	    UI.initPanorama();
+
+        // Misc
+        UI.initKeyboardNavigation();
+        UI.initTracking();
+        UI.initTranslateOverlay();
+        UI.initTravelMap();
+
 	    $j('body').addClass('x-loaded');
 
 	},
@@ -177,9 +179,11 @@ UI =
 
         $mobileNavToggle.on('click', function(e) {
             e.preventDefault();
+            var isActive = $mobileNav.hasClass('x--active');
 
-            $mobileNav.toggleClass('x--active');
-            $mobileNavToggle.toggleClass('x--active', $mobileNav.hasClass('x--active'));
+            $j('body').toggleClass('x-lock', !isActive);
+            $mobileNavToggle.toggleClass('x--active', !isActive);
+            $mobileNav.toggleClass('x--active', !isActive);
         });
 
         $mobileNav.find('input.field').attr('placeholder', 'Поиск в блоге…');
@@ -291,13 +295,7 @@ UI =
             // Hide Icon if entire image is shown
             $panorama.next('.panoramaIcon').toggleClass('panoramaIcon--hide', $panorama.find('img.panorama').width() < width);
         }
-}
-
-
-jQuery(document).ready( function() {
-    $j=jQuery.noConflict();
-    UI.init();
-});
+};
 
 (function() {
     function ScrollView() {
@@ -400,3 +398,10 @@ jQuery(document).ready( function() {
         });
     };
 })(jQuery);
+
+jQuery(function () {
+    // INIT
+    // ----
+    $j=jQuery.noConflict();
+    UI.init();
+});
