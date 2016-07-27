@@ -68,7 +68,8 @@
 }
 .single {
     .hentry {
-        margin: 0 0 36px 0;
+        margin: 0 0 3em 0;
+        border-bottom: dashed 1px $light;
     }
 
     .entry-content {
@@ -190,10 +191,14 @@ body.page .edit-link {
     height: auto !important;
 }
 
-.hentry img {
-    display: block;
-    max-width:100%;
-    height: auto;
+.hentry {
+    margin-top: 2.5em;
+
+    img {
+        display: block;
+        max-width:100%;
+        height: auto;
+    }
 }
 
 .excerpt_thumbnails{
