@@ -22,9 +22,11 @@
         }
     }
 
-    small {
+    small,
+    .entry-subtitle {
+        margin-top: .25em;
         color: $med;
-        font-size: 65%;
+        font-size: 60%;
         font-weight:normal;
     }
 }
@@ -37,6 +39,12 @@
     small {
         display: inline-block;
         margin-top:-5px;
+    }
+
+    .entry-subtitle {
+        margin-top: .25em;
+        color: $med;
+        font-size: 60%;
     }
 }
 

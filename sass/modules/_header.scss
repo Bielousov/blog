@@ -5,7 +5,7 @@ header.site-header {
     min-width: 1000px;
 
     padding: 10px 0 5px;
-    background: #f5f5f5 url($theme + 'images/h/header-mountains.jpg') no-repeat center center;
+    background: #f5f5f5 url($theme + 'images/h/header-totems.jpg') no-repeat center center;
     background-size: cover;
     @include box-shadow(0 0 10px $light-gray);
 
@@ -37,11 +37,13 @@ header.site-header {
             height: 80px;
             width: 80px;
             margin-left: 0px;
-            margin-right: 10px;
-            margin-bottom: -12px;
-            margin-top: -5px;
+            margin-right: 1px;
+            margin-bottom: -13px;
+            margin-top: -7px;
+            opacity: .8;
             background: transparent url($theme + 'images/a/maple-leaf@2x.png') no-repeat center center;
-            background-size: contain;
+            //background-size: contain;
+            background-size: 66%;
             vertical-align: middle;
         }
 
@@ -75,6 +77,7 @@ header.site-header {
             color: $med;
             font-size: 10pt;
             font-weight: 300;
+            white-space: nowrap;
 
             a {
                 color: $med;
@@ -88,14 +91,15 @@ header.site-header {
 
     .rss-feed{
         position: absolute;
-        bottom: 4px;
-        left:103%;
+        bottom: 17px;
+        left: 101%;
 
-        height: 32px;
-        width: 32px;
+        height: 16px;
+        width: 16px;
 
         @include sprite;
         background-position: 0 0;
+        background-size: auto 100%;
     }
 
     // Google Plus

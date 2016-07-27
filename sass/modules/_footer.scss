@@ -11,7 +11,7 @@
         margin: 0 auto;
         overflow: hidden;
         padding: 18px 0;
-        width:920px;
+        width: 920px;
     }
 
     #footer-widget-area {
@@ -19,6 +19,7 @@
         color: $gray;
         font-family: $font-sans;
         font-size: $small-text;
+        font-weight: 300;
 
         .widget-area {
             display: inline-block;
@@ -28,6 +29,7 @@
         .widget-title {
             margin:.5em 0;
             font-size: $small-text;
+            font-weight: normal;
         }
 
         #first {
