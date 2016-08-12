@@ -42,7 +42,12 @@
 		 */
 		wp_head();
 
-		if(isset($custom_fields['og:video']))
+		if (isset($custom_fields['og:video'])) {
 			echo '<meta property="og:video" content="'.$custom_fields['og:video'][0].'">';
+		}
+
+		if (is_singular()) {
+			echo '<link rel="amphtml" href="'.get_permalink().'amp/" />';
+		}
 	?>
 </head>
