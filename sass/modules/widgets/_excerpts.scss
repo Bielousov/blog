@@ -1,0 +1,25 @@
+.excerpt_thumbnails {
+    display: block;
+    margin-bottom: 1em;
+    text-align: center;
+
+    img.thumb{
+        display: inline-block;
+        width: 175px;
+        height: 175px;
+        margin-top: $margin/2;
+        margin-right: $margin/2;
+        overflow: hidden;
+    }
+}
+
+.excerpt-more-link {
+    display: block;
+    font-size:13pt;
+    margin:.5em 0 1em;
+
+    .meta-nav {
+        font-size:120%;
+        line-height: 100%;
+    }
+}
