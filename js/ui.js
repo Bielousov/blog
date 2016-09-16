@@ -123,23 +123,24 @@ var UI = {
             $navNext.hide();
         }
 
-        jQuery(document).keydown(function (e){
+        jQuery(document).keydown(function (e) {
             if($j('body').hasClass('theater-mode') || !(event.metaKey || event.ctrlKey)) {
                 return;
             }
 
+            var callback = function(e, $link) {
+                if (e && $link.length) {
+                    e.preventDefault();
+                    window.location.href = $link.attr('href');
+                }
+            };
+
             switch(e.keyCode) {
                 case 37:
-                    e.preventDefault();
-                    if ($navPrevLink.length) {
-                        window.location = $navPrevLink.attr('href');
-                    }
+                    callback(e, $navPrevLink);
                     break;
                 case 39:
-                    e.preventDefault();
-                    if ($navNext.length) {
-                        window.location = $navNextLink.attr('href');
-                    }
+                    callback(e, $navNextLink);
                     break;
             }
         });

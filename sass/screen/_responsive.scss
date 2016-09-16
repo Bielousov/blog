@@ -278,39 +278,6 @@
         padding: $margin $side-margin;
     }
 
-    // Related posts
-    // -------------
-    .x-related-posts {
-        padding: $margin $side-margin;
-
-        ul {
-            margin: 0;
-
-            li {
-                float: none;
-
-                + li {
-                    border-top: solid 1px $border;
-                }
-
-                a {
-                    display: inline-block;
-                    width: 100%;
-
-                    padding-left: 130px;
-
-                    img {
-                        float: left;
-                        width: 100px;
-                        height: auto;
-
-                        margin-left: -115px;
-                    }
-                }
-            }
-        }
-    }
-
     // Pagination
     // ----------
     .x-pagination {

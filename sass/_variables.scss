@@ -29,9 +29,10 @@ $active: #ff4b33;
 
 /* =Global Margins
 -------------------------------------------------------------- */
-$margin: 10px;
-    $side-margin: $margin*1.5;
-    $tall-margin: 32px;
+$unit: 5px;
+    $margin: $unit*2;
+    $side-margin: $unit*3;
+    $tall-margin: $unit*7;
 
 $rounded: 3px; // rounded corners
 // ex:  @include border-radius($rounded);
@@ -41,8 +42,8 @@ $rounded: 3px; // rounded corners
 $text: 14pt;
 $mobile-text: 12pt;
 
-    $xsmall-text: 10px;
-    $small-text: 10pt;
+    $xsmall-text: 9pt;
+    $small-text: 12pt;
     $medium-text: 15pt;
     $large-text: 18pt;
     $xlarge-text: 21pt;
