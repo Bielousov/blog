@@ -27,7 +27,9 @@ $custom_fields = get_post_custom();
 				}
 
 				// Display comments counter
-				printf( __( '<a href="%1$s" class="%2$s">%3$s</a>'), get_permalink().'#comments', $commentsClassName, $commentsCount);
+				if ($commentsCount > 0) {
+					printf( __( '<a href="%1$s" class="%2$s">%3$s</a>'), get_permalink().'#comments', $commentsClassName, $commentsCount);
+				}
 			}
 
 			// Post edit link

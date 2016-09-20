@@ -21,6 +21,7 @@ Just include scripts/slideshow.js and css/slideshow.css
 (September 20, 2016)
  - Use different Related posts plugin
  - SCSS Cleanup
+ - Don't show 0 comments
 
 ### v. 3.1.3
 (August 24, 2016)
