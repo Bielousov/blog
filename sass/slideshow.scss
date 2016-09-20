@@ -169,20 +169,23 @@ body.theater-mode {
 				margin: .2em 0;
 
 				color: white;
-				font-size: 18pt;
-				font-weight: 500;
+				font-size: $large-text;
+				font-weight: normal;
 				line-height: 1.1;
 			}
 
 			p {
 				margin: 0;
 				color: white;
-				font-size: 11pt;
+				font-size: $small-text;
+				font-weight: 300;
 			}
 
 			// COPYRIGHT
 			.copy {
+				opacity: .8;
 				color: white;
+				font-size: $xsmall-text;
 				font-weight: normal;
 			}
 			// PINTEREST

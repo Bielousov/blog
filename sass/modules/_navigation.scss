@@ -8,12 +8,11 @@
     // ------------
     &.x--desktop {
         position: absolute;
-        bottom: 5px;
-        right: 20px;
+        bottom: $unit;
+        right: $margin*2;
 
         display: block;
-        margin-top: 32px;
-        font-size: 14px;
+        font-size: $xsmall-text;
         font-weight: 300;
         white-space: nowrap;
 
@@ -42,12 +41,13 @@
 
             input.field {
                 margin: 0;
-                padding: 3px 35px 3px 7px;
+                padding: $unit $margin;
                 outline: none;
-                width: 168px;
+                width: 165px;
 
-                font-size: 13px;
+                font-size: $xsmall-text;
                 font-weight: 300;
+                line-height: 1;
 
                 &:-webkit-input-placeholder,
                 &:-moz-placeholder,
@@ -64,8 +64,8 @@
             input.submit{
                 position: absolute;
                 top: 0;
-                right: 4px;
-                height: 24px;
+                right: $unit;
+                height: 26px;
                 width: 30px;
                 overflow: hidden;
 

@@ -15,10 +15,65 @@ No changes required on back-end.
 Just include scripts/slideshow.js and css/slideshow.css
 
 
-
-
 ## CHANGELOG
-### v. 3.0
+
+### v. 3.1.4
+(September 20, 2016)
+ - Use different Related posts plugin
+ - SCSS Cleanup
+
+### v. 3.1.3
+(August 24, 2016)
+ - Sponsored label styling update
+ - Mobile navigation fixes
+ - Update logo
+ - Header styles update
+ - Updated post styling
+ - Updated Share CTA
+ - GA: Added AMP link
+ - GA: Added required hentry meta data
+ - GA: Updated Atom html to meet AMP requirements
+ - Increased fonts and style formatting cleanup
+
+### v. 3.1.2
+(March 28, 2016)
+ - Remove WP custom background
+ - Fix spacing in tweet ideas
+ - JS Code style fixes for safe minification
+
+### v. 3.1.1
+(February 19, 2016)
+ - Fixed google ads background colour
+ - Fine tuned slideshow fullscreen transition
+ - Enabled retina images for category pages
+ - Another attempt to fix new Wordpress Customization + Mobify script compatibility issue.
+
+### v. 3.1.0
+(December 15, 2015)
+ - Fixed admin bar positioning in mobile version
+ - Enabled Mobify
+ - Mobile navigation styling fixes
+ - Slideshow v.1.2: added tracking check and copyright
+ - Slideshow: enabled GPU acceleration
+ - Slideshow: update jQuery reference, added exclude image URL pattern
+ - Slideshow: Improved fullscreen mode
+ - Fix Tweet iframe height
+ - Fixed Tweet Ideas regression
+ - Disable gallery on mobile
+ - Consolidate all social plugins with third-party module
+ - Replaced custom AddThis with Shareaholic widget
+ - Lazy load full-size images for Retina
+ - Removed translation header
+ - Fixed header styling and SEO
+ - Added new header image
+ - Changed jQuery initiation
+ - Updated Autor's photo
+ - Updated travel map
+ - Switched from Feedburner to Feedly + MailChimp
+ - Added Subscription link to share block
+ - Disabled new WP features (responsive image and custom background) for not working properly with Mobify script
+
+### v. 3.0.0
 (March 3, 2015)
  - Responsive mobile build
  - New pagination (get rid of Paginator)

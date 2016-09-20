@@ -2,7 +2,7 @@
 
 #sidebar .widget-area {
 	font-family: $font-sans;
-	font-size: 10pt;
+	font-size: $xsmall-text;
 	font-weight: 300;
 
 	ul {
@@ -10,6 +10,10 @@
 	    padding: 0;
 
 	    list-style: none;
+
+        li {
+            margin: $unit 0;
+        }
 	}
 }
 
