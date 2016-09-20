@@ -51,11 +51,11 @@
 
 
 
-<?php /* How to display posts of the Gallery format. The gallery category is the old way. */ ?>
+<?php /* How to display posts of the Gallery format. */ ?>
 
 	<?php if ( ( function_exists( 'get_post_format' ) && 'gallery' == get_post_format( $post->ID ) ) || in_category( _x( 'gallery', 'gallery category slug', 'myblog' ) ) ) : ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<h2 class="entry-title rublog-title--post"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Постоянная ссылка на %s', 'myblog' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			<h2 class="entry-title rublog-title--post"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Читать полностью: «%s»', 'myblog' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 
 			<?php
 				// Entry Meta
@@ -93,7 +93,7 @@
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 			<h2 class="entry-title rublog-title--post">
-				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Постоянная ссылка на %s', 'myblog' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
+				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Читать полностью: «%s»', 'myblog' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
 					<?php the_title(); ?>
 				</a>
 			</h2>
@@ -130,7 +130,7 @@
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 			<h2 class="entry-title rublog-title--post">
-				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Постоянная ссылка на %s', 'myblog' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
+				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Читать полностью: «%s»', 'myblog' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
 					<?php the_title(); ?>
 					<small class="rublog-sponsored-subtitle">(обновленный пост)</small>
 				</a>
@@ -166,7 +166,7 @@
 
 	<?php else : ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<h2 class="entry-title rublog-title--post"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Постоянная ссылка на %s', 'myblog' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			<h2 class="entry-title rublog-title--post"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Читать полностью: «%s»', 'myblog' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 
 			<?php
 				// Entry Meta
@@ -190,7 +190,7 @@
    						my_excerpt_thumbnails($id, 0);
 					}
 
-					// Use Advanced excerpts plugion if available
+					// Use Advanced excerpts plugin if available
 					if ( function_exists('the_advanced_excerpt') ) {
 						the_advanced_excerpt();
 					} else {

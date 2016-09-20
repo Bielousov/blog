@@ -1,6 +1,7 @@
 /**** Feedburner email subscription form ****/
 
 .x-mail-subscription {
+    padding: $unit $margin;
     border-top: solid 1px $border;
     text-align: center;
 
@@ -14,8 +15,8 @@
 
     .email {
         margin: .5em 0;
-        color: #999;
-        font-size: 9pt;
+        color: $gray;
+        font-size: $xsmall-text+(-1);
         font-style: italic;
         text-align: center;
     }
