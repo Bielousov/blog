@@ -1,0 +1,43 @@
+/* WP Review Plugin
+-------------------------------------------------------------- */
+.review-wrapper {
+    &.wp-review-box-full-width {
+        float: none;
+        display: inline-block;
+
+        border: none;
+        background: transparent;
+    }
+
+    .review-title {
+        font-size: $xlarge-text;
+        line-height: 1.3;
+    }
+
+    .review-list {
+        font-size: $small-text;
+
+        li {
+            &,
+            &:nth-child(2n),
+            &:last-child {
+                background: transparent;
+                border-bottom: none;
+            }
+        }
+    }
+
+    .review-result-wrapper {
+        height: 4px;
+    }
+    .review-result {
+        height: 100%;
+    }
+
+    .review-summary-title {
+        display: none;
+    }
+    .review-desc {
+        font-size: $small-text;
+    }
+}
