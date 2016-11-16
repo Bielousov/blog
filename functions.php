@@ -348,6 +348,13 @@ function change_card_type(  ) {
 	return 'photo';
 }
 
+// Avoid minified css and js beeing added to AMP pages
+add_action( 'pre_amp_render_post', 'amp_avoid_w3tc_minified_css_js' );
+function amp_avoid_w3tc_minified_css_js() {
+    global $wp_query;
+    $wp_query->is_feed = 1;
+}
+
 // CDN Subdomain for images sitemap
 function wpseo_cdn_filter( $uri ) {
 	return str_replace( 'http://www.bielousov.com', 'http://cdn.bielousov.com', $uri );
