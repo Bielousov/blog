@@ -388,9 +388,11 @@ add_filter( 'wp_calculate_image_srcset', '__return_false', PHP_INT_MAX );
 // Remove the reponsive stuff from the content
 remove_filter( 'the_content', 'wp_make_content_images_responsive' );
 
+// Remove WP Emoji script
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
 // Remove custom background feature
-
-
 /**
  * Remove customizer options.
  *
