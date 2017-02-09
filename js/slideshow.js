@@ -66,11 +66,13 @@ iSlide = {
 		// Thumbnails click event
         iSlide.container.find('.thumbnails li a').click(function(){
 			iSlide.select(jQuery(this).attr('data-index'));
+
+			trackEvent('Slideshow', 'Navigation', 'Thumbnail Click');
 		});
 
         // On fullscreen mode change
         jQuery(document).on("webkitfullscreenchange mozfullscreenchange fullscreenchange",function(){
-        	if(iSlide.useFullscreen && iSlide.is_active()){
+        	if(iSlide.useFullscreen && iSlide.is_active()) {
 				if (document.webkitIsFullScreen || document.mozFullScreen || document.fullscreen) {
 					jQuery('body').addClass('fullscreen');
 				} else {
@@ -81,7 +83,7 @@ iSlide = {
         });
 
         jQuery(window).resize(function(){
-        	if(iSlide.is_active()){
+        	if (iSlide.is_active()) {
 	        	iSlide.loadCurrent();
 	        }
         });
@@ -91,8 +93,9 @@ iSlide = {
         });*/
 
         jQuery(window).unload(function() {
-		  if(iSlide.useFullscreen && iSlide.is_active())
-		  	iSlide.fullscreen(false);
+		  	if (iSlide.useFullscreen && iSlide.is_active()) {
+		  		iSlide.fullscreen(false);
+		  	}
 		});
 	},
 
@@ -191,7 +194,7 @@ iSlide = {
 			}, 100);
 		}
 
-		iSlide.track();
+		trackEvent('Slideshow', 'View Slideshow');
 	},
 
 	fullscreen: function(a) {
@@ -206,6 +209,8 @@ iSlide = {
 			else if (docElm.webkitRequestFullScreen) {
 				docElm.webkitRequestFullScreen();
 			}
+
+			trackEvent('Slideshow', 'Enter Fullscreen');
 		} else {
 			if (document.exitFullscreen) {
 				document.exitFullscreen();
@@ -227,13 +232,19 @@ iSlide = {
 
 
 	previous: function(){
-		if(iSlide.index>0)
+		if(iSlide.index>0) {
 			iSlide.select(parseInt(iSlide.index)-1);
+
+			trackEvent('Slideshow', 'Navigation', 'Previous Slide');
+		}
 	},
 
 	next: function(){
-		if(iSlide.index<iSlide.images.length-1)
+		if(iSlide.index<iSlide.images.length-1) {
 			iSlide.select(parseInt(iSlide.index)+1);
+
+			trackEvent('Slideshow', 'Navigation', 'Next Slide');
+		}
 	},
 
 	select: function(index){
@@ -288,14 +299,6 @@ iSlide = {
 				if(preload)
 					iSlide.preload(index);
 			});
-	},
-
-	track: function() {
-		// Analytics tracking function
-		// feel free to update
-		if (typeof(window.trackEvent) !== 'undefined') {
-			window.trackEvent('Slideshow', 'View Slideshow', 'Post', window.location);
-		}
 	},
 
 	getSlide: function(index){
