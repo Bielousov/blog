@@ -36,15 +36,22 @@ var UI = {
         var $document = jQuery('body');
 
         // GLOBAL: Track Ad Campaigns
-        $document.on('click', 'a[data-campaign]', function(){
+        $document.on('click', 'a[data-campaign]', function() {
             var $link = jQuery(this);
             trackOutboundLink(this, 'Ad Campaign', $link.data('campaign'),  $link.data('campaign-label') || $link.attr('href'));
         });
 
         // GLOBAL: Track all external links
-        $document.on('click', 'a[href*="//"]:not([href*="' + document.location.host + '"])', function(){
+        $document.on('click', 'a[href*="//"]:not([href*="' + document.location.host + '"])', function() {
             var $link = jQuery(this);
             trackOutboundLink(this, 'outbound-article', $link.attr('href'));
+        });
+
+        // GLOBAL: Track related posts
+        $document.on('click', '.related_post a', function() {
+            var $link = jQuery(this);
+            var position = $link.closest('[data-position]').data('position');
+            trackOutboundLink(this, 'Related Posts', $link.attr('href'), position);
         });
     },
 
