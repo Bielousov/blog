@@ -1,6 +1,6 @@
 <?php
 /*
- *Template Name: Travels Map
+ *Template Name: Travels
  * @subpackage MyBlog
  * @since 3.0
  */
