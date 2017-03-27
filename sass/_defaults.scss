@@ -57,6 +57,11 @@ h6 {
     color: $dark;
     line-height: 1.2;
     margin: 1em 0 .25em 0;
+
+    small {
+        color: $med;
+        font-size: 75%;
+    }
 }
 h1{
     font-size: $title-text;

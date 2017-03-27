@@ -1,0 +1,39 @@
+// Thumbnail images list
+.x-thumbnails-list {
+    @include display-flex;
+    @include flex-flow(row wrap);
+    @include align-items(stretch);
+    @include kill-list;
+
+    margin: 1em (-$margin);
+    text-align: center;
+
+    li {
+        width: 200px;
+        margin: $margin;
+        border: solid 1px $light;
+
+        &:hover {
+            border-color: $light-gray;
+            box-shadow: 0 0 $margin $light;
+        }
+
+        a {
+            display: block;
+            padding: $margin $side-margin;
+            text-decoration: none;
+
+            img {
+                width: calc(100% + ($side-margin * 2));
+                max-width: none;
+                margin: -$margin (-$side-margin) $margin;
+            }
+        }
+
+        em {
+            display: block;
+            font-size: $xsmall-text;
+            line-height: 1.3;
+        }
+    }
+}
