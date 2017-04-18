@@ -14,6 +14,8 @@
  * @since Twenty Ten 1.2
  */
 
+$excluded_terms = '4835';
+
 function custom_excerpt_length( $length ) {
 	return 20;
 }
@@ -101,10 +103,10 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 	<nav class="x-pagination x--post">
 		<div class="x-pagination__prev-next">
 			<div class="x-pagination__prev">
-				<?php previous_post_link( '%link', '<span class="x-pagination__arrow">' . _x( '&larr;', 'Previous post link', 'myblog' ) . '</span> <span class="x-pagination__post-title">%title</span><small class="x-pagination__arrow-hint">Предыдущий пост</small>' ); ?>
+				<?php previous_post_link( '%link', '<span class="x-pagination__arrow">' . _x( '&larr;', 'Previous post link', 'myblog' ) . '</span> <span class="x-pagination__post-title">%title</span><small class="x-pagination__arrow-hint">Предыдущий пост</small>', false, $excluded_terms ); ?>
 			</div>
 			<div class="x-pagination__next">
-				<?php next_post_link( '%link', '<span class="x-pagination__post-title">%title</span> <span class="x-pagination__arrow">' . _x( '&rarr;', 'Next post link', 'myblog' ) . '</span><small class="x-pagination__arrow-hint">Следующий пост</small>' ); ?>
+				<?php next_post_link( '%link', '<span class="x-pagination__post-title">%title</span> <span class="x-pagination__arrow">' . _x( '&rarr;', 'Next post link', 'myblog' ) . '</span><small class="x-pagination__arrow-hint">Следующий пост</small>', false, $excluded_terms ); ?>
 			</div>
 
 			<div class="x-pagination__hint">
