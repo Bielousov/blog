@@ -246,14 +246,16 @@ var UI = {
 
     // POST: Numbers after image image to reffer to
     initImageNumbers: function() {
-        // console.log('initImageNumbers');
-
-        var $postImages = $j('.one-column .entry-content').find('img.size-large, .wm-parallax .layer:first-of-type img.attachment-large');
+        var $postImages = $j('.one-column .entry-content').find('img.size-large, img.size-full');
 
         if ($postImages.length < 3)
             return;
-        $postImages.each(function(i){
-            $j(this).before('<ins id="img_' + (i+1) + '" class="imgNumber"><small>' + (i+1) +'</small></ins>');
+        $postImages.each(function(i) {
+            var $image = $j(this);
+
+            if (!$image.hasClass('panorama')) {
+                $image.before('<ins id="img_' + (i+1) + '" class="imgNumber"><small>' + (i+1) +'</small></ins>');
+            }
         });
     },
 
