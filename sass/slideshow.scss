@@ -24,29 +24,36 @@ body.theater-mode {
 
 
 /* =Image in the post thumbnail
-    -------------------------------------------------------------- */
-.entry-content {
-	img.zoom {
-		cursor: pointer;
-	}
-	.zoomIcon {
-		@include sprite-icon;
-		@include single-transition(opacity, 1s, linear);
+-------------------------------------------------------------- */
+//Zoom in (landscape)
+.c-zoom-in {
+	cursor: zoom-in;
+}
+.c-zoom-in__icon {
+	@include sprite-icon;
+	@include single-transition(opacity, 1s, linear);
 
-		cursor: pointer;
+	pointer-events: none;
 
-		position: absolute;
+	position: absolute;
 
-		display: block;
+	display: block;
 
-		margin: -50px 0 20px 15px;
-		opacity: .7;
+	margin: -50px 0 20px 15px;
+	opacity: .75;
 
-		background-position: -64px 0;
+	background-position: -64px 0;
+}
 
-		&:hover {
-			opacity: 1;
-		}
+// Zoom out (portrait)
+.c-zoom-out {
+	cursor: zoom-out;
+
+	&.c--enabled {
+		width: auto;
+		max-height: 90vh;
+
+		cursor: zoom-in;
 	}
 }
 

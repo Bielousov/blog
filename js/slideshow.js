@@ -9,7 +9,7 @@ iSlide = {
 	images: Object,
 	imgSelector: '.one-column .entry-content img.size-large[src*=".jpg"]',
 	imgPattern: /-\d{3,4}x\d{3,4}\./,
-	imgExcludePattern: /-\d{3}x\d{4}\./, // do not include tall images e.g.omage-900x1280.jpg
+	imgPortraitPattern: /-\d{3}x\d{4}\./, // do not include tall images e.g.omage-900x1280.jpg
 	title: String,
 
 	pinterest: true,
@@ -19,26 +19,32 @@ iSlide = {
 	{
 		iSlide.container = false;
 		iSlide.title = jQuery('h1.entry-title').text();
+		iSlide.images = [];
 
-		jQuery(iSlide.imgSelector).each(function(i,el){
-			if (!iSlide.imgExcludePattern.test(jQuery(el).attr('src'))) {
-				jQuery(this).addClass('zoom').after('<span data-src="'+jQuery(el).attr('src')+'" class="zoomIcon"></span>');
-			}
+		var $allImages = jQuery(iSlide.imgSelector);
+
+		var $zoomInImages = $allImages.filter(function(_, img) {
+			return !iSlide.imgPortraitPattern.test(jQuery(img).attr('src'));
 		});
 
-		iSlide.images = jQuery(iSlide.imgSelector+'.zoom');
-
-		if (iSlide.images.length === 0) {
-			return false;
-		}
+		var $zoomOutImages = $allImages.filter(function(_, img) {
+			return iSlide.imgPortraitPattern.test(jQuery(img).attr('src'));
+		});
 
 
-		iSlide.images.click(function(){
+		// Portrait images (zoom out)
+		$zoomOutImages.addClass('c-zoom-out');
+		$zoomOutImages.on('click', function() {
+			jQuery(this).toggleClass('c--enabled');
+		});
+
+		// Landscape images (zoom in)
+		$zoomInImages.addClass('c-zoom-in');
+		$zoomInImages.after('<i class="c-zoom-in__icon" />');
+
+		iSlide.images = $zoomInImages;
+		iSlide.images.on('click', function(){
 			iSlide.open(jQuery(this).attr('src'));
-		});
-
-		jQuery('.zoomIcon').click(function(){
-			iSlide.open(jQuery(this).attr('data-src'));
 		});
 	},
 
