@@ -4,10 +4,10 @@ header.site-header {
     display: block;
     min-width: 1000px;
 
-    padding: 10px 0 5px;
+    padding: $margin*2 0 $margin;
     background: #f5f5f5 url($theme + 'images/h/header-totems.jpg') no-repeat center center;
     background-size: cover;
-    @include box-shadow(0 0 10px $light-gray);
+    @include box-shadow(0 0 $unit*2 $light-gray);
 
     a {
         -webkit-transition: all .5s;
