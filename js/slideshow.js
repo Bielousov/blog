@@ -17,6 +17,11 @@ iSlide = {
 
 	init: function()
 	{
+		// Disable on mobile devices
+		if (screen.width < 900)  {
+			return false;
+		}
+
 		iSlide.container = false;
 		iSlide.title = jQuery('h1.entry-title').text();
 		iSlide.images = [];
