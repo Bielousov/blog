@@ -342,12 +342,6 @@ function add_hatom_data($content) {
 }
 add_filter('the_content', 'add_hatom_data');
 
-// Use Twitter photo card type with Yoast SEO plugin
-add_filter( 'wpseo_twitter_card_type', 'change_card_type', 20 );
-function change_card_type(  ) {
-	return 'photo';
-}
-
 // Avoid minified css and js beeing added to AMP pages
 add_action( 'pre_amp_render_post', 'amp_avoid_w3tc_minified_css_js' );
 function amp_avoid_w3tc_minified_css_js() {
