@@ -15,7 +15,7 @@
 ?>
 
 <div id="map-wrapper" class="hfeed">
-    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1WqeAH01rygN4s6ZzgXaXHoOfWM4" width="100%" style="height:86vh;"></iframe>
+    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1WqeAH01rygN4s6ZzgXaXHoOfWM4" width="100%" class="x-posts-map"></iframe>
 
     <?php
         // Entry Share

@@ -5,7 +5,7 @@
     margin-top:-20px;
     margin-bottom:0;
     padding:0;
-    
+
     a.active{
         border:none;
         color:#111;
@@ -24,7 +24,7 @@
         line-height:160%;
         margin:0;
         padding:0;
-    
+
         h2{
             display:inline;
             font-size:15pt;
@@ -52,7 +52,7 @@
     li{
         position:absolute;
         line-height: 1;
-    
+
         h2{
             font-size:10pt;
         }
@@ -77,7 +77,7 @@
 
     li{
         margin-bottom:2em;
-    
+
         p.more{
             color:#666;
             display:block;
@@ -92,7 +92,7 @@
         display:block;
         font-size:18pt;
         margin: 3em 0 1em;
-    
+
         &.first{
             margin-top: 0;
         }
@@ -115,4 +115,13 @@
 .search-results .pageSubLinks,
 .search-results #travels {
     display: none;
+}
+
+
+/* = POSTS MAP
+-------------------------------------------------------------- */
+.x-posts-map {
+    height: 100%;
+    height: calc(100vh - 45px);
+    margin-top: -45px;
 }
