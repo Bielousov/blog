@@ -17,6 +17,24 @@ Just include scripts/slideshow.js and css/slideshow.css
 
 ## CHANGELOG
 
+### v. 3.2.0
+ - Fix minified scripts in AMP
+ - Disable WP emoji
+ - Added reviews styles
+ - Added icon for push notifications
+ - Fixed slideshow icon positioning
+ - Style Code tag
+ - Added Related Posts tracking
+ - Added slideshow tracking events
+ - Added comments, related posts, report error, tweat ideas and Google adds to default page template
+ - Count panorama images with photos on page
+ - Shrink portrait images on click
+ - Disable slideshow on mobile
+ - Disable data mining
+ - Remove Twitter card plugin support
+ - Shareaholic old posts HTTPS migration
+ - Added posts map
+
 ### v. 3.1.4
 (September 20, 2016)
  - Use different Related posts plugin
