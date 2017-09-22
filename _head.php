@@ -30,16 +30,18 @@
 	    wp_enqueue_style('ui', get_template_directory_uri() . '/css/style.css', false, '3.0', 'all');
 	    wp_enqueue_style('slideshow', get_template_directory_uri() . '/css/slideshow.css', false, '1.1', 'all');
 
-		/* We add some JavaScript to pages with the comment form
-		 * to support sites with threaded comments (when in use).
-		 *
-		if ( is_singular() && get_option( 'thread_comments' ) )
-			wp_enqueue_script( 'comment-reply' );
-		 * Always have wp_head() just before the closing </head>
-		 * tag of your theme, or you will break many plugins, which
-		 * generally use this hook to add elements to <head> such
-		 * as styles, scripts, and meta tags.
-		 */
+		/* Shareaholic HTTP counter fallback */
+		$canonical_share_url = false;
+		if (is_singular() && isset($custom_fields['canonical_protocol'])) {
+			$canonical_share_url = wp_get_canonical_url();
+		} else if (is_home()) {
+			$canonical_share_url = get_site_url();
+		}
+		if ($canonical_share_url) {
+			$http_canonical_share_url = preg_replace('/^https:/', 'http:', $canonical_share_url);
+			echo '<meta name="shareaholic:url:custom" content="'.$http_canonical_share_url.'" />';
+		}
+
 		wp_head();
 
 		if (isset($custom_fields['og:video'])) {
